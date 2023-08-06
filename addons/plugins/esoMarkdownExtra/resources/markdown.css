@@ -1,0 +1,34 @@
+.postBody h1
+{
+	font-size: 200% !important;
+}
+
+.postBody h2
+{
+	font-size: 180% !important;
+}
+
+.postBody h3
+{
+	font-size: 160% !important;
+}
+
+.postBody h4
+{
+	font-size: 140% !important;
+}
+
+.postBody h5
+{
+	font-size: 120% !important;
+}
+
+.postBody h6
+{
+	font-size: 110% !important;
+}
+
+.postBody strong
+{
+	font-weight: bold;
+}
