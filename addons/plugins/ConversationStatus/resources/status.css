@@ -1,0 +1,14 @@
+.label-added, .gambit-added, 
+.label-fixed, .gambit-fixed,
+.label-notbug, .gambit-notbug {
+	color: green !important;
+}
+.label-inprogress, .gambit-inprogress, 
+.label-considered, .gambit-considered, 
+.label-lowpriority, .gambit-lowpriority {
+	color: orange !important;
+}
+.label-rejected, .gambit-rejected, 
+.label-highpriority, .gambit-highpriority {
+	color: red !important;
+}
