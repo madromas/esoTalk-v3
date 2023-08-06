@@ -14,7 +14,7 @@
 
 ![admin](https://github.com/madromas/esoTalk-v3/assets/64708726/dd734994-4a11-4bfd-930f-542c58cc3b1a)
 
-#### Demo: http://hub.madway.net
+#### Demo: https://hub.madway.net
 
 > Original (but outdated) project is here: https://github.com/esotalk/esoTalk
 
