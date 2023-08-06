@@ -1,0 +1,5 @@
+.script-box {display:inline; float:left; margin-left:-74px;}
+.edit-script-form > li {padding-left:5px;}
+textarea[name=scriptsrc] {width:98%;}
+.CodeMirror {border-top:1px solid #ccc; border-bottom:1px solid #ccc; height:auto !important;}
+.CodeMirror-scroll {overflow-y:hidden; overflow-x: auto;}
