@@ -1,0 +1,28 @@
+{
+	"name": "opauth/vkontakte",
+	"description": "VKontakte strategy for Opauth",
+	"keywords": ["authentication","auth","vkontakte"],
+	"homepage": "http://opauth.org",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "David Grajal Blanco",
+			"email": "dgrabla@gmail.com",
+			"homepage": "http://davidgrajal.com"
+		},
+		{
+			"name": "U-Zyn Chua",
+			"email": "chua@uzyn.com",
+			"homepage": "http://uzyn.com"
+		}
+	],
+	"require": {
+		"php": ">=5.2.0",
+		"opauth/opauth": ">=0.2.0"
+	},
+	"autoload": {
+		"psr-0": {
+			"": "."
+		}
+	}
+}

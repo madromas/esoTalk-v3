@@ -1,0 +1,87 @@
+/**
+ * OpauthConnect
+ * 
+ * @copyright Copyright © 2012 Oleksandr Golubtsov
+ * @license   GPLv2 License
+ * @package   OpauthСonnect
+ * 
+ * This file is part of OpauthСonnect plugin. Please see the included license file for usage information
+ */
+
+.opauth-settings .row {
+    position: relative;
+    float: none;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.opauth-settings .category {
+    margin-top: 30px;
+}
+
+.opauth-settings .first-category {
+    margin-top: 20px;
+}
+
+.opauth-settings .category-toggle {
+    border-top: 1px solid #d5d5d5;
+    padding-top: 2px;
+    padding-left: 3px;
+    color: #706B6B;
+    cursor: pointer;
+}
+
+.opauth-settings .category-toggle:hover {
+    color: #1260ee;
+}
+
+.opauth-settings .category-settings {
+    display: none;
+}
+
+.opauth-settings .row>div {
+    position: relative;
+    float: left;
+}
+
+.opauth-settings .row .status {
+    width: 100px;
+    margin-right: 10px;
+}
+
+.settings-account {
+    margin-bottom: 15px;
+}
+
+.settings-account .account-description {
+    position: relative;
+    float: left;
+    margin-top: 4px;
+}
+
+.settings-account .account-logo {
+    position: relative;
+    float: left;
+    margin-right: 12px;
+}
+
+.settings-account .account-link {
+    display: block;
+    margin-bottom: 2px;
+}
+
+.settings-account .account-confirmed {
+    color: green;
+}
+
+.settings-account .account-not-confirmed span {
+    color: red;
+}
+
+.settings-account .account-unlink {
+    margin-top: 2px;
+}
+
+.settings-account .account-unlink a {
+    color: #910808;
+}
