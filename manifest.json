@@ -1,0 +1,50 @@
+{
+  "name": "Website Title",
+  "short_name": "Short Title",
+  "start_url": "/index.php",
+  "scope": "/index.php",
+  "description": "Description",
+  "icons": [
+    {
+      "src": "fav/apple-touch-icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+	  "purpose": "any"
+    },
+	{
+      "src": "fav/favicon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+	  "purpose": "any"
+    },
+	{
+      "src": "fav/favicon-128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+	  "purpose": "any"
+    },
+	{
+      "src": "fav/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+	  "purpose": "any"
+    },
+	{
+      "src": "fav/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+	  "purpose": "any"
+    },
+    {
+      "src": "fav/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+	  "purpose": "any"
+    }
+  ],
+  "theme_color": "#131a20",
+  "background_color": "#131a20",
+  "display": "standalone"
+  "splash_pages": null,
+    "gcm_sender_id": "734831785927"
+}
