@@ -1,0 +1,25 @@
+.label-answered, .gambit-answered {
+	color:#33c488 !important;
+}
+
+.embedded-answer {
+	border-color:#33c488;
+	margin:25px 0 10px;
+}
+.embedded-answer h3 {
+	font-size: 100%;
+}
+.embedded-answer h3, .embedded-answer h3 a {
+	color:#33c488;
+}
+
+.markAsAnswer {
+	float: right;
+	padding: 1px 10px;
+	font-size: 12px;
+	color: #777;
+}
+.markAsAnswer i {
+	font-size: 12px;
+	margin-right: 2px;
+}

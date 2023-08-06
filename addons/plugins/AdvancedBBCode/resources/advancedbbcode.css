@@ -1,0 +1,38 @@
+#bbcodeList {list-style:none; margin:20px 0 0 0; padding:0}
+#bbcodeList > li {margin-bottom:10px; padding:10px 12px}
+#bbcodeList > li > small {margin-left:7px}
+#bbcodeList img {opacity:0.5; vertical-align:-3px; margin-right:10px}
+#bbcodeList > li img {opacity:1}
+
+#bbcodeList > li .bbcodeControls {margin:-3px -5px 0; float:right; font-size:90%}
+#bbcodeList > li .bbcodeControls > a {display:inline-block}
+#bbcodeList .toggle {width:15px; text-align:center}
+
+#bbcodeList > li .popupWrapper {visibility:hidden}
+#bbcodeList > li .popupButton .text {display:none}
+#bbcodeList > li:hover .popupWrapper, #bbcodeList .popupWrapper.active {visibility:visible}
+
+.bbcodeedit dt
+{
+    border-image: none;
+    border-style: none none none none;
+    border-width: medium medium medium medium;
+    padding-top: 3px;
+    text-align: left;
+    width: 60%;
+    margin: 0 0 0 -10%;
+    float: left;
+    width: auto;    
+}
+
+.bbcodeedit dd
+{
+    border-color: -moz-use-text-color -moz-use-text-color -moz-use-text-color #cccccc;
+    border-image: none;
+    border-style: none none none solid;
+    border-width: medium medium medium 1px;
+    font-size: 1em;
+    margin: 0 0 0 60%;
+    padding: 0 0 0 5px;
+    vertical-align: top;
+}

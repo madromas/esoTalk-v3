@@ -1,0 +1,7 @@
+
+.abbcodelist {display:none; position:absolute; margin-left:200px; height:212px; overflow-y:auto; width:80px; overflow-x:hidden; color:#666; background-color:#fff; list-style-type:none; cursor:pointer; padding:3px 6px 3px 6px; border:1px solid #aaa; border-radius:3px; z-index:300; opacity:0.9}
+.abbcodelist > li:hover {color:#000; background-color:#ddd}
+.abbcodelist > li a {color:#666}
+.abbcodelist > li:hover a {color:#000}
+
+.abbcode:hover .abbcodelist {display:block}
