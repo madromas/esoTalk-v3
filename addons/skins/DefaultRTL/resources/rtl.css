@@ -1,0 +1,400 @@
+/*
+RTL Skin Styles
+*/
+
+/* Global */
+body, input, textarea {
+    direction: rtl;
+    font-family: "Droid Arabic Kufi", arial, serif;
+    font-size: 14px;
+}
+
+/* Layout */
+#hdr-content, #body-content, #ftr-content {
+    margin:0 auto;
+    padding:0 30px
+}
+#body-content {
+    padding-bottom:20px;
+    padding-top:10px
+}
+#body {
+    padding-top:60px
+}
+
+/* Menus (inline lists) */
+.menu {
+    margin-top:0;
+    margin-bottom:0;
+    padding:0;
+}
+
+
+/* Header */
+#hdr-inner {
+    padding-right:0;
+}
+#hdr h1 {
+    padding:14px 0;
+    margin:0;
+}
+#hdr h1 img {
+    margin-right:5px;
+}
+#hdr h1 span {
+    margin-left:10px
+}
+#backButton {
+    float:right;
+    margin-right:10px;
+    margin-left:-30px;
+    margin-top:20px;
+}
+
+#mainMenu {
+    margin-left:30px;
+    padding:18px 0
+}
+#userMenu {
+    float:left;
+    padding:18px 0;
+    margin-right:-580px;
+    margin-left:-18px;
+}
+#userMenu .item-user .avatar {
+    margin:-5px 0 -5px 8px
+}
+#userMenu.menu > li {
+    margin-left:18px;
+}
+
+#hdr .button {
+    padding:9px 12px;
+    margin:-7px 0
+}
+
+
+/* Footer */
+#ftr-content {
+    padding-top:20px;
+    padding-bottom:20px
+}
+#ftr li {
+    margin-right:10px
+}
+#ftr .item-copyright {
+    float:left;
+    margin:0
+}
+
+
+/* Text inputs */
+input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {
+    padding:5px;
+    margin:0;
+}
+
+
+/* Buttons */
+.button {
+    margin-bottom:1px;
+    padding:0 10px 2px;
+}
+.button.big {
+    padding:0 10px 0;
+}
+
+a.button {
+    padding:8px 10px;
+}
+a.button.big {
+    padding:10px;
+}
+
+.buttonGroup .button {
+    margin-right:-3px
+}
+
+form.search {
+    float: left;
+}
+
+.search input.text, .search .control-reset, .search .icon-search {
+    float: right;
+}
+
+.search input.text {
+    margin-right: -25px;
+    margin-left: 0;
+    line-height: 19px;
+}
+
+.search .control-reset {
+    margin-right: -27px;
+    margin-left: 0;
+}
+
+.search .icon-search {
+    padding-right: 7px;
+    padding-left: 0;
+}
+
+.search .popupButton {
+    margin-right: 10px;
+    margin-left: 0;
+}
+
+
+#conversationsFilter .channels {
+    padding-right: 130px;
+    padding-left: 0;
+}
+
+#conversationsFilter .channelListItem {
+    margin-right: -129px;
+    margin-left: 0;
+}
+
+#conversationsFilter .pathItem {
+    margin-right: -95px;
+    margin-left: 0;
+}
+
+.tabs li {
+    float: right;
+    margin: 4px 7px 4px 0;
+}
+
+.tabs .pathItem {
+    margin-left: 20px;
+    margin-right: 0;
+}
+
+.tabs .pathItem a:first-child {
+    padding-right: 7px;
+    border-radius: 3px 3px 0 0px;
+}
+
+/*.tabs .pathItem.selected a:after {
+    float: right;
+    border-left-color: #FFF;
+    left: -24px;
+    right: 0;
+}
+
+.tabs .pathItem.selected a:before {
+    border-right-color: #EAEAEA;
+    border-left-color: none !important;
+}
+
+.tabs .pathItem.selected a:before, .tabs .pathItem.selected a:after {
+    left: -27px;
+    right: 0;
+    content: "";
+}*/
+
+.conversationList li {
+    padding-right: 13em;
+    padding-left: 27em;
+}
+
+.conversationList .col-star {
+    float: right;
+    margin-right: -13em;
+    margin-left: 0;
+    padding-right: 0.7em;
+    padding-left: 0;
+}
+
+.conversationList .col-channel {
+    float: right;
+    width: 10em;
+    margin-right: -11em;
+    margin-left: 0;
+    text-align: left;
+}
+
+.conversationList .col-lastPost {
+    float: left;
+    margin-left: -27em;
+    margin-right: 0;
+}
+
+.conversationList .col-replies {
+    float: left;
+    margin-left: -31em;
+    margin-right: 0;
+}
+
+#backButton {
+    float: right;
+    margin-left: 10px;
+    margin-right: -30px;
+}
+
+.hasScrubber {
+    margin-left: 190px;
+    margin-right: 0;
+}
+
+.scrubberColumn {
+    width: 150px;
+    float: left;
+    margin-left: -190px;
+    margin-right: 0;
+}
+
+.post {
+    padding-right: 79px;
+    padding-left: 0;
+}
+
+.post div.avatar {
+    float: right;
+    margin-right: -79px;
+    margin-left: 0;
+}
+
+.postHeader .controls {
+    float: left;
+}
+
+.post .editButtons > .button {
+    float: left;
+    margin-right: 7px;
+    margin-left: 0;
+}
+.post .editButtons .draftButtons {
+    float: right;
+}
+
+
+#memberProfile .avatar {
+    float: right;
+    margin-left: 15px;
+    margin-right: 0;
+}
+
+#memberInfo {
+    float: right;
+}
+
+#memberProfile .popupWrapper {
+    float: left;
+}
+
+#memberActions {
+    clear: left;
+    float: left;
+    text-align: left;
+}
+
+
+.hasControls .controls {
+    float: left;
+}
+
+.hasControls .controls .time {
+    float: right;
+}
+
+
+.activityBody {
+    padding-right: 30px;
+    margin-right: 26px;
+    margin-left: 0;
+}
+
+
+.form > li {
+    padding-right: 150px;
+    padding-left: 0;
+}
+
+.form > li > label {
+    margin: 0 0 1px 10px;
+    margin-right: -150px;
+    float: right;
+}
+
+
+
+
+.postContent:before, .postContent:after {
+content: " ";
+border-right-color: rgba(0, 0, 0, 0) !important;
+border-left-color: #000 !important;
+right: -16px;
+}
+
+.postContent:after {
+    float: right;
+    right: -15px;
+}
+
+.thing:before {
+    border-color: #DDD;
+    border-left-color: #EAEAEA !important;
+}
+
+.thing:after {
+    border-color: #FFF;
+    border-right-color: rgba(100, 0, 0, 0) !important;
+    border-left-color: rgba(255, 255, 255, 1) !important;
+}
+
+
+.tabs .pathItem.selected a:before {
+    border-left-color: #EAEAEA;
+}
+
+.tabs .pathItem.selected a:before, .tabs .pathItem.selected a:after {
+    content: " ";
+    border: 13px solid rgba(0, 0, 0, 0);
+    left: -27px;
+    right: auto;
+    border-left-color: rgba(0, 0, 0, 0) !important;
+    border-right-color: #EAEAEA;
+}
+
+.tabs .pathItem.selected a:after {
+    float: left;
+    border-left-color: rgba(0, 0, 0, 0) !important;
+    border-right-color: #FFF;
+    left: -26px;
+    right: auto;
+    top: -1px;
+}
+
+.timeMarker {
+    letter-spacing: 0;
+}
+
+
+#userMenu.menu > li {
+    text-align: right;
+}
+
+.radio input[type=radio], .checkbox input[type=checkbox] {
+    float: right;
+    margin-right: -20px;
+    margin-left: 0;
+}
+
+.indent {
+    margin-right: 20px;
+    margin-left: 0;
+}
+
+#adminSettings .form li {
+    padding-right: 180px;
+    padding-left: 0;
+}
+
+#skinList > li .skinControls {
+    float: left !important;
+}
+
+#languageList > li .popupWrapper {
+    float: left !important;
+}
