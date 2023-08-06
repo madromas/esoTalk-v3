@@ -14,6 +14,10 @@
 
 ![admin](https://github.com/madromas/esoTalk-v3/assets/64708726/dd734994-4a11-4bfd-930f-542c58cc3b1a)
 
+#### Mobile view
+
+![Screenshot 2023-08-06 123734](https://github.com/madromas/esoTalk-v3/assets/64708726/d6bb3c2c-a80c-47c4-b7be-13931f1bac4f)
+
 #### Demo: https://hub.madway.net
 
 > Original (but outdated) project is here: https://github.com/esotalk/esoTalk
