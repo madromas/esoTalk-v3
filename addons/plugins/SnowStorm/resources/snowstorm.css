@@ -1,0 +1,4 @@
+#stopSnowingButton {position:fixed; bottom:5px; left:5px; opacity:0.5; cursor:pointer; width:32px; height:32px; background:url(stopSnowing.png) no-repeat scroll 100% 100% transparent;}
+#stopSnowingButton:hover {opacity:1;}
+#snowmanImg {position:fixed; bottom:0px; right:0px; opacity:0.25; cursor:pointer; width:64px; height:79px; background:url(Snowman.gif) no-repeat scroll 100% 100% transparent; background-size:cover;}
+#snowmanImg:hover {opacity:1;}
