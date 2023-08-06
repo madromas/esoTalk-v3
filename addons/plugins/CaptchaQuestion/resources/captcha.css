@@ -1,0 +1,11 @@
+.sheet .buttons .captcha {
+  float: right;
+  margin-left: 10px;
+}
+.captcha input {
+  padding: 7px;
+  width: 72px;
+}
+.fieldGroup .captcha input {
+  width: 154px;
+}
