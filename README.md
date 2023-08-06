@@ -5,8 +5,10 @@
 ![mad](https://user-images.githubusercontent.com/64708726/185802624-3f7f8aec-532c-4966-b58b-5bbbcf1210f7.jpg)
 
 ![mad2](https://user-images.githubusercontent.com/64708726/185802724-af43a611-1d13-4f18-b3e6-743110bc1e5f.jpg)
+Admin Panel
+![admin](https://github.com/madromas/esoTalk-v3/assets/64708726/dd734994-4a11-4bfd-930f-542c58cc3b1a)
 
-![admin](https://github.com/madromas/esoTalk-v3/assets/64708726/de61db61-4029-4cbf-ace8-f61e3ea54d4f)
+
 
 #### Demo: http://hub.madway.net
 
