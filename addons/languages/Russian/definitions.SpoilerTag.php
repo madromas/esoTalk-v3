@@ -1,0 +1,2 @@
+<?PHP
+$definitions["SpoilerBBCode"] = "Спойлер";
