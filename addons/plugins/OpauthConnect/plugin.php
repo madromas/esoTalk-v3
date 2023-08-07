@@ -11,7 +11,7 @@
 
 ET::$pluginInfo["OpauthConnect"] = array(
     "name" => "OpauthConnect",
-    "description" => "Sign in via social networks",
+    "description" => "BROKEN, DO NOT USE!!! Sign in via social networks",
     "version" => "2.1",
     "author" => "Oleksandr Golubtsov",
     "authorEmail" => "alex.8fmi@gmail.com",
