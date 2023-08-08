@@ -60,6 +60,11 @@ pre {
   border-radius: 10px; 
 }
 
+code {background: #000 !important;
+  color: #b9b9b9 !important;
+  border: 1px solid #494949 !important;
+  border-radius: 10px; }
+
 /* Global */
 body {font-size:14px; font-weight:normal; margin:0; overflow-y:scroll; background:#131a20; color:#c9d1d9}
 body, input, textarea, select {font-family: poppins,sans-serif;}
