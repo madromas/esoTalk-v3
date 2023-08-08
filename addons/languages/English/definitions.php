@@ -18,6 +18,21 @@ $definitions["charset"] = "utf-8";
 
 $definitions["date.full"] = "%c";
 
+$definitions["month"] = array(
+  "January"   => "January",
+  "February"  => "February",
+  "March"     => "March",
+  "April"     => "April",
+  "May"       => "May",
+  "June"      => "June",
+  "July"      => "July",
+  "August"    => "August",
+  "September" => "September",
+  "October"   => "October",
+  "November"  => "November",
+  "December"  => "December"
+);
+
 $definitions["%d day ago"] = "yesterday";
 $definitions["%d days ago"] = "%d days ago";
 $definitions["%d hour ago"] = "1 hour ago";
@@ -76,7 +91,6 @@ $definitions["Approve"] = "Approve";
 $definitions["Automatically star conversations that I reply to"] = "Automatically follow conversations that I reply to";
 $definitions["Avatar"] = "Avatar";
 
-$definitions["Back to administration"] = "Back to administration";
 $definitions["Back to channels"] = "Back to channels";
 $definitions["Back to conversation"] = "Back to conversation";
 $definitions["Back to member"] = "Back to member";
@@ -171,6 +185,7 @@ $definitions["First posted"] = "First posted";
 $definitions["Follow"] = "Follow";
 $definitions["Follow to receive notifications"] = "Follow to receive notifications";
 $definitions["Following"] = "Following";
+
 $definitions["For %s seconds"] = "For %s seconds";
 $definitions["Forever"] = "Forever";
 $definitions["Forgot?"] = "Forgot?";
@@ -216,7 +231,7 @@ $definitions["Installed Plugins"] = "Installed Plugins";
 $definitions["Installed plugins"] = "Installed plugins";
 $definitions["Installed Skins"] = "Installed Skins";
 $definitions["Installed skins"] = "Installed skins";
-$definitions["is %s"] = "is %s";
+$definitions["is %s"] = "является %s";
 
 $definitions["Joined"] = "Joined";
 $definitions["just now"] = "just now";
@@ -526,49 +541,40 @@ $definitions["email.link"]                   = "If the button above doesn't work
 $definitions["email.quest"]                  = "If you have any questions, please don't reply to this email &mdash; use the forum, we're always happy to help out.";
 $definitions["email.sender"]                 = "Cheers,<br>Your Admin";
 
-// 146:/core/models/ETActivityModel.class.php
 $definitions["email.header"]                 = "<p>Hey %s!</p>";
-$definitions["email.footer"]                 = "You can change your mail settings at any time by clicking here:";
+$definitions["email.footer"]                 = "<p>(You can change your mail settings at any time by clicking <a href='%s'>here</a>.)</p> ";
 
-// 267:/core/controllers/ETUserController.class.php
-$definitions["email.confirmEmail.subject"]   = "Hey %1\$s! &mdash; Did You Sign Up for, our Forum?"; /* 1 REPLACMENT */
+$definitions["email.confirmEmail.subject"]   = "Hey %1\$s! &mdash; Did You Sign Up for, our Forum?"; 
+
 $definitions["email.confirmEmail.body"]      = "<p>Hey there, we just got a request from your email address that suggested you were interested in getting into the '%1\$s' forum.</p>
                                                 <p>But before you start getting in it, we ask that you confirm that was your intention.</p>
-                                                <p>So hit the big red button to confirm. (<b>If you didn't sign up, do nothing. We'll never bother you again.</b>) Thanks in advance!</p>"; /* 1 REPLACMENT */
-
-// 52:/core/controllers/admin/ETUnapprovedAdminController.class.php
-$definitions["email.approved.subject"]       = "Thanks For Signing Up %1\$s, your Account has been Confirmed."; /* 1 REPLACMENT */
+                                                <p>So hit the big red button to confirm. (<b>If you didn't sign up, do nothing. We'll never bother you again.</b>) Thanks in advance!</p>"; 
+												
+$definitions["email.approved.subject"]       = "Thanks For Signing Up %1\$s, your Account has been Confirmed."; 
 $definitions["email.approved.body"]          = "<p>Thanks for signing up for %1\$s!</p>
                                                 <p>We'd love to welcome you in our community.</p>
                                                 <p>This forum is always open to ideas.</p>
                                                 <p>Shoot us an email if you have any suggestions to offer up.</p>
                                                 <p>Finally, we should note that we accept donations, big or small, via PayPal (internmail@gmail.com). (The big donations come with neat perks, by the way.)</p>
-                                                <p>Click the following button to log in and start the show.</p>"; /* 1 REPLACMENT */
-
-// 376:/core/controllers/ETUserController.class.php
-$definitions["email.forgotPassword.subject"] = "Forgot your Password, %1\$s?"; /* 1 REPLACMENT */
+                                                <p>Click the following button to log in and start the show.</p>";
+$definitions["email.forgotPassword.subject"] = "Forgot your Password, %1\$s?"; 
 $definitions["email.forgotPassword.body"]    = "<p>Need to reset your '%1\$s' Forum Password? No problem!</p>
                                                 <p>Just click the button below and you'll be on your way.</p>
-                                                <p><b>If you did not make this request, please ignore this email.</b></p>"; /* 1 REPLACMENT */
-
-// 476:/core/models/ETActivityModel.class.php
-$definitions["email.mention.subject"]        = "[Mentioned by %1\$s] %2\$s"; /* 2 REPLACMENTS */
+                                                <p><b>If you did not make this request, please ignore this email.</b></p>"; 
+$definitions["email.mention.subject"]        = "[Mentioned by %1\$s] %2\$s"; 
 $definitions["email.mention.body"]           = "<p><strong>%1\$s</strong> mentioned you in the <strong>%2\$s</strong>  post.</p>
                                                 <hr size='1'>%3\$s<hr size='1'>
-                                                <p>So hit the big red button to view the post in context.</p>"; /* 3 REPLACMENTS */
+                                                <p>So hit the big red button to view the post in context.</p>"; 
 
-// 510:/core/models/ETActivityModel.class.php
-$definitions["email.privateAdd.subject"]     = "[Private] %1\$s"; /* 1 REPLACMENT */
+$definitions["email.privateAdd.subject"]     = "[Private] %1\$s"; 
 $definitions["email.privateAdd.body"]        = "<p>You have been added to a private conversation titled <strong>%1\$s</strong>.</p>
                                                 <hr size='1'>%2\$s<hr size='1'>
-                                                <p>So hit the big red button to view this conversation.</p>"; /* 2 REPLACMENT */
+                                                <p>So hit the big red button to view this conversation.</p>";
 
-// 528:/core/models/ETActivityModel.class.php
-$definitions["email.post.subject"]           = "[New Reply] %1\$s"; /* 1 REPLACMENT */
+$definitions["email.post.subject"]           = "[New Reply] %1\$s";
 $definitions["email.post.body"]              = "<p><strong>%1\$s</strong> has replied to a conversation which you followed: <strong>%2\$s</strong></p>
                                                 <hr size='1'>%3\$s<hr size='1'>
-                                                <p>So hit the big red button to view the new activity.</p>"; /* 3 REPLACMENTS */
-
+                                                <p>So hit the big red button to view the new activity.</p>"; 
 
 // Translating the gambit system can be quite complex, but we'll do our best to get you through it. :)
 // Note: Don't use any html entities in these definitions, except for: &lt; &gt; &amp; &#39;
@@ -641,19 +647,3 @@ $definitions["gambit.active last ? days"] = "{$definitions["gambit.active"]} {$d
 // This is similar to the regular expression for the active gambit, but for the "has n reply(s)" gambit.
 // Usually you just need to change the "has" and "repl".
 $definitions["gambit.gambitHasNReplies"] = "/^has *(?<a>>|<|>=|<=)? *(?<b>\d+) *repl/";
-
-// vanGato
-$definitions["month"] = array(
-  "January"   => "January",
-  "February"  => "February",
-  "March"     => "March",
-  "April"     => "April",
-  "May"       => "May",
-  "June"      => "June",
-  "July"      => "July",
-  "August"    => "August",
-  "September" => "September",
-  "October"   => "October",
-  "November"  => "November",
-  "December"  => "December"
-);
