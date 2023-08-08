@@ -75,7 +75,7 @@ $config["esoTalk.meta.description"] = "If you are normal, you have got to be MAD
 $config["esoTalk.skin"] = "Dark"; // The active skin.
 $config["esoTalk.mobileSkin"] = "Dark"; // The active skin for mobile devices.
 $config["esoTalk.adminSkin"] = "Dark"; // The active skin for the administrator section.
-$config["esoTalk.enabledPlugins"] = array("BBCode", "ConfigEditor", "Emoticons", "Attachments", "likes", "Views", "AutoLink"); // A list of enabled plugins.
+$config["esoTalk.enabledPlugins"] = array("BBCode", "ConfigEditor", "Emoticons", "Attachments", "Likes", "Views", "AutoLink"); // A list of enabled plugins.
 
 // Login and registration settings.
 $config["esoTalk.badLoginsPerMinute"] = 10;
