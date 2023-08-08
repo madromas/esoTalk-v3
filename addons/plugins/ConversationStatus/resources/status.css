@@ -1,6 +1,5 @@
 .label-added, .gambit-added, 
-.label-fixed, .gambit-fixed,
-.label-notbug, .gambit-notbug {
+.label-fixed, .gambit-fixed {
 	color: green !important;
 }
 .label-inprogress, .gambit-inprogress, 
@@ -11,4 +10,8 @@
 .label-rejected, .gambit-rejected, 
 .label-highpriority, .gambit-highpriority {
 	color: red !important;
+}
+
+.label-nobug, .gambit-nobug {
+	color: #32a0c1 !important;
 }
