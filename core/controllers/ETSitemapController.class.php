@@ -59,7 +59,7 @@ if (!file_exists("sitemap.xml") or filemtime("sitemap.xml") < time() - $config["
 			$urlset = "<?xml version='1.0' encoding='UTF-8'?><urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>";
 
 			// Create a <url> tag for each conversation in the result set.
-			while (list($conversationId, $slug, $postsPerDay, $lastUpdated, $posts) = mysql_fetch_row($r)) {
+			while ([$conversationId, $slug, $postsPerDay, $lastUpdated, $posts] = mysql_fetch_row($r)) {
 
 				$urlset .= "<url><loc>{$config["baseURL"]}" . makeLink($conversationId, $slug) . "</loc><lastmod>" . gmdate("Y-m-d\TH:i:s+00:00", $lastUpdated) . "</lastmod><changefreq>";
 
