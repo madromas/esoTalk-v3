@@ -68,7 +68,7 @@ function init()
 
 			// Fetch the 20 most recent posts in the conversation.
 			$result = $this->esoTalk->db->query("SELECT postId, name, content, time FROM " . config("esoTalk.database.prefix") . "posts INNER JOIN " . config("esoTalk.database.prefix") . "members USING (memberId) WHERE conversationId={$conversation["id"]} AND deleteMember IS NULL ORDER BY time DESC LIMIT 20");
-			while (list($id, $member, $content, $time) = $this->esoTalk->db->fetchRow($result)) {
+			while ([$id, $member, $content, $time] = $this->esoTalk->db->fetchRow($result)) {
 				$this->items[] = array(
 					"title" => $member,
 					"description" => sanitize($this->format($content)),
@@ -85,7 +85,7 @@ function init()
 			// It doesn't matter whether we're logged in or not - just get non-deleted posts from conversations
 			// that aren't private!
 			$result = $this->esoTalk->db->query("SELECT p.postId, c.title, m.name, p.content, p.time FROM " . config("esoTalk.database.prefix") . "posts p LEFT JOIN " . config("esoTalk.database.prefix") . "conversations c USING (conversationId) INNER JOIN " . config("esoTalk.database.prefix") . "members m ON (m.memberId=p.memberId) WHERE c.private=0 AND c.posts>0 AND p.deleteMember IS NULL ORDER BY p.time DESC LIMIT 20");
-			while (list($postId, $title, $member, $content, $time) = $this->esoTalk->db->fetchRow($result)) {
+			while ([$postId, $title, $member, $content, $time] = $this->esoTalk->db->fetchRow($result)) {
 				$this->items[] = array(
 					"title" => "$member - $title",
 					"description" => sanitize($this->format($content)),

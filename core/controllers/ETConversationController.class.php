@@ -46,11 +46,11 @@ public function action_index($conversationId = false, $year = false, $month = fa
 		// Add the keywords in $this->searchString to be highlighted. Make sure we keep ones "in quotes" together.
 		$words = array();
 		$term = $searchString;
-		if (preg_match_all('/"(.+?)"/', $term, $matches)) {
+		if (preg_match_all('/"(.+?)"/', (string) $term, $matches)) {
 			$words[] = $matches[1];
 			$term = preg_replace('/".+?"/', '', $term);
 		}
-		$words = array_unique(array_merge($words, explode(" ", $term)));
+		$words = array_unique(array_merge($words, explode(" ", (string) $term)));
 		ET::$session->store("highlight", $words);
 
 	}
@@ -182,7 +182,7 @@ public function action_index($conversationId = false, $year = false, $month = fa
 
 		// If the slug in the URL is not the same as the actual slug, redirect.
 		$slug = slug($conversation["title"]);
-		if ($slug and (strpos($conversationId, "-") === false or substr($conversationId, strpos($conversationId, "-") + 1) != $slug)) {
+		if ($slug and (!str_contains($conversationId, "-") or substr($conversationId, strpos($conversationId, "-") + 1) != $slug)) {
 			redirect(URL($url), 301);
 		}
 
@@ -270,7 +270,7 @@ public function action_index($conversationId = false, $year = false, $month = fa
 				->limit(1)
 				->exec()
 				->result();
-			if (strlen($description) > 155) $description = substr($description, 0, strrpos($description, " ")) . " ...";
+			if (strlen((string) $description) > 155) $description = substr($description, 0, strrpos($description, " ")) . " ...";
 			$description = str_replace(array("\n\n", "\n"), " ", $description);
 			$this->addToHead("<meta name='description' content='".sanitizeHTML($description)."'>");
 		}
@@ -360,7 +360,8 @@ public function action_start($member = false)
 	}
 
 	$channelId = $form->validPostBack("content") ? ET::$session->get("channelId") : ET::$session->get("searchChannelId");
-	ET::$session->store("channelId", isset($channels[$channelId]) ? $channelId : reset(array_keys($channels)));
+	$arrayKeys = array_keys($channels);
+	ET::$session->store("channelId", isset($channels[$channelId]) ? $channelId : reset($arrayKeys));
 
 	// Get an empty conversation.
 	$model = ET::conversationModel();
@@ -416,7 +417,7 @@ public function action_start($member = false)
 		}
 
 		if ($result) {
-			list($conversationId, $postId) = $result;
+			[$conversationId, $postId] = $result;
 
 			ET::$session->remove("membersAllowed");
 			ET::$session->remove("channelId");
@@ -475,7 +476,7 @@ public function action_post($postId = false)
 		return;
 	}
 
-	list($pos, $conversationId, $title) = array_values($result->firstRow());
+	[$pos, $conversationId, $title] = array_values($result->firstRow());
 
 	// Work out which page of the conversation this post is on, and redirect there.
 	$page = floor($pos / C("esoTalk.conversation.postsPerPage")) + 1;
@@ -1310,8 +1311,8 @@ public function formatPostForTemplate($post, $conversation)
 		// Add the user's online status / last action next to their name.
 		if (empty($post["preferences"]["hideOnline"])) {
 			$lastAction = ET::memberModel()->getLastActionInfo($post["lastActionTime"], $post["lastActionDetail"]);
-			if ($lastAction[0]) $lastAction[0] = " (".sanitizeHTML($lastAction[0]).")";
-			if ($lastAction) array_unshift($formatted["info"], "<".(!empty($lastAction[1]) ? "a href='{$lastAction[1]}'" : "span")." class='online' title='".T("Online")."{$lastAction[0]}'><i class='icon-circle'></i></".(!empty($lastAction[1]) ? "a" : "span").">");
+			if ((array)$lastAction[1]) $lastAction[1] = " (".sanitizeHTML((array)$lastAction[1]).")";
+			if ($lastAction) array_unshift($formatted["info"], "<".(!empty($lastAction[1]) ? "a href='{$lastAction[1]}'" : "span")." class='online' title='".T("Online")."{$lastAction[1]}'><i class='icon-circle'></i></".(!empty($lastAction[1]) ? "a" : "span").">");
 		}
 
 		// Show the user's group type.
@@ -1436,7 +1437,7 @@ protected function getPostForQuoting($postId, $conversationId)
  * @param bool $post Whether or not $id is the conversationId or a postId.
  * @return bool|array An array of the conversation details, or false if it wasn't found.
  */
-public function getConversation($id, $post = false)
+public function getConversation($id, $post = false): bool|array
 {
 	$conversation = !$post ? ET::conversationModel()->getById($id) : ET::conversationModel()->getByPostId($id);
 
@@ -1457,7 +1458,7 @@ public function getConversation($id, $post = false)
  * @param int $postId The post ID.
  * @return bool|array An array of post data, or false if it cannot be edited.
  */
-protected function getPostForEditing($postId)
+protected function getPostForEditing($postId): bool|array
 {
 	// Get the conversation.
 	if (!($conversation = $this->getConversation($postId, true))) return false;

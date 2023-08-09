@@ -52,18 +52,12 @@ public function action_login()
 
 	// Add the username field to the form structure.
 	$form->addSection("username", T("Username or Email"));
-	$form->addField("username", "username", function($form)
-	{
-		return $form->input("username");
-	});
+	$form->addField("username", "username", fn($form) => $form->input("username"));
 
 	// Add the password field to the form structure. We also use a processing callback on this field to attempt
 	// the login because the password is the specific mechanism of authentication in this instance.
 	$form->addSection("password", T("Password")." <small><a href='".URL("user/forgot")."' class='link-forgot' tabindex='-1'>".T("Forgot?")."</a></small>");
-	$form->addField("password", "password", function($form)
-	{
-		return $form->input("password", "password");
-	},
+	$form->addField("password", "password", fn($form) => $form->input("password", "password"),
 	function($form, $key, &$success) use ($controller)
 	{
 		// If the login was successful...
@@ -76,10 +70,7 @@ public function action_login()
 	// Add the "remember me" field to the form structure.
 	if (C("esoTalk.enablePersistenceCookies")) {
 		$form->addSection("remember");
-		$form->addField("remember", "remember", function($form)
-		{
-			return "<label class='checkbox'>".$form->checkbox("remember")." ".T("Keep me logged in")."</label>";
-		});
+		$form->addField("remember", "remember", fn($form) => "<label class='checkbox'>".$form->checkbox("remember")." ".T("Keep me logged in")."</label>");
 	}
 
 	$this->trigger("initLogin", array($form));
@@ -152,10 +143,7 @@ public function action_join()
 
 	// Add the username field to the form structure.
 	$form->addSection("username", T("Username"));
-	$form->addField("username", "username", function($form)
-	{
-		return $form->input("username");
-	},
+	$form->addField("username", "username", fn($form) => $form->input("username"),
 	function($form, $key, &$data)
 	{
 		$data["username"] = $form->getValue($key);
@@ -163,10 +151,7 @@ public function action_join()
 
 	// Add the email field to the form structure.
 	$form->addSection("email", T("Email"));
-	$form->addField("email", "email", function($form)
-	{
-		return $form->input("email")."<br><small>".T("Used to verify your account and subscribe to conversations")."</small>";
-	},
+	$form->addField("email", "email", fn($form) => $form->input("email")."<br><small>".T("Used to verify your account and subscribe to conversations")."</small>",
 	function($form, $key, &$data)
 	{
 		$data["email"] = $form->getValue($key);
@@ -174,10 +159,7 @@ public function action_join()
 
 	// Add the password field to the form structure.
 	$form->addSection("password", T("Password"));
-	$form->addField("password", "password", function($form)
-	{
-		return $form->input("password", "password")."<br><small>".sprintf(T("Choose a secure password of at least %s characters"), C("esoTalk.minPasswordLength"))."</small>";
-	},
+	$form->addField("password", "password", fn($form) => $form->input("password", "password")."<br><small>".sprintf(T("Choose a secure password of at least %s characters"), C("esoTalk.minPasswordLength"))."</small>",
 	function($form, $key, &$data)
 	{
 		$data["password"] = $form->getValue($key);
@@ -185,10 +167,7 @@ public function action_join()
 
 	// Add the confirm password field to the form structure.
 	$form->addSection("confirm", T("Confirm password"));
-	$form->addField("confirm", "confirm", function($form)
-	{
-		return $form->input("confirm", "password");
-	},
+	$form->addField("confirm", "confirm", fn($form) => $form->input("confirm", "password"),
 	function($form, $key, &$data)
 	{
 		// Make sure the passwords match.
@@ -212,7 +191,7 @@ public function action_join()
 			$data["account"] = ACCOUNT_MEMBER;
 
 			if (!C("esoTalk.registration.requireConfirmation")) $data["confirmed"] = true;
-			else $data["resetPassword"] = md5(uniqid(rand()));
+			else $data["resetPassword"] = md5(uniqid(random_int(0, mt_getrandmax())));
 
 			// Create the member.
 			$model = ET::memberModel();
@@ -325,9 +304,10 @@ public function action_sendConfirmation($username = "")
 {
 	// If email confirmation is not necessary, get out of here.
 	if (C("esoTalk.registration.requireConfirmation") != "email") return;
+	$get = ET::memberModel()->get(array("m.username" => $username, "m.confirmed" => false));
 
 	// Get the requested member.
-	$member = reset(ET::memberModel()->get(array("m.username" => $username, "m.confirmed" => false)));
+	$member = reset($get);
 	if ($member) {
 		$this->sendConfirmationEmail($member["email"], $member["username"], $member["memberId"].$member["resetPassword"]);
 		$this->renderMessage(T("Success!"), T("message.confirmEmail"));
@@ -361,15 +341,16 @@ public function action_forgot()
 	// If they've submitted their email to get a password reset link, email one to them!
 	if ($form->validPostBack("submit")) {
 
+		$get = ET::memberModel()->get(array("email" => $form->getValue("email")));
 		// Find the member with this email.
-		$member = reset(ET::memberModel()->get(array("email" => $form->getValue("email"))));
+		$member = reset($get);
 		if (!$member)
 			$form->error("email", T("message.emailDoesntExist"));
 
 		else {
 
 			// Update their record in the database with a special password reset hash.
-			$hash = md5(uniqid(rand()));
+			$hash = md5(uniqid(random_int(0, mt_getrandmax())));
 			ET::memberModel()->updateById($member["memberId"], array("resetPassword" => $hash));
 
 			// Send them email containing the link, and redirect to the home page.
@@ -406,9 +387,10 @@ public function action_reset($hashString = "")
 	// Split the hash into the member ID and hash.
 	$memberId = (int)substr($hashString, 0, strlen($hashString) - 32);
 	$hash = substr($hashString, -32);
+	$get = ET::memberModel()->get(array("m.memberId" => $memberId, "resetPassword" => $hash));
 
 	// Find the member with this password reset token. If it's an invalid token, take them back to the email form.
-	$member = reset(ET::memberModel()->get(array("m.memberId" => $memberId, "resetPassword" => $hash)));
+	$member = reset($get);
 	if (!$member) return;
 
 	// Construct a form.

@@ -187,7 +187,7 @@ public function action_activity($member = "", $page = "")
 
 	// We fetch 11 items so we can tell if there are more items after this page.
 	$showViewMoreLink = false;
-	if (count($activity) == 11) {
+	if ((is_countable($activity) ? count($activity) : 0) == 11) {
 		array_pop($activity);
 		$showViewMoreLink = true;
 	}
