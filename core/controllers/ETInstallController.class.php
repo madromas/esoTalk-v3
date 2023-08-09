@@ -110,7 +110,7 @@ public function action_info()
 		$values = $form->getValues();
 
 		// Make sure the title isn't empty.
-		if (!strlen($values["forumTitle"]))
+		if (!strlen((string) $values["forumTitle"]))
 			$form->error("forumTitle", T("message.empty"));
 
 		// Make sure the admin's details are valid.
@@ -253,7 +253,7 @@ Disallow: /conversation/start/");
  * @param string $error The error that occurred.
  * @return void
  */
-protected function fatalError($error)
+protected function fatalError($error): never
 {
 	$this->data("error", $error);
 	$this->render("install/error");
