@@ -10,17 +10,17 @@ if (!defined("IN_ESOTALK")) exit;
  * @package esoTalk
  */
 
-ET::$skinInfo["Default"] = array(
-	"name" => "Default",
-	"description" => "The default esoTalk skin.",
-	"version" => ESOTALK_VERSION,
-	"author" => "esoTalk Team",
-	"authorEmail" => "support@esotalk.org",
-	"authorURL" => "http://esotalk.org",
+ET::$skinInfo["Flatty"] = array(
+	"name" => "Flatty",
+	"description" => "A flat theme Skin.",
+	"version" => "v0.2",
+	"author" => "Demynnfire",
+	"authorEmail" => "demynnfire1@gmail.com",
+	"authorURL" => "http://web.xen.quadrex.org/~demynnfire/",
 	"license" => "GPLv2"
 );
 
-class ETSkin_Default extends ETSkin {
+class ETSkin_Flatty extends ETSkin {
 
 
 /**
@@ -31,7 +31,7 @@ class ETSkin_Default extends ETSkin {
  */
 public function handler_init($sender)
 {
-	$sender->addCSSFile((C("esoTalk.https") ? "https" : "http")."://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap");
+	$sender->addCSSFile((C("esoTalk.https") ? "https" : "http")."://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto|TitilliumWeb");
 	$sender->addCSSFile("core/skin/base.css", true);
 	$sender->addCSSFile("core/skin/font-awesome.css", true);
 	$sender->addCSSFile($this->resource("styles.css"), true);
@@ -41,7 +41,6 @@ public function handler_init($sender)
 		$sender->addCSSFile($this->resource("mobile.css"), true);
 		$sender->masterView = "mobile.master";
 		$sender->addToHead("<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>");
-		$sender->addToHead("<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.15.4/css/all.css'>");
 	}
 
 	$sender->addCSSFile("config/colors.css", true);

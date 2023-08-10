@@ -12,6 +12,31 @@ input, textarea, select {font-size:100%}
 strong {font-weight:600}
 
 
+/* ScrollToTop */
+.scrollToTop{
+width: 36px;
+bottom: 60px;
+font-size: 16px;
+margin-bottom: 0;
+text-align: center;
+cursor: pointer;
+border-radius: 30px;
+padding: 6px 0;
+color: #1b2228;
+background: #d0d1d2;
+opacity: 0.7;
+border: 0;
+font-weight: 900;
+    position:fixed;
+    right:55px;
+    display:none;
+  z-index: 1000;
+}
+.scrollToTop:hover{
+    text-decoration:none;
+background-color: darken(fadein(#1b2228, 5%), 5%);
+}
+
 /* Links */
 a {text-decoration:none}
 a:hover {text-decoration:none; color:#000}

@@ -16,9 +16,48 @@ if (!defined("IN_ESOTALK")) exit;
 <meta charset='<?php echo T("charset", "utf-8"); ?>'>
 <title><?php echo sanitizeHTML($data["pageTitle"]); ?></title>
 <?php echo $data["head"]; ?>
+<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+<link rel="stylesheet" type="text/css" href="/fancybox/fancybox.css">
 </head>
 
 <body class='<?php echo $data["bodyClass"]; ?>'>
+<script>
+//Infinite Scroll
+$(function(){ //on document ready
+    $(document).scroll(function (e) { //bind scroll event
+
+        var intBottomMargin = 60; //Pixels from bottom when script should trigger
+
+        //if less than intBottomMargin px from bottom
+        if ($(window).scrollTop() >= $(document).height() - $(window).height() - intBottomMargin) {
+          //  $(".viewMore").click(); //trigger click
+        }
+
+    });
+});
+</script>
+<script src="/fancybox/fancybox.js"></script>
+<a href='#' class='scrollToTop'><i class='fas fa-chevron-up'></i></a>
+ <script>
+$(document).ready(function(){
+
+    //Check to see if the window is top if not then display button
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 100) {
+            $('.scrollToTop').fadeIn();
+        } else {
+            $('.scrollToTop').fadeOut();
+        }
+    });
+
+    //Click event to scroll to top
+    $('.scrollToTop').click(function(){
+        $('html, body').animate({scrollTop : 0},800);
+        return false;
+    });
+
+});
+</script> 
 <?php $this->trigger("pageStart"); ?>
 
 <div id='messages'>
@@ -67,7 +106,6 @@ if (!defined("IN_ESOTALK")) exit;
 <div id='ftr'>
 <div id='ftr-content'>
 <ul class='menu'>
-<li id='goToTop'><a href='#'><?php echo T("Go to top"); ?></a></li>
 <?php echo $data["metaMenuItems"]; ?>
 <?php if (!empty($data["statisticsMenuItems"])) echo $data["statisticsMenuItems"]; ?>
 </ul>

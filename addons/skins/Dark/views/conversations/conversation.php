@@ -48,12 +48,12 @@ echo "<strong class='title'><a href='".URL($conversationURL.((ET::$session->user
 if (ET::$session->get("highlight"))
 	echo "<span class='controls'><a href='".URL($conversationURL."/?search=".urlencode($data["fulltextString"]))."' class='showMatchingPosts'>".T("Show matching posts")."</a></span>";
 
-// If this conversation is stickied, output an excerpt from its first post. Add "->firstLine()" after "inline(true)" to 
+// If this conversation is stickied, output an excerpt from its first post. Add "->firstLine()" before "inline(true)" to 
 // show only first line. Add "format()" to show html. 
 
 // Add or remove "firstPost" from "if ($conversation["firstPost"])" to show or not to show excerpt.
 if ($conversation["firstPost"])
-   echo "<div class='excerpt'>".ET::formatter()->init($conversation["firstPost"])->format()->inline(true)->clip(150)->get()."</div>";
+   echo "<div class='excerpt'>".ET::formatter()->init($conversation["firstPost"])->firstLine()->format()->inline(true)->clip(200)->get()."</div>";
 
 
 ?></div>
@@ -100,5 +100,3 @@ echo "<span class='action'><a href='".URL(memberURL($conversation["lastPostMembe
 <?php echo "<i class='icon-eye-open'></i> ".Ts("%s", "%s", $data["conversation"]["views"])."";?>
 </div>
 </li>
-
-

@@ -6,15 +6,43 @@ here if necessary.
 */
 
 /* Global */
-body {font-size:13px; margin:0; overflow-y:scroll; background:#D6D8E6; color:#555}
-body, input, textarea, select {font-family:open sans,lucida grande,lucida sans unicode,helvetica,arial,sans-serif}
+body {font-size:14px; font-weight:300; margin:0; overflow-y:scroll; background:#fff; color:#666}
+body, input, textarea, select {font-family: poppins,sans-serif;}
 input, textarea, select {font-size:100%}
+strong {font-weight:600}
 
+iframe {width: 80%;height: 340px; border-radius: 10px;border: 0;}
+video {width: 80%; border-radius: 10px;border: 0;}
+embed {width: 80%; border-radius: 10px;border: 0;}
+
+/* ScrollToTop */
+.scrollToTop{
+width: 36px;
+bottom: 60px;
+font-size: 16px;
+margin-bottom: 0;
+text-align: center;
+cursor: pointer;
+border-radius: 30px;
+padding: 6px 0;
+color: #1b2228;
+background: #d0d1d2;
+opacity: 0.7;
+border: 0;
+font-weight: 900;
+    position:fixed;
+    right:55px;
+    display:none;
+  z-index: 1000;
+}
+.scrollToTop:hover{
+    text-decoration:none;
+background-color: darken(fadein(#1b2228, 5%), 5%);
+}
 
 /* Links */
-a {text-decoration:none; color:#1260ee}
-a:hover {text-decoration:underline}
-a:active {color:#1a3e6d}
+a {text-decoration:none}
+a:hover {text-decoration:none; color:#000}
 
 
 /* Inline styles */
@@ -22,17 +50,59 @@ small {font-size:85%}
 
 
 /* Block styles */
-h2 {font-size:160%; font-weight:normal}
-h3 {font-size:115%; font-weight:bold}
+h1 {font-size:150%; font-weight:300}
+h2 {font-size:160%; font-weight:300}
+h3 {font-size:115%; font-weight:600}
+h4 {font-weight:600}
 p, ul, pre {line-height:1.6em}
-.bodyHeader h1 {line-height:1.5em; font-size:140%; font-weight:bold}
+.bodyHeader h1 {line-height:1.5em}
+
+
+/* Sheets */
+.sheet h3 {font-weight:300}
+.sheet, .area {background:#fff}
+
+
+/* Conversation list: adjust the typography. */
+.conversationList .title {font-weight:300; font-size:16px}
+.conversationList .unread .title a {font-weight:600}
+.conversationList .action * {font-weight:300}
+
+
+/* Channel list */
+.channelList .channel {font-weight:600}
+
+
+/* Posts */
+.postHeader h3 {font-size:120%; font-weight:600}
+.postBody h4 {font-weight:300}
+.replyPlaceholder .postHeader h3 {font-weight:300}
+.postBody {line-height:1.75em; font-size:14px}
+
+/* All posts have got a little tinier font size */
+.postBody {
+    font-size: 14px !important;
+}
+
+.postBody a {font-weight:600}
+
+
+/* Tabs */
+.tabs.big li.selected a {color:#fff; border:0; padding:11px 14px}
+
+
+/* Miscellaneous */
+.permissionsGrid .group th {font-weight:300}
+.action .name, .action a, .action strong {font-weight:600}
+.avatar {border-radius:32px}
+.scrubber li.selected > a {font-weight:600}
 
 
 /* Layout */
 #hdr-content, #body-content, #ftr-content {margin:0 auto; min-width:760px; max-width:1100px; padding:0 30px}
 #body-content, #ftr-content {background-color:#fff}
 #body-content {padding-bottom:20px; padding-top:10px}
-#body {padding-top:48px}
+#body {padding-top:60px}
 
 
 /* Menus (inline lists) */
@@ -41,131 +111,47 @@ p, ul, pre {line-height:1.6em}
 
 
 /* Header */
-#hdr {background:#364159; color:#fff; position:fixed; width:100%; z-index:350}
+#hdr {background:#fff; position:fixed; width:100%; z-index:100; border-bottom:1px solid}
 #hdr-inner {padding-right:580px; white-space:nowrap}
-#hdr h1 {display:inline-block; max-width:100%; font-size:120%; padding:16px 0; margin:0; font-weight:bold; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
-#hdr h1 img {margin:-9px 0; display:inline; vertical-align:bottom; border:0}
-#hdr-inner > a, #hdr-inner > h1 a, #hdr-inner > ul > li > a {color:#fff}
+#hdr h1 {display:inline-block; max-width:100%; font-size:20px; padding:14px 0; margin:0; font-weight:300; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+#hdr h1 img {display:inline; vertical-align:-5px; margin-right:5px; border:0}
+#hdr h1 span {margin-left:10px}
 #backButton {float:left; margin-right:10px; margin-left:-30px; font-size:20px; line-height:20px; margin-top:17px; text-decoration:none}
 
 #mainMenu {margin-left:30px; display:inline; padding:18px 0}
 #userMenu {float:right; padding:18px 0; margin-right:-580px; margin-left:-18px;}
-#userMenu .item-user {font-weight:bold}
+#userMenu .item-user {font-weight:600}
 #userMenu .item-user .avatar {vertical-align:middle; margin:-5px 8px -5px 0}
 #userMenu.menu > li {margin-left:18px; text-align:left}
 
-#hdr .button {background:rgba(0, 0, 0, 0.3); border:1px solid transparent; border-radius:4px; color:#fff; font-size:100%; padding:9px 12px; margin:-7px 0; text-shadow:none}
-#hdr .button:active {background:rgba(0, 0, 0, 0.5)}
-#hdr .button i {color:#fff}
-
-
-/* If a light header color is chosen, make the header text dark. */
-.lightHdr #hdr .button {background:rgba(0, 0, 0, 0.1);}
-.lightHdr #hdr .button:active {background:rgba(0, 0, 0, 0.3);}
-.lightHdr #hdr, .lightHdr #hdr a {color:rgba(0, 0, 0, 0.7)}
-.lightHdr #hdr .popupButton, .lightHdr #hdr #notifications {background-color:rgba(0, 0, 0, .1); color:rgba(0, 0, 0, 0.3)}
+#hdr .button {border-radius:4px; font-size:100%; padding:9px 12px; margin:-7px 0}
+#hdr #notifications {color:#ccc}
+#hdr #notifications.new {color:#fff !important}
 
 
 /* Footer */
-#ftr {font-size:90%; color:#888; color:rgba(0, 0, 0, 0.5)}
-#ftr-content {padding-top:20px; padding-bottom:20px; background:#fff}
+#ftr {font-size:90%}
+#ftr-content {padding-top:20px; padding-bottom:20px}
 #ftr li {margin-right:10px}
-#ftr a {color:#444; color:rgba(0, 0, 0, 0.75);}
 #ftr .item-copyright {float:right; margin:0}
-#ftr .item-copyright a {color:#bbb; color:rgba(0, 0, 0, 0.3)}
 
 
 /* Text inputs */
-input[type=text], input[type=email], input[type=url], input[type=password], textarea {background:#fff; border:#ccc 1px solid; padding:3px; border-radius:3px; vertical-align:-1px; margin:0}
-input[type=text]:focus, input[type=email]:focus, input[type=url]:focus, input[type=password]:focus, textarea:focus {border-color:#999; outline:0; box-shadow:inset 0 1px 2px rgba(0, 0, 0, 0.15)}
-.postBody textarea:focus {box-shadow:none}
+input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {font-weight:300; background:#fff; border:1px solid; padding:5px; border-radius:3px; vertical-align:-1px; margin:0; -webkit-appearance:none}
+input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=number]:focus, input[type=email]:focus, .input:focus {outline:0}
 
 
 /* Buttons */
-.button {background:#e0e0e0 url(button.png) repeat-x; text-shadow:#fff 0 1px; color:#333; font-weight:bold; border:1px solid #ccc; box-shadow:0 1px 0 rgba(0, 0, 0, 0.04); margin-bottom:1px; -webkit-appearance:none}
-.button:hover, .button:active {border-color:#ccc}
-.button:active {background-color:#d3d3d3; background-position:0 -40px; color:#333}
-.button.disabled {border-color:#ccc !important; background:#f2f2f2 !important; color:#999 !important; box-shadow:none !important}
-.button.big {height:28px}
-a.button.big {padding:5px 6px; height:auto; line-height:1em}
-.postFooter a.button.big {padding:6px 6px 0px; height:20px}
+.button {background:#f6f6f6; font-weight:600; border:1px solid transparent; margin-bottom:1px; white-space:nowrap; height:30px; font-size:90%; padding:0 10px 2px; line-height:30px; -webkit-appearance:none}
+.button.big {height:34px; font-size:90%; padding:0 10px 0; line-height:28px}
+.button:hover, .button:active {border-color:#ddd}
+.button:active {background-color:#ddd}
+.button.disabled {opacity:0.25; cursor:default; border-color:transparent !important}
+
+a.button {padding:8px 10px; height:auto; line-height:1em; display:inline-block}
+a.button.big {padding:10px; height:auto; line-height:1em}
+
+.button.submit {color:#fff}
+.button.submit:hover {border-color:#000; color:#fff}
+
 .buttonGroup .button {margin-right:-3px}
-
-
-/* Forum330 specific values. Must be moved to config/custom.css? */
-body {font-size:14px; color:#000}
-body, input, textarea, select {font-family:verdana,lucida grande,lucida sans unicode,helvetica,arial,sans-serif}
-pre {line-height:1.4em; white-space:pre}
-#hdr {top:0}
-#hdr h1 {padding:6px 0px 0px 0px; margin:0; max-width:120%}
-h1#forumSlogan {display:inline-block; font-size:90%; color:#ddd; padding:1px 10px; margin:0; font-family:sans serif; font-weight:normal; font-style:italic; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
-#hdr-inner {padding-right:760px}
-#userMenu {margin-right:-730px}
-#userMenu {padding:10px 0px}
-#backButton {margin-top:8px}
-#body-content {padding-left:15px; padding-top:0px}
-#conversationPrivacy {margin:0px; padding:5px 15px} 
-#conversationReply {margin:30px 0px 20px}
-#conversationBody .scrubberContent .button {width:110px}
-#conversationsFilter {padding-bottom:10px}
-#onlineSheet {width:70%; margin-left:-35%; height:auto; max-height:75%; overflow:auto}
-#loginSheet {width:500px}
-#forgotPasswordSheet {width:500px}
-#editChannelSheet {top:10px; width:75%}
-#permissionsSheet {top:10px; width:650px}
-.sheet .sheetBody {max-height:600px;}
-#joinSheet .sheetBody {max-height:700px;}
-
-.conversationList .title a:visited {color:#333333}
-.conversationList > li {padding-top:4px; padding-bottom:4px; padding-right:29em}
-.conversationList .mine {background-color:#fffbdb}
-.conversationList .popular .title a {font-weight:bold; color:#000}
-.conversationList .unread:not(.popular) .title a {font-weight:normal; color:#000}
-.channelList .unsubscribed {background:#ececec}
-.channelList .unsubscribed .channel {opacity:0.5}
-.memberList > li {padding-top:4px; padding-bottom:4px}
-.memberList .col-member {width:50%}
-.memberList .col-lastActive {width:35%}
-.memberList .col-replies {width:12%}
-.scrubberColumn {font-size:13px}
-.conversationList .controls-first-post {position:absolute; margin-left:-11px; opacity:0.5; cursor:pointer}
-.controls-first-post:hover {opacity:0.75}
-.form > li > label {line-height:1.6em}
-#topPanelBtn {position:fixed; top:0; left:50%; margin-left:-12px; opacity:0.3; cursor:pointer; width:24px; height:24px}
-#topPanelBtn:hover {opacity:1;}
-#topPanelBtn > i {font-size:180%}
-#rightPanelBtn {position:fixed; right:0; top:50%; margin-top:-12px; opacity:0.3; cursor:pointer; width:24px; height:24px}
-#rightPanelBtn:hover {opacity:1;}
-#rightPanelBtn > i {font-size:180%}
-
-.postHeader {margin-bottom:1px; padding:2px 2px 2px 12px}
-.postHeader h3 {display:inline; font-size:90%; margin:0}
-.postHeader h3 a {color:#444444}
-.postHeader .controls {margin:0px; padding:0px}
-.postHeader .controls > span a {color:#888}
-.postHeader .controls .control-pushpin {margin-right:20px}
-.postHeader .controls.detached {position:fixed; top:50px; left:50%; width:80%; margin-left:-40%; background-color:#fff; border:1px solid #ccc; border-radius:3px; box-shadow: 0 0 3px rgba(0,0,0,0.5)}
-[class*=control-] {padding:6px; margin:0px}
-.postBody a.link-member {color:#444444; font-weight:bold}
-.postBody a.badVideo, .postBody a.badImage {color:#990000; font-size:120%; border:1px solid #ccc; border-radius:3px; box-shadow: 0 0 3px rgba(0,0,0,0.5); padding:3px 15px 3px}
-.postBody a span.linkPrefix {font-size:70%; padding-right:2px}
-.postBody p {line-height:1.5em; margin:0px 0px 3px}
-.postBody p + p  {margin:1em 0px 3px}
-/*.postBody {font-size:14px}*/
-/*.post {margin-bottom:0px; margin-top:0px; padding-bottom:0px; padding-top:0px}*/
-.post {margin-bottom:0px; margin-top:0px; padding-bottom:3px; padding-top:3px}
-.post.postDoubled:first-child {margin-top:-4px; padding-top:0px;}
-.post div.avatar {margin-left:-56px}
-.post {padding-left:56px}
-.post .editButtons {padding: 0px 0px 0px}
-.timeMarker {padding:5px 10px; margin:1px 0px}
-.postContent .postReplies {color:#888; font-size:85%; margin:0px; padding:0px 8px; list-style-type:none; text-align:right}
-.postContent .postReplies a {color:#888}
-.postContent .postReplies a:hover {color:rgb(18, 96, 238)}
-.postContent div.deleted {display:none}
-div.video {text-align:center}
-blockquote a.expand, pre a.expand {padding:0 8px; font-size:14px; width:16px}
-.avatar {width:45px; height:45px}
-#memberProfile > .avatar {width:64px; height:64px}
-.bodyHeader {padding:5px 0px 5px}
-.autoCompletePopup .popupMenu li > a {padding:3px 10px 3px 10px}
