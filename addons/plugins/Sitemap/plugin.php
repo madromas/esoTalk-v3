@@ -9,8 +9,8 @@ ET::$pluginInfo["Sitemap"] = array(
 	"name" => "Sitemap",
 	"description" => "Generate XML index and sitemap files.",
 	"version" => "1.0.0",
-	"author" => "Tristan van Bokkem",
-	"authorEmail" => "tristanvanbokkem@gmail.com",
+	"author" => "MadRomas",
+	"authorEmail" => "madromas@yahoo.com",
 	"authorURL" => "https://madway.net",
 	"license" => "GPLv2",
 	"dependencies" => array(
@@ -56,56 +56,32 @@ class ETPlugin_Sitemap extends ETPlugin
 	}
 
 
-	public function action_create()
-	{
-		// Include the file needed to create the sitemap.
-		include "lib/Sitemap.php";
+public function action_create()
+ {
+     // Include the file needed to create the sitemap.
+     include "lib/Sitemap.php";
+     $sitemap = new Sitemap(C("esoTalk.baseURL"));
+     $sitemap->setPath(PATH_ROOT . "/");
+     $sitemap->addItem("", "1.0", "hourly", 'now');
+     $result = ET::SQL()->select("ch.channelId")->select("ch.slug")->from("channel ch")->orderBy("ch.channelId ASC")->exec();
+     $channels = $result->allRows("channelId");
+     foreach ($channels as $channel) {
+         if(array($channel["slug"], C("plugin.Sitemap.channels"))) {
+             $sitemap->addItem("conversations/" . $channel["slug"], C("plugin.Sitemap.priority3"), C("plugin.Sitemap.frequency3"), 'now');
+             $result = ET::SQL()->select("c.conversationId")->select("c.title")->select("c.channelId")->select("c.sticky")->select("lastPostTime")->from("conversation c")->where("c.channelId = :channelId")->where("private", 0)->orderBy("c.conversationId ASC")->bind(":channelId", $channel["channelId"])->exec();
+             $conversations = $result->allRows();
+             foreach ($conversations as $conversation) {
+                 $url = conversationURL($conversation["conversationId"], $conversation["title"]);
+                 if ($conversation["sticky"]) {
+                     $sitemap->addItem($url, C("plugin.Sitemap.priority2"), C("plugin.Sitemap.frequency2"), $conversation["lastPostTime"]);
+                 } else {
+                     $sitemap->addItem($url, C("plugin.Sitemap.priority1"), C("plugin.Sitemap.frequency1"), $conversation["lastPostTime"]);
+                 }
+             }
+         }
+     }
 
-		$sitemap = new Sitemap(C("esoTalk.baseURL"));
-		$sitemap->setPath(PATH_ROOT."/");
-		$sitemap->addItem("", "1.0", "hourly", 'now');
-
-		$result = ET::SQL()
-			->select("ch.channelId")
-			->select("ch.slug")
-		    ->from("channel ch")
-			->orderBy("ch.channelId ASC")
-		    ->exec();
-
-		$channels = $result->allRows("channelId");
-
-		foreach ($channels as $channel) {
-			if(!in_array($channel["slug"], C("plugin.Sitemap.channels"))) {
-				$sitemap->addItem("conversations/".$channel["slug"], C("plugin.Sitemap.priority3"), C("plugin.Sitemap.frequency3"), 'now');
-
-				$result = ET::SQL()
-					->select("c.conversationId")
-					->select("c.title")
-					->select("c.channelId")
-					->select("c.sticky")
-					->select("lastPostTime")
-					->from("conversation c")
-					->where("c.channelId = :channelId")
-					->where("private", 0)
-					->orderBy("c.conversationId ASC")
-					->bind(":channelId", $channel["channelId"])
-					->exec();
-
-				$conversations = $result->allRows();
-
-				foreach ($conversations as $conversation) {
-					$url = conversationURL($conversation["conversationId"], $conversation["title"]);
-
-					if($conversation["sticky"]) {
-						$sitemap->addItem($url, C("plugin.Sitemap.priority2"), C("plugin.Sitemap.frequency2"), $conversation["lastPostTime"]);
-					} else {
-						$sitemap->addItem($url, C("plugin.Sitemap.priority1"), C("plugin.Sitemap.frequency1"), $conversation["lastPostTime"]);
-					}
-				}
-			}
-		}
-
-		$sitemap->createSitemapIndex("https://madway.net", 'now');
+		$sitemap->createSitemapIndex("https://hub.madway.net", 'now');
 	}
 
 	public function settings($sender)
