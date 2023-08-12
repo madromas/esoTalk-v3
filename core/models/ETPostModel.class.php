@@ -100,7 +100,8 @@ public function get($wheres = array())
  */
 public function getById($postId)
 {
-	return reset($this->get(array("p.postId" => $postId)));
+	$get = $this->get(array("p.postId" => $postId));
+	return reset($get);
 }
 
 
@@ -189,7 +190,7 @@ private function whereSearch(&$sql, $search)
  * @param string $title The title of the conversation (so it can be added alongside the post, for fulltext purposes.)
  * @return bool|int The new post's ID, or false if there were errors.
  */
-public function create($conversationId = null, $memberId = null, $content = null, $title = "")
+public function create($conversationId = null, $memberId = null, $content = null, $title = ""): bool|int
 {
 	// Validate the post content.
 	$this->validate("content", $content, array($this, "validateContent"));
@@ -226,7 +227,7 @@ public function create($conversationId = null, $memberId = null, $content = null
 
 		$names = ET::formatter()->getMentions($content);
 
-		if (count($names)) {
+		if (is_countable($names) ? count($names) : 0) {
 
 			// Get the member details from the database.
 			$sql = ET::SQL()

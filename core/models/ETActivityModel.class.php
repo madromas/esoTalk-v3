@@ -23,9 +23,9 @@ if (!defined("IN_ESOTALK")) exit;
 class ETActivityModel extends ETModel {
 
 
-const PROJECTION_ACTIVITY = "activity";
-const PROJECTION_NOTIFICATION = "notification";
-const PROJECTION_EMAIL = "email";
+public final const PROJECTION_ACTIVITY = "activity";
+public final const PROJECTION_NOTIFICATION = "notification";
+public final const PROJECTION_EMAIL = "email";
 
 
 /**
@@ -98,7 +98,7 @@ public static function addType($type, $projections)
  *		(i.e. it is not stored in the database.)
  * @return bool|int The activity ID, or false if there were errors.
  */
-public function create($type = null, $member = null, $fromMember = null, $data = null, $emailData = null)
+public function create($type = null, $member = null, $fromMember = null, $data = null, $emailData = null): bool|int
 {
 	// Make sure we have a definition for this type of activity.
 	if (empty(self::$types[$type]))
@@ -112,8 +112,8 @@ public function create($type = null, $member = null, $fromMember = null, $data =
 		"type" => $type,
 		"memberId" => $member["memberId"],
 		"fromMemberId" => $fromMember ? $fromMember["memberId"] : null,
-		"conversationId" => isset($data["conversationId"]) ? $data["conversationId"] : null,
-		"postId" => isset($data["postId"]) ? $data["postId"] : null,
+		"conversationId" => $data["conversationId"] ?? null,
+		"postId" => $data["postId"] ?? null,
 		"time" => time()
 	);
 	$activityId = null;
@@ -140,7 +140,7 @@ public function create($type = null, $member = null, $fromMember = null, $data =
 		ET::loadLanguage(@$member["preferences"]["language"]);
 
 		// Get the email content by calling the type's email projection function.
-		list($subject, $body) = call_user_func($projections[self::PROJECTION_EMAIL], $activity, $member);
+		[$subject, $body] = call_user_func($projections[self::PROJECTION_EMAIL], $activity, $member);
 
 		// Send the email, prepending/appending a common email header/footer.
 		// vanGato - add url
@@ -219,7 +219,7 @@ public function getActivity($member, $offset = 0, $limit = 11)
 		->where("a.memberId=:memberId")
 		->bind(":memberId", $member["memberId"])
 		->where("a.type IN (:types)")
-		->bind(":types", $this->getTypesWithProjection(self::PROJECTION_ACTIVITY))
+		->bind(":types", static::getTypesWithProjection(self::PROJECTION_ACTIVITY))
 		->orderBy("time DESC")
 		->limit($offset + $limit);
 
@@ -272,7 +272,7 @@ public function getActivity($member, $offset = 0, $limit = 11)
 		$item["data"] = unserialize($item["data"]);
 
 		// Run the type/projection's callback function. The return value is the activity description and body.
-		list($item["description"], $item["body"]) = call_user_func_array(self::$types[$item["type"]][self::PROJECTION_ACTIVITY], array(&$item, $member)) + array(null, null);
+		[$item["description"], $item["body"]] = call_user_func_array(self::$types[$item["type"]][self::PROJECTION_ACTIVITY], array(&$item, $member)) + array(null, null);
 
 		$activity[] = $item;
 	}
@@ -311,7 +311,7 @@ public function getNotifications($limit = 5)
 		->where("a.memberId=:userId")
 		->bind(":userId", ET::$session->userId)
 		->where("a.type IN (:types)")
-		->bind(":types", $this->getTypesWithProjection(self::PROJECTION_NOTIFICATION))
+		->bind(":types", static::getTypesWithProjection(self::PROJECTION_NOTIFICATION))
 		->orderBy("a.time DESC")
 		->limit($limit == -1 ? false : $limit);
 
@@ -337,7 +337,7 @@ public function getNotifications($limit = 5)
 		$item["unread"] = !$item["read"];
 
 		// Run the type/projection's callback function. The return value is the notification body and link.
-		list($item["body"], $item["link"]) = call_user_func_array(self::$types[$item["type"]][self::PROJECTION_NOTIFICATION], array(&$item)) + array(null, null);
+		[$item["body"], $item["link"]] = call_user_func_array(self::$types[$item["type"]][self::PROJECTION_NOTIFICATION], array(&$item)) + array(null, null);
 
 		$notifications[] = $item;
 	}

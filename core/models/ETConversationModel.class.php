@@ -169,7 +169,7 @@ public function get($wheres = array())
 		->limit(1);
 
 	// Fetch the labels field as well.
-	$this->addLabels($sql);
+	static::addLabels($sql);
 
 	// Make sure the user is allowed to view this conversation.
 	$this->addAllowedPredicate($sql);
@@ -198,7 +198,7 @@ public function get($wheres = array())
 	$conversation = $result->firstRow();
 
 	// Expand the labels field into a simple array of active labels.
-	$conversation["labels"] = $this->expandLabels($conversation["labels"]);
+	$conversation["labels"] = static::expandLabels($conversation["labels"]);
 
 	// Convert the separate groups who have permission to view this channel ID/name fields into one.
 	$conversation["channelPermissionView"] = $this->formatGroupsAllowed($conversation["channelPermissionView"], $conversation["channelPermissionViewNames"]);
@@ -311,7 +311,7 @@ public function getEmptyConversation()
 		->groupBy("pv.channelId")
 		->limit(1)
 		->exec();
-	list($conversation["channelTitle"], $conversation["channelDescription"], $conversation["channelSlug"], $conversation["channelLft"], $conversation["channelRgt"], $conversation["channelPermissionView"], $channelPermissionViewNames) = array_values($result->firstRow());
+	[$conversation["channelTitle"], $conversation["channelDescription"], $conversation["channelSlug"], $conversation["channelLft"], $conversation["channelRgt"], $conversation["channelPermissionView"], $channelPermissionViewNames] = array_values($result->firstRow());
 
 	// Convert the separate groups who have permission to view this channel ID/name fields into one.
 	$conversation["channelPermissionView"] = $this->formatGroupsAllowed($conversation["channelPermissionView"], $channelPermissionViewNames);
@@ -445,8 +445,8 @@ public function getMembersAllowed($conversation)
 
 	// Go through the results and construct our final "members allowed" array.
 	while ($entity = $result->nextRow()) {
-		list($type, $id, $name, $email, $avatarFormat, $account, $groups) = array_values($entity);
-		$groups = ET::groupModel()->getGroupIds($account, explode(",", $groups));
+		[$type, $id, $name, $email, $avatarFormat, $account, $groups] = array_values($entity);
+		$groups = ET::groupModel()->getGroupIds($account, explode(",", (string) $groups));
 		if ($type == "group") {
 			if ($id == GROUP_ID_ADMINISTRATOR) $name = ACCOUNT_ADMINISTRATOR;
 			elseif ($id == GROUP_ID_MEMBER) $name = ACCOUNT_MEMBER;
@@ -500,7 +500,7 @@ public function getMembersAllowedSummary($conversation, $membersAllowed = array(
 	else {
 
 		// Sort the members.
-		$count = count($membersAllowed);
+		$count = is_countable($membersAllowed) ? count($membersAllowed) : 0;
 
 		// Loop through the members allowed and filter out all the groups and members into separate arrays.
 		foreach ($membersAllowed as $k => $member) {
@@ -583,7 +583,7 @@ public function getChannelPath($conversation)
  * @return bool|array An array containing the new conversation ID and the new post ID, or false if
  * 		there was an error.
  */
-public function create($data, $membersAllowed = array(), $isDraft = false)
+public function create($data, $membersAllowed = array(), $isDraft = false): bool|array
 {
 	// We can't do this if we're not logged in.
 	if (!ET::$session->user) return false;
@@ -690,7 +690,7 @@ public function create($data, $membersAllowed = array(), $isDraft = false)
  * @param string $content The post content.
  * @return int|bool The new post's ID, or false if there was an error.
  */
-public function addReply(&$conversation, $content)
+public function addReply(&$conversation, $content): int|bool
 {
 	// We can't do this if we're not logged in.
 	if (!ET::$session->user) return false;
@@ -705,7 +705,7 @@ public function addReply(&$conversation, $content)
 	// is called, each individual user will receive a maximum of one.
 	ET::activityModel()->startNotificationGroup();
 
-	if (($returns = $this->trigger("addReplyBefore", array($conversation, &$content))) && count($returns)) {
+	if (($returns = $this->trigger("addReplyBefore", array($conversation, &$content))) && (is_countable($returns) ? count($returns) : 0)) {
 		return reset($returns);
 	}
 
@@ -733,7 +733,7 @@ public function addReply(&$conversation, $content)
 	if ($conversation["draft"]) $updateStatus["draft"] = null;
 	if (ET::$session->preference("starOnReply")) $updateStatus["starred"] = true;
 
-	if (($returns = $this->trigger("addReplyBeforeUpdateConversation", array($conversation, &$update, &$updateStatus))) && count($returns)) {
+	if (($returns = $this->trigger("addReplyBeforeUpdateConversation", array($conversation, &$update, &$updateStatus))) && (is_countable($returns) ? count($returns) : 0)) {
 		return reset($returns);
 	}
 
@@ -764,7 +764,7 @@ public function addReply(&$conversation, $content)
 	);
 	$emailData = array("content" => $content);
 
-	if (($returns = $this->trigger("addReplyBeforeCreateActivity", array($conversation, $postId, &$data, &$emailData))) && count($returns)) {
+	if (($returns = $this->trigger("addReplyBeforeCreateActivity", array($conversation, $postId, &$data, &$emailData))) && (is_countable($returns) ? count($returns) : 0)) {
 		return reset($returns);
 	}
 
@@ -881,7 +881,7 @@ public function deleteById($id)
  * @param string $type The entity type (group or member).
  * @return void
  */
-public function setStatus($conversationIds, $memberIds, $data, $type = "member")
+public function setStatus(array|int $conversationIds, array|int $memberIds, $data, $type = "member")
 {
 	$memberIds = (array)$memberIds;
 	$conversationIds = (array)$conversationIds;
@@ -964,7 +964,7 @@ public function setLastRead(&$conversation, $memberId, $lastRead, $force = false
  * @param array|int $memberId The member to set the status for.
  * @return void
  */
-public function markAsRead($conversationIds, $memberId)
+public function markAsRead(array|int $conversationIds, array|int $memberId)
 {
 	$conversationIds = array_values((array)$conversationIds);
 
@@ -1105,7 +1105,7 @@ public function setTitle(&$conversation, $title)
  * @param string $title The conversation title.
  * @return bool|string Returns an error string or false if there are no errors.
  */
-public function validateTitle($title)
+public function validateTitle($title): bool|string
 {
 	if (!strlen(trim($title))) return "emptyTitle";
 }
@@ -1161,7 +1161,7 @@ public function setChannel(&$conversation, $channelId)
  * @return bool|array Returns an array of the entity's details (in the same format as getMembersAllowed()),
  * 		or false if no entity was found.
  */
-public function getMemberFromName($name)
+public function getMemberFromName($name): bool|array
 {
 	$memberId = $memberName = false;
 
@@ -1202,7 +1202,7 @@ public function getMemberFromName($name)
 
 	// Get the result and return it as an array.
 	$row = $result->firstRow();
-	$row["groups"] = ET::groupModel()->getGroupIds($row["account"], explode(",", $row["groups"]));
+	$row["groups"] = ET::groupModel()->getGroupIds($row["account"], explode(",", (string) $row["groups"]));
 	return array("type" => "member", "id" => $row["memberId"], "name" => $row["username"], "avatarFormat" => $row["avatarFormat"], "groups" => $row["groups"]);
 }
 

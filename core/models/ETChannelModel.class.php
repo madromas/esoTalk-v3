@@ -11,7 +11,7 @@ if (!defined("IN_ESOTALK")) exit;
  */
 class ETChannelModel extends ETModel {
 
-public const CACHE_KEY = "channels";
+public final const CACHE_KEY = "channels";
 
 
 /**

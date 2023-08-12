@@ -12,7 +12,7 @@ if (!defined("IN_ESOTALK")) exit;
  */
 class ETGroupModel extends ETModel {
 
-const CACHE_KEY = "groups";
+public final const CACHE_KEY = "groups";
 
 
 /**
