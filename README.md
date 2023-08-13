@@ -1,6 +1,6 @@
 # esoTalk v3
 
-## This is an updated version of the esoTalk forum v1.0.0g4 from 17 May 2014
+## This is an updated version of the esoTalk forum v1.0.0g5 from 17 May 2014
 >
 
 ##### Full documentation available here: https://hub.madway.net/docs/
