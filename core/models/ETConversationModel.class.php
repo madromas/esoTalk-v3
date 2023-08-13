@@ -1105,7 +1105,7 @@ public function setTitle(&$conversation, $title)
  * @param string $title The conversation title.
  * @return bool|string Returns an error string or false if there are no errors.
  */
-public function validateTitle($title): bool|string
+public function validateTitle($title)
 {
 	if (!strlen(trim($title))) return "emptyTitle";
 }
