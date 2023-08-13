@@ -98,7 +98,7 @@ public static function addType($type, $projections)
  *		(i.e. it is not stored in the database.)
  * @return bool|int The activity ID, or false if there were errors.
  */
-public function create($type = null, $member = null, $fromMember = null, $data = null, $emailData = null): bool|int
+public function create($type = null, $member = null, $fromMember = null, $data = null, $emailData = null): bool
 {
 	// Make sure we have a definition for this type of activity.
 	if (empty(self::$types[$type]))
@@ -145,10 +145,12 @@ public function create($type = null, $member = null, $fromMember = null, $data =
 		// Send the email, prepending/appending a common email header/footer.
 		// vanGato - add url
 		sendEmail(
-			$member["email"], 
-			$subject, 
-			sprintf(T("email.header"), $member["username"]).'<hr size="1">'.$body.'<hr size="1">'.sprintf(T("email.footer")),
-			URL("settings", true)
+		
+			
+$subject,
+$body,
+$this->sendEmail($member['email'], $subject, $body)
+
 		);
 
 		// Revert back to esoTalk's old language definitions.
