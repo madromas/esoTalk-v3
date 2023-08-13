@@ -15,6 +15,12 @@ $definitions["charset"] = "utf-8";
 
 $definitions["date.full"] = "%c";
 
+$definitions["Submit Issue"] = "Отправить вопрос";
+$definitions["esoTalk Documentation"] = "Документация esoTalk";
+$definitions["esoTalk Discussion"] = "Обсуждение esoTalk";
+$definitions["GitHub Repository"] = "Репозиторий GitHub";
+$definitions["Usefull links"] = "Полезные ссылки";
+
 $definitions["month"] = array(
   "January"   => "Январь",
   "February"  => "Февраль",
