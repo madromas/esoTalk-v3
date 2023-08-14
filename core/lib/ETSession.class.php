@@ -104,7 +104,7 @@ public function refreshUserData()
  */
 public function preference($key, $default = false)
 {
-	return isset($this->user["preferences"][$key]) ? $this->user["preferences"][$key] : $default;
+	return $this->user["preferences"][$key] ?? $default;
 }
 
 
@@ -171,14 +171,15 @@ public function loginWithMemberId($memberId)
 public function login($name, $password, $remember = false)
 {
 	$return = $this->trigger("login", array($name, $password, $remember));
-	if (count($return)) return reset($return);
+	if (is_countable($return) ? count($return) : 0) return reset($return);
 
 	// Get the member with this username or email.
 	$sql = ET::SQL()
 		->where("m.username=:username OR m.email=:email")
 		->bind(":username", $name)
 		->bind(":email", $name);
-	$member = reset(ET::memberModel()->getWithSQL($sql));
+	$getWithSQL = ET::memberModel()->getWithSQL($sql);
+	$member = reset($getWithSQL);
 
 	// Check that the password is correct.
 	if (!$member or !ET::memberModel()->checkPassword($password, $member["password"])) {
@@ -243,7 +244,7 @@ protected function clearRememberToken($memberId)
  */
 public function setCookie($name, $value, $expire = 0)
 {
-	return setcookie(C("esoTalk.cookie.name")."_".$name, $value, $expire, C("esoTalk.cookie.path", getWebPath('')), C("esoTalk.cookie.domain"), C("esoTalk.https"), true);
+	return setcookie(C("esoTalk.cookie.name")."_".$name, $value, ['expires' => $expire, 'path' => C("esoTalk.cookie.path", getWebPath('')), 'domain' => C("esoTalk.cookie.domain"), 'secure' => C("esoTalk.https"), 'httponly' => true]);
 }
 
 
@@ -270,7 +271,7 @@ public function setRememberCookie($userId)
 public function getCookie($name, $default = null)
 {
 	$name = C("esoTalk.cookie.name")."_".$name;
-	return isset($_COOKIE[$name]) ? $_COOKIE[$name] : $default;
+	return $_COOKIE[$name] ?? $default;
 }
 
 
@@ -325,7 +326,7 @@ public function validateToken($token)
 public function regenerateToken()
 {
 	session_regenerate_id(true);
-	$_SESSION["token"] = substr(md5(uniqid(rand())), 0, 13);
+	$_SESSION["token"] = substr(md5(uniqid(random_int(0, mt_getrandmax()))), 0, 13);
 	$_SESSION["userAgent"] = md5($_SERVER["HTTP_USER_AGENT"]);
 }
 
@@ -460,7 +461,7 @@ public function store($key, $value)
  */
 public function get($key = null, $default = null)
 {
-	return isset($_SESSION[$key]) ? $_SESSION[$key] : $default;
+	return $_SESSION[$key] ?? $default;
 }
 
 

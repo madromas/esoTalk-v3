@@ -10290,7 +10290,7 @@ jQuery.noConflict = function( deep ) {
 		window.jQuery = _jQuery;
 	}
 
-	return jQuery; 
+	return jQuery;
 };
 
 // Expose jQuery and $ identifiers, even in

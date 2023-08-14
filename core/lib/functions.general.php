@@ -12,7 +12,7 @@ if (!defined("IN_ESOTALK")) exit;
  */
 
 // Define E_USER_DEPRECATED for PHP < 5.3.
-if (!defined("E_USER_DEPRECATED")) define('E_USER_DEPRECATED', E_USER_WARNING);
+
 
 
 /**
@@ -373,10 +373,12 @@ function parseRequest($parts, $controllers)
  *
  * @package esoTalk
  */
-function sanitizeHTML($value)
+
+	function sanitizeHTML($value)
 {
 	return htmlentities((string)$value, ENT_QUOTES, "UTF-8");
 }
+
 
 
 /**

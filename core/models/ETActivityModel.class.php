@@ -144,14 +144,7 @@ public function create($type = null, $member = null, $fromMember = null, $data =
 
 		// Send the email, prepending/appending a common email header/footer.
 		// vanGato - add url
-		sendEmail(
 		
-			
-$subject,
-$body,
-$this->sendEmail($member['email'], $subject, $body)
-
-		);
 
 		// Revert back to esoTalk's old language definitions.
 		ET::revertLanguageState();
