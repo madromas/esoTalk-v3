@@ -4045,7 +4045,7 @@ class GeSHi {
                   $parsed_code .= str_repeat('</span>', $close);
                   $close = 0;
                 }
-                if ($i + 1 < $n) {
+                elseif ($i + 1 < $n) {
                     $parsed_code .= "\n";
                 }
                 unset($code[$i]);

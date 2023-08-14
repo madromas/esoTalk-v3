@@ -317,7 +317,7 @@ public function handler_settingsController_initGeneral($sender, $form)
 	$form->addField("Likes", "disallowLikes", array(__CLASS__, "fieldDisallowLikes"), array($sender, "saveBoolPreference"));
 	
 	// Add the "Allow Dislikes" field.
-	$form->setValue("allowDislikes", ET::$session->preference("allowDislikes", false));
+	$form->setValue("allowDislikes", ET::$session->preference("allowDislikes", true));
 	$form->addField("Likes", "allowDislikes", array(__CLASS__, "fieldAllowDislikes"), array($sender, "saveBoolPreference"));
 	
 	// Add the "hide Likes Pane" field.
@@ -347,7 +347,7 @@ static function fieldHideLikesPane($form)
  */
 static function fieldDisallowLikes($form)
 {
-	return "<label class='checkbox'>".$form->checkbox("disallowLikes")." ".T("setting.disallowLikes.label")."</label>";
+	return "<label class='checkbox' checked>".$form->checkbox("disallowLikes")." ".T("setting.disallowLikes.label")."</label>";
 }
 
 /**

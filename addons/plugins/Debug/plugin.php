@@ -40,9 +40,8 @@ class ETPlugin_Debug extends ETPlugin {
 
 	/**
 	 * An array of queries that have been executed.
-	 * @var array
 	 */
-	private $queries = array();
+	private array $queries = array();
 
 
 	/**

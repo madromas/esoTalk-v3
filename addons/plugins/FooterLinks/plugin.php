@@ -30,7 +30,7 @@ class ETPlugin_FooterLinks extends ETPlugin {
 public function handler_init($sender)
 {
 	
-	$sender->addToMenu("meta", "madway", "<a href='http://madway.net'>".T("MADWAY")."</a>");
+	$sender->addToMenu("meta", "madway", "(c) <a href='http://madway.net'>".T("MADWAY")."</a>");
 
 }
 
