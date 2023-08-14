@@ -81,7 +81,7 @@ $config["esoTalk.enabledPlugins"] = array("BBCode", "ConfigEditor", "Emoticons",
 $config["esoTalk.badLoginsPerMinute"] = 10;
 $config["esoTalk.enablePersistenceCookies"] = true;
 $config["esoTalk.registration.open"] = true;
-$config["esoTalk.registration.requireConfirmation"] = "email"; // false | "email" = require email confirmation | "approval" = require admin approval
+$config["esoTalk.registration.requireConfirmation"] = false; // false | "email" = require email confirmation | "approval" = require admin approval
 
 // Cookie settings.
 $config["esoTalk.cookie.name"] = "madway";

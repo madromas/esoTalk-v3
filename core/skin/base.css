@@ -548,7 +548,7 @@ a.deleteLink:hover {color:#f00 !important; text-decoration:line-through}
 
 
 /* Scrubber "load more items" areas */
-.scrubberMore {text-align:center; background:#f7f7f7; border:dotted #fff; border-width:2px 0; height:56px; line-height:56px; margin:35px 0}
+.scrubberMore {text-align:center; background:#f7f7f7; border:1px solid #fff; border-radius:15px; height:56px; line-height:56px; margin:35px 0}
 .scrubberMore a {display:block; color:#bbb; font-size:18px;}
 .scrubberMore.loading a {background:url(loading.gif) no-repeat center center; text-indent:-9999px}
 .list .scrubberMore {border:0; padding:0}

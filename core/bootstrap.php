@@ -55,7 +55,7 @@ set_exception_handler(array("ET", "fatalError"));
 
 // Determine the relative path to this forum. For example, if the forum is at http://forum.com/test/forum/,
 // the web path should be /test/forum.
-$parts = explode("/", $_SERVER["PHP_SELF"]);
+$parts = explode("/", (string) $_SERVER["PHP_SELF"]);
 $key = array_search("index.php", $parts);
 if ($key !== false) ET::$webPath = implode("/", array_slice($parts, 0, $key));
 
@@ -230,7 +230,7 @@ if (empty($selfURL)) {
 	if (!empty($_GET)) $selfURL .= "?".http_build_query($_GET);
 }
 
-$requestParts = explode("/", $request);
+$requestParts = explode("/", (string) $request);
 
 
 
@@ -289,7 +289,7 @@ else {
 }
 
 // Parse the request store all of the request information.
-list(ET::$controllerName, ET::$controller, $method, $arguments, $responseType) = parseRequest($requestParts, $controllers);
+[ET::$controllerName, ET::$controller, $method, $arguments, $responseType] = parseRequest($requestParts, $controllers);
 
 ET::$controller->selfURL = $selfURL;
 ET::$controller->controllerMethod = $method;

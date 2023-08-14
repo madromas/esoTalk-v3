@@ -1,7 +1,9 @@
 <?php
 // Copyright 2011 Toby Zerner, Simon Zerner
 // This file is part of esoTalk. Please see the included license file for usage information.
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 if (!defined("IN_ESOTALK")) exit;
 
 /**
@@ -14,10 +16,12 @@ if (!defined("IN_ESOTALK")) exit;
 "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-
+ 
 <meta charset='<?php echo T("charset", "utf-8"); ?>'>
 <title><?php echo sanitizeHTML($data["pageTitle"]); ?></title>
+
 <?php echo $data["head"]; ?>
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta property="og:title" content="<?php echo sanitizeHTML($data["pageTitle"]); ?>" />
     <meta property="og:description" content="If you are normal, you have got to be MAD!" />
@@ -34,11 +38,15 @@ if (!defined("IN_ESOTALK")) exit;
 <link rel="shortcut icon" href="/favicon.png" />
 <link rel="stylesheet" type="text/css" href="/fancybox/fancybox.css">
 <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828851643911658"
-     crossorigin="anonymous"></script>	 
-<script src='https://cdn.jsdelivr.net/gh/Web-Highlights/webhighlights-link-preview/dist/main.js' type='module'>
+
+<link href="<?php echo URL('',true); ?>jquery.minipreview.css" rel="stylesheet">
+    
+
 </head>
 <body class='<?php echo $data["bodyClass"]; ?>'>
+
+
+
 <script>
 //Infinite Scroll
 $(function(){ //on document ready
@@ -104,7 +112,7 @@ $(document).ready(function(){
 
 <?php endif; ?>
 
-<h1 id='forumTitle'><a href='<?php echo URL(""); ?>'><?php echo $data["forumTitle"]; ?></a></h1>
+<a href='<?php echo URL(""); ?>'><h1 id='forumTitle'><?php echo $data["forumTitle"]; ?></h1></a>
 
 <ul id='mainMenu' class='menu'>
 <?php if (!empty($data["mainMenuItems"])) echo $data["mainMenuItems"]; ?>
@@ -138,5 +146,6 @@ $(document).ready(function(){
 <?php $this->trigger("pageEnd"); ?>
 
 </div>
+
 </body>
 </html>

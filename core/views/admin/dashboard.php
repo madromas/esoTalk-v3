@@ -60,7 +60,7 @@ $(function() {
 <li>
 <p> <a href='https://github.com/madromas/esoTalk-v3' target='_blank'><?php echo T("GitHub Repository"); ?> &raquo;</a></p>
 <p> <a href='https://github.com/madromas/esoTalk-v3/discussions' target='_blank'><?php echo T("esoTalk Discussion"); ?> &raquo;</a></p>
-<p> <a href='https://hub.madway.net/docs/' target='_blank'><?php echo T("esoTalk Documentation"); ?> &raquo;</a></p>	
+<p> <a href='https://hub.madway.net/docs/' target='_blank'><?php echo T("esoTalk Documentation"); ?> &raquo;</a></p>
 <p> <a href='https://github.com/madromas/esoTalk-v3/issues' target='_blank'><?php echo T("Submit Issue"); ?> &raquo;</a></p>
 </li>
 </ul>
