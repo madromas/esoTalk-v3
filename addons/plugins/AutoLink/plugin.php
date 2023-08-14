@@ -25,7 +25,7 @@ class ETPlugin_AutoLink extends ETPlugin {
 	// AUTO-EMBED IMAGE FORMATS
 	//
 	var $accepted_image_formats = array(
-	  'gif', 'jpg', 'jpeg', 'tif', 'tiff', 'bmp', 'png', 'svg', 'webp', 'ico' );
+	  'gif', 'jpg', 'jpeg', 'tif', 'tiff', 'bmp', 'png', 'webp', 'svg', 'ico' );
 
 
 public function handler_format_format($sender)
@@ -117,7 +117,9 @@ public function autoLink( $link = array())
 
 
   // default to linkifying with icon
-	return '<a href="'.$link[0].'" rel="nofollow external" target="_blank" class="link-external">'.$link[0].' <i class="icon-external-link"></i></a>';
+	
+	// default to linkifying with icon
+	return '<span id="p1"><a href="'.$link[0].'" rel="nofollow external" target="_blank" class="link-external">'.$link[0].' <i class="icon-external-link"></i></a></span>';
 
 }
 

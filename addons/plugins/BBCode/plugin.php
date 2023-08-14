@@ -124,7 +124,7 @@ class ETPlugin_BBCode extends ETPlugin {
          $sender->content = preg_replace("/\[img\](https?.*?)\[\/img\]/i", $replacement, $sender->content);
 		 
 		 // Map: [map]url[/map]
-         $replacement = $sender->inline ? "[map]" : "<iframe src='$1' frameborder='0'/></iframe>";
+         $replacement = $sender->inline ? "[map]" : "<iframe src='$1' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'/></iframe>";
          $sender->content = preg_replace("/\[map\](https?.*?)\[\/map\]/i", $replacement, $sender->content);
  
          // Links with display text: [url=http://url]text[/url]
@@ -146,7 +146,7 @@ class ETPlugin_BBCode extends ETPlugin {
          // Centering: [b]centering text[/b]
 	     $sender->content = preg_replace("/\[center\](.*?)\[\/center\]/si", "<center>$1</center>", $sender->content);
 
-         // vanGato
+
          // Font Color: [color=$1]text[/color]
          $sender->content = preg_replace("/\[color=([#a-z0-9]+)\](.*?)\[\/color\]/is", "<span style=\"color:\\1\">\\2</span>", $sender->content);
      }
@@ -205,3 +205,6 @@ class ETPlugin_BBCode extends ETPlugin {
          }
      }
  }
+
+
+
