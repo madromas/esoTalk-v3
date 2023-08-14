@@ -30,7 +30,7 @@ class ETPlugin_HideTag extends ETPlugin {
 					"$1</p>", $sender->content);
 			} else {
 				$sender->content = preg_replace($regexp,
-				"<div class=\"hiddenContent\">".T("hidden.YouMustBeLoggedIn", " Вы должны авторизоваться, для возможности просмотра этого контента.")."</div>", $sender->content);
+				"<div class=\"hiddenContent\">".T("hidden.YouMustBeLoggedIn")."</div>", $sender->content);
 			}
 			
 		}
@@ -43,7 +43,7 @@ class ETPlugin_HideTag extends ETPlugin {
 					"$2</p>", $sender->content);
 			}else{
 				$sender->content = preg_replace($regexp,
-					"<div class=\"hiddenContent\">".T("hidden.YouMustHavePosts"," Вы должны иметь $1 сообщений на форуме, для возможности просмотра этого контента.")."</div>", $sender->content);
+					"<div class=\"hiddenContent\">".T("hidden.YouMustHavePosts")."</div>", $sender->content);
 			}
 			
 		}
@@ -58,7 +58,7 @@ class ETPlugin_HideTag extends ETPlugin {
 					"$2</p>", $sender->content);
 			} else {
 				$sender->content = preg_replace($regexp,
-					"<div class=\"hiddenContent\">".T("hidden.YouMustBeInGroups"," Вы должны состоять в группе « $1 », для возможности просмотра этого контента.")."</div>", $sender->content);
+					"<div class=\"hiddenContent\">".T("hidden.YouMustBeInGroups")."</div>", $sender->content);
 			}
 			
 		}
@@ -73,7 +73,7 @@ class ETPlugin_HideTag extends ETPlugin {
 					"$2</p>", $sender->content);
 			} else {
 				$sender->content = preg_replace($regexp,
-					"<div class=\"hiddenContent\">".T("hidden.ContentForUsers"," Приватный контент только для пользователя: $1.")."</div>", $sender->content);
+					"<div class=\"hiddenContent\">".T("hidden.ContentForUsers")."</div>", $sender->content);
 			}
 			
 		}
