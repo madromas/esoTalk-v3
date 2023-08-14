@@ -22,6 +22,12 @@ here if necessary.
 
 .jumpToLast {color:#617177;}
 
+.scrubberMore {
+  text-align: center;
+  background: #1b2228;
+  border: 1px solid #3c3c3c;
+}
+
 .triangle-border {
   position:relative;
   padding:10px;
@@ -150,6 +156,7 @@ a:hover {text-decoration:none; color:#58a6ff}
 	background-color: #131a20;
 }
 
+.excerpt img{width:200px; border-radius:5px}
 
 /* Search boxes */
 
@@ -373,7 +380,7 @@ pre {border:0px dashed #ccc;}
 .replyPlaceholder .postHeader h3 {font-weight:300; color:#999}
 .postBody {line-height:1.5em; font-size:14px}
 .postBody a {font-weight:400; color:#03a9f4}
-.postBody img {vertical-align: bottom;max-width: 80%; border: 1px solid #484848;}
+.postBody img {vertical-align: bottom;max-width: 80%; border: 1px solid #484848;border-radius:5px}
 
 .button.submit {background-color:#23b636; color:#fff; border:0px; }
 .button.submit:hover {background-color:#2ea041; color:#fff; border:0px;}
