@@ -24,7 +24,7 @@ class ETPlugin_HideTag extends ETPlugin {
 
 		//[hide]Hello word[/hide]
 		$regexp = '!\[hide\](.*?)\[/hide\]!s';
-		while (preg_match($regexp, $sender->content)) {
+		while (preg_match($regexp, (string) $sender->content)) {
 			if (ET::$session->userId) {
 				$sender->content = preg_replace($regexp,
 					"$1</p>", $sender->content);
@@ -37,7 +37,7 @@ class ETPlugin_HideTag extends ETPlugin {
 		
 		//[hide=100]Hello word[/hide]
 		$regexp = '!\[hide\=([0-9]+)\](.*?)\[/hide\]!s';
-		while (preg_match($regexp, $sender->content, $matches)) {
+		while (preg_match($regexp, (string) $sender->content, $matches)) {
 			if (ET::$session->userId AND ET::$session->user['countPosts']  >= (int)$matches[1] OR ET::$session->user['account']=='administrator' OR ET::$session->user['account']=='moderator') {
 				$sender->content = preg_replace($regexp,
 					"$2</p>", $sender->content);
@@ -51,8 +51,8 @@ class ETPlugin_HideTag extends ETPlugin {
 		//[groups=1,4]Hello word[/groups];
 		$regexp = '!\[groups\=([a-zA-Z0-9-+.,_ ]+)\](.*?)\[/groups\]!s';
 		$groups = array();
-		while (preg_match($regexp, $sender->content, $matches)) {
-			$groups = explode(',',$matches[1]); 
+		while (preg_match($regexp, (string) $sender->content, $matches)) {
+			$groups = explode(',',(string) $matches[1]); 
 			if (ET::$session->user['account']=='administrator' OR ET::$session->user['account']=='moderator' OR count(array_intersect($groups,ET::$session->getGroupIds())) >0 ) {
 				$sender->content = preg_replace($regexp,
 					"$2</p>", $sender->content);
@@ -66,8 +66,8 @@ class ETPlugin_HideTag extends ETPlugin {
 		//[users=Toby,Tristan]Hello word[/users]
 		$regexp = '!\[users\=([a-zA-Z0-9-+.,_ ]+)\](.*?)\[/users\]!s';
 		$users = array();
-		while (preg_match($regexp, $sender->content, $matches)) {
-			$users = explode(',',$matches[1]); 
+		while (preg_match($regexp, (string) $sender->content, $matches)) {
+			$users = explode(',',(string) $matches[1]); 
 			if (ET::$session->user['account']=='administrator' OR ET::$session->user['account']=='moderator' OR in_array(ET::$session->user['username'],$users)) {
 				$sender->content = preg_replace($regexp,
 					"$2</p>", $sender->content);
@@ -80,7 +80,7 @@ class ETPlugin_HideTag extends ETPlugin {
 
 		//Hello, [visitor][/visitor]!
 		$regexp = '!\[visitor\]\[/visitor\]!s';
-		while (preg_match($regexp, $sender->content, $matches)) {			
+		while (preg_match($regexp, (string) $sender->content, $matches)) {			
 			$sender->content = preg_replace($regexp,
 				'<strong>'.ET::$session->user['username']."</strong></p>", $sender->content);			
 		}			
