@@ -10,6 +10,4 @@ $(document).ready(function() {
 var SpoilerTag = {
 
 spoiler: function(id) {ETConversation.wrapText($("#"+id+" textarea"), "[spoiler]", "[/spoiler]");},
-nsfw: function(id) {ETConversation.wrapText($("#"+id+" textarea"), "[nsfw]", "[/nsfw]");},
-
-};
+nsfw: function(id) {ETConversation.wrapText($("#"+id+" textarea"), "[nsfw]", "[/nsfw]");},};
