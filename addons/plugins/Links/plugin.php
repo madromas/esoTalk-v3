@@ -30,7 +30,8 @@ public function handler_init($sender)
 
 // Type of a manu placement = "user", "statistics" or "meta". Add  'top' at the and to make it appear first inline.
 
-$sender->addToMenu("user", "Links", '<a href="https://madway.net/conversations/off-topic" target="_self">Chat</a>');
+$sender->addToMenu("user", "Links", '<a href="https://hub.madway.net/docs/" target="_self">Docs</a>');
+
 
 }
 
