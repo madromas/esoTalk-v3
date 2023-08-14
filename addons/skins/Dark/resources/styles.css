@@ -8,6 +8,17 @@ here if necessary.
 /* The News Bubble
 ------------------------------------------------------------------------------------------------------------------------------- */
 
+.hiddenContent{
+    background: #12151a !important;
+	border: 1px solid #30363d !important;
+	color: #c1c1c1 !important;
+}
+
+.hiddenContent:before{
+	color: #990000 !important;
+}
+
+
 
 /* Notifications button */
 #hdr .popupWrapper {margin:-5px 0; display:inline-block}
