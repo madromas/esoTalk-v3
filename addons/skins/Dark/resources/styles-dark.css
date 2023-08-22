@@ -98,7 +98,9 @@ here if necessary.
 .sel-dark-toggle{color:inherit!important;background-color: inherit;
 border: 0;
 cursor: hand;
-cursor: pointer;}
+cursor: pointer;
+display: grid;
+height: 18px;}
 
 
 .dark .sel-dark-toggle .i__sun{display:block!important}
