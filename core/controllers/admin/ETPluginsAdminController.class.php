@@ -193,12 +193,15 @@ public function action_uninstall($plugin = "")
 	}
 
 	// Set up an instance of the plugin so we can call its uninstall function.
-	if (file_exists($file = PATH_PLUGINS."/".sanitizeFileName($plugin)."/plugin.php")) include_once $file;
-	$className = "ETPlugin_$plugin";
-	if (class_exists($className)) {
-		$pluginObject = new $className;
-		$pluginObject->uninstall();
-	}
+	// Set up an instance of the plugin so we can call its uninstall function.
+     if (file_exists($file = PATH_PLUGINS . "/" . sanitizeFileName($plugin) . "/plugin.php")) {
+         include_once $file;
+     }
+     $className = "ETPlugin_{$plugin}";
+     if (class_exists($className)) {
+         $pluginObject = new $className($path);
+         $pluginObject->uninstall();
+     }
 
 	// Attempt to remove the directory. If we couldn't, show a "not writable" message.
 	if (!is_writable($file = PATH_PLUGINS) or !is_writable($file = PATH_PLUGINS."/$plugin") or !rrmdir($file))
