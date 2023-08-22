@@ -45,6 +45,7 @@ embed {
   #hdr #forumTitle {font-size:14px; padding: 7px 0 0 10px; text-align:left;   display:inline-flex; width:60%;   margin:0 auto; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 #hdr .button {margin:6px 0}
 #hdr .popupWrapper {float:right; margin:0 0 0 7px}
+#hdr .popupMode {float:right; margin:6px 0 0 7px}
 #hdr #backButton {float:left; margin:13px 5px 0 5px}
 #userMenu {margin:0 !important; text-align:left; padding:0}
 #hdr #notifications {font-size:13px}
