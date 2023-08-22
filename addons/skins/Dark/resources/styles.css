@@ -7,11 +7,186 @@ here if necessary.
 
 /* The News Bubble
 ------------------------------------------------------------------------------------------------------------------------------- */
+/* Primary color */
+.conversationList .title a,
+.conversationList .unread .title a,
+.action .name, .action a, .action strong,
+.postHeader h3, .postHeader h3 a,
+.button, .button i, .button:hover,
+#hdr-inner > a, #hdr-inner > h1 a, #hdr-inner > ul > li > a,
+#hdr,
+.tabs li.selected a,
+.channelList .channel,
+#conversationTitle a,
+#pluginList > li,
+#skinList > li,
+#languageList > li,
+.memberList strong a,
+.scrubber li.selected > a,
+.scrubber li ul li.selected a,
+a
+{
+	color:#555;
+}
+
+.tabs.big li.selected a,
+#hdr .active .popupButton,
+#hdr #notifications.new,
+.button.submit,
+.popupMenu li > a:hover, ul.popupMenu li.selected > a, .unreadIndicator
+{
+	background-color:{primary}
+}
+
+.sheet.active,
+.popup,
+.popupWrapper.active .popupButton,
+input[type=text]:focus, input[type=password]:focus, input[type=number]:focus, input[type=email]:focus, textarea:focus, .input:focus,
+#hdr,
+.withArrow.popup:before,
+.scrubber > li.selected
+{
+	border-color:#30363d;
+}
+
+
+/* Secondary color (light text) */
+.tabs li > a,
+.channel,
+.list .col-replies, .list .col-replies a,
+.action,
+.timeMarker,
+.conversationList .excerpt,
+.postHeader .info > span, .postHeader .info > a,
+#ftr,
+#hdr h1 span,
+.channel
+{
+	color:#666;
+}
+
+
+/* Tertiary color (light lines) */
+.channel,
+.list > li,
+.thing,
+.sheet, .sheet h3, .sheet .section, .sheet .buttons,
+input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input,
+.tabs li.selected a,
+.tabs li a:hover,
+.tabs.big,
+#adminMenu li.separator
+{
+	border-color:#30363d;
+}
+.tabs .pathItem.selected a:before
+{
+	border-left-color:#30363d;
+}
+
+.tabs .pathItem.selected a:after
+{
+	border-left-color:#30363d;
+}
+
+
+.mode-switch {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.app-icon {
+	width: 26px;
+	height: 2px;
+	border-radius: 4px;
+	background-color: transparent;
+	position: relative;
+}
+
+.app-icon:before,
+.app-icon:after {
+	content: "";
+	position: absolute;
+	width: 12px;
+	height: 2px;
+	border-radius: 4px;
+	background-color: var(--k-bg-black);
+	left: 50%;
+	transform: translatex(-50%);
+}
+
+.app-icon:before {
+	top: -6px;
+}
+
+.app-icon:after {
+	bottom: -6px;
+}
+
+.app-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 15px 20px;
+	position: relative;
+}
+
+.app-header-left,
+.app-header-right {
+	display: flex;
+	align-items: center;
+}
+
+.app-header-left {
+	flex-grow: 1;
+}
+
+.app-header-right button {
+	margin-left: 10px;
+}
+
+.app-name {
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 700;
+	margin: 0px 22px 0px 0px;
+}
+
+#toggleThemeBtn {
+	cursor: pointer;
+}
+
+.moon {
+	display: none;
+}
+
+.sun {
+	width: 24px;
+	height: 24px;
+	display: block;
+}
+
+#toggleThemeBtn.light .sun {
+	display: none;
+}
+
+#toggleThemeBtn.light .moon {
+	display: block;
+}
+
+
+
+
 
 .hiddenContent{
-    background: #12151a !important;
+    background: #f0f0f0 !important;
 	border: 1px solid #30363d !important;
-	color: #c1c1c1 !important;
+	color: #414141 !important;
 }
 
 .hiddenContent:before{
@@ -35,7 +210,7 @@ here if necessary.
 
 .scrubberMore {
   text-align: center;
-  background: #1b2228;
+  background: #f0f0f0;
   border: 1px solid #3c3c3c;
 }
 
@@ -44,7 +219,7 @@ here if necessary.
   padding:10px;
   margin: 10px 10px 15px 10px;
   border:1px solid #0d419d;
-  color:#c9d1d9;
+  color:#101010;
   background:#14243b;
   /* css3 */
   -webkit-border-radius:10px;
@@ -83,7 +258,7 @@ code {background: #000 !important;
   border-radius: 10px; }
 
 /* Global */
-body {font-size:14px; font-weight:normal; margin:0; overflow-y:scroll; background:#131a20; color:#c9d1d9}
+body {font-size:14px; font-weight:normal; margin:0; overflow-y:scroll; background:#fff; color:#000}
 body, input, textarea, select {font-family: poppins,sans-serif;}
 input, textarea, select {font-size:100%; max-width: 100%;}
 strong {font-weight:600; padding-left:10px;}
@@ -128,7 +303,7 @@ cursor: pointer;
 border-radius: 30px;
 padding: 6px 0;
 color: #d0d1d2;
-background: #1b2228;
+background: #f0f0f0;
 opacity: 0.7;
 border: 0;
 font-weight: 900;
@@ -139,12 +314,12 @@ font-weight: 900;
 }
 .scrollToTop:hover{
     text-decoration:none;
-background-color: darken(fadein(#1b2228, 5%), 5%);
+background-color: darken(fadein(#f0f0f0, 5%), 5%);
 }
 
 /* Links */
 a { text-decoration:none;}
-a:hover {text-decoration:none; color:#58a6ff}
+a:hover {text-decoration:none;}
 .link-external a, .icon-external-link {color:#58a6ff}
 
 /* Signature */
@@ -153,9 +328,9 @@ a:hover {text-decoration:none; color:#58a6ff}
     font-size:95%;
     padding: 5px 12px;
     margin: 1px 0 0;
-    color:#c9d1d9;
+    color:#101010;
     word-wrap: break-word;
-	background-color: #131a20;
+	background-color: #fff;
 }
 .signature p {margin-bottom:0}
 .signature-no-likes {
@@ -163,8 +338,8 @@ a:hover {text-decoration:none; color:#58a6ff}
     font-size:95%;
     padding: 5px 12px;
     margin:1px 0 0;
-    color:#c9d1d9;
-	background-color: #131a20;
+    color:#101010;
+	background-color: #fff;
 }
 
 .excerpt img{width:200px; border-radius:5px}
@@ -231,9 +406,9 @@ p, ul, pre {line-height:1.5em}
 
 
 /* Sheets */
-.sheet {background: #1b2228;}
-.sheet {margin:30px auto; width:600px; padding:1px; border:1px solid #d5d5d5; background: #1b2228;}
-.sheet.active {background:#131a20; border-radius:3px; box-shadow:0 5px 20px rgba(0, 0, 0, 0.2); top:80px; margin:0; z-index:200}
+.sheet {background: #f0f0f0;}
+.sheet {margin:30px auto; width:600px; padding:1px; border:1px solid #d5d5d5; background: #f0f0f0;}
+.sheet.active {background:#fff; border-radius:3px; box-shadow:0 5px 20px rgba(0, 0, 0, 0.2); top:80px; margin:0; z-index:200}
 .sheetOverlay {background:rgba(255, 255, 255, 0.9); z-index:150; position:fixed; top:0; left:0; bottom:0; right:0}
 
 .sheet h3 {font-weight:normal; font-size:120%; margin-bottom:-1px !important; position:relative}
@@ -257,7 +432,7 @@ p, ul, pre {line-height:1.5em}
 /* Conversation list */
 #conversations {margin-top:-11px}
 .conversationList li {overflow:hidden; padding-right:27em; padding-left:13.5em}
-.conversationList .excerpt {color:#aaa; font-size:90%;}
+.conversationList .excerpt {color:#565656; font-size:90%;}
 .conversationList .justVisited {border-color:#005d73; border-style:solid; position:relative}
 .conversationList .controls {margin-left:10px}
 .conversationList .controls a {margin-right:5px}
@@ -269,7 +444,7 @@ p, ul, pre {line-height:1.5em}
 .tabs .pathItem {margin-right:20px;}
 .tabs .pathItem a {position:relative; float:left; padding-left:20px; margin-left:1px !important}
 .tabs .pathItem.selected a {border-radius:0}
-.tabs .pathItem a:first-child {padding-left:7px; border-radius:3px 0 0 3px; background:#131a20;}
+.tabs .pathItem a:first-child {padding-left:7px; border-radius:3px 0 0 3px; background:#fff;}
 .tabs .pathItem.selected a:before, .tabs .pathItem.selected a:after {z-index:1; content:" "; border:13px solid transparent; height:0; width:0; right:-27px; top:-1px; position:absolute; border-left-color:#d5d5d5}
 .tabs .pathItem.selected a:after {float:left; border-left-color:#fff; right:-24px; border-width:12px; top:0}
 .tabs .pathEnd.selected a:last-child {border-radius:0 3px 3px 0}
@@ -286,18 +461,18 @@ negative margins so they overlap the padding of the <li>. */
 .conversationList .col-views {float:right; margin-right:-16em; width:14em; margin-top:1.5em}
 
 .conversationList .col-lastPost {float:right; width:20em; margin-right:-29em; font-size:90%; overflow:hidden; white-space:nowrap}
-.conversationList .col-replies span {font-size:100%; font-weight:300; color:#aaa;}
-.list .col-replies {color:#aaa; font-size:90%}
-.list .col-replies i {font-size:14px; color:#aaa; margin-right:5px}
+.conversationList .col-replies span {font-size:100%; font-weight:300; color:#565656;}
+.list .col-replies {color:#565656; font-size:90%}
+.list .col-replies i {font-size:14px; color:#565656; margin-right:5px}
 
 .conversationList .col-views span {font-size:100%; font-weight:300}
-.list .col-views {color:#aaa; font-size:90%}
-.list .col-views i {font-size:14px; color:#aaa; margin-right:5px}
-.list .col-replies span i {font-size:14px; color:#aaa; margin-right:5px}
+.list .col-views {color:#565656; font-size:90%}
+.list .col-views i {font-size:14px; color:#565656; margin-right:5px}
+.list .col-replies span i {font-size:14px; color:#565656; margin-right:5px}
 
 
 /* In the TOPIC itself*/
-.conversationViews {color:#aaa; font-weight:400; margin-bottom:10px; font-size:13px}
+.conversationViews {color:#565656; font-weight:400; margin-bottom:10px; font-size:13px}
 
 
 /* NEW. Show author of first post closest to the left border*/
@@ -332,8 +507,8 @@ margin-right: 5px;}
 
 /* Channel list */
 #channelList {margin-top:-11px}
-.channelList {background:#131a20}
-.channelList > li {padding:10px; background:#131a20}
+.channelList {background:#fff}
+.channelList > li {padding:10px; background:#fff}
 .channelList .channel {padding:3px 6px; font-size:85%; font-weight:500;}
 .channelList .description {font-size:85%; margin-top:10px; color:#888; margin-bottom:0}
 .channelList .stats {font-size:85%; margin-left:10px; color:#888}
@@ -346,9 +521,9 @@ margin-right: 5px;}
 
 
 /* Generic lists */
-.list {margin:0; border-bottom:0px solid #131a20; line-height:1.5em; padding:5px; list-style-type:none}
-.list > li {border:1px solid #131a20; background-color:#131a20; border-radius: 10px; margin-bottom: 5px;}
-.list > li:hover {background-color:#1b2228}
+.list {margin:0; border-bottom:0px solid #fff; line-height:1.5em; padding:5px; list-style-type:none}
+.list > li {border:1px solid #b3b3b3; background-color:#fff; border-radius: 10px; margin-bottom: 5px;}
+.list > li:hover {background-color:#f0f0f0}
 .list .controls {visibility:hidden}
 .list > li:hover .controls {visibility:visible}
 .popup .list > li:last-child {border-bottom:0}
@@ -363,14 +538,14 @@ margin-right: 5px;}
 	font-size:13px;
 	padding:5px 12px;
 	margin:0px 0 0;
-	background-color:#131a20;
+	background-color:#fff;
 }
 
 
 /* Post content (code, quotes, headers) */
 .postBody h4 {margin:1.2em 0 0.8em; font-size:130%;}
 
-blockquote {background: #1b2228; color: #6c8293; margin:0 -1px 1em; padding:5px 7px 1px 36px; position:relative; border-radius: 9px; border: 0px solid #0d419d;}
+blockquote {background: #f0f0f0; color: #6c8293; margin:0 -1px 1em; padding:5px 7px 1px 36px; position:relative; border-radius: 9px; border: 0px solid #0d419d;}
 blockquote cite {display:inline; font-style:normal; font-weight:bold; margin-right:5px}
 blockquote cite a {color:#555}
 blockquote p {margin-bottom:0.5em}
@@ -406,19 +581,19 @@ pre {border:0px dashed #ccc;}
 .colorSwatch {display:inline-block; height:21px; width:21px; border-radius:3px; margin-right:5px; vertical-align:-8px; border:1px solid rgba(0, 0, 0, 0.2)}
 
 
-.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:100%; color:#c9d1d9; background:#12151a; border: 1px solid #30363d}
+.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:100%; color:#101010; background:#f0f0f0; border: 1px solid #30363d}
 
 
 /* Tabs */
-.tabs.big li.selected a { padding:11px 14px; border:1px solid #30363d; color:#c9d1d9; border-radius:3px; background:#131a20;}
-.tabs li.selected a { border:1px solid #30363d; color:#c9d1d9; border-radius:3px; background:#131a20;}
+.tabs.big li.selected a { padding:11px 14px; border:1px solid #30363d; color:#101010; border-radius:3px; background:#fff;}
+.tabs li.selected a { border:1px solid #30363d; color:#101010; border-radius:3px; background:#fff;}
 .tabs.big:focus {outline:1px solid red;}
 
 
 /* Miscellaneous */
 .permissionsGrid .group th {font-weight:300}
 .action .name, .action a, .action strong {font-weight:600}
-.avatar {border-radius:32px; background:#131a20; border:1px solid #30363d;}
+.avatar {border-radius:32px; background:#fff; border:1px solid #30363d;}
 .scrubber {margin:10px 0; padding:0; list-style-type:none;}
 .scrubber li.selected > a {font-weight:600}
 .scrubber > li {border-left:5px solid #03a9f4; margin-bottom:2px;}
@@ -429,13 +604,13 @@ pre {border:0px dashed #ccc;}
 
 /* Layout */
 #hdr-content, #body-content, #ftr-content {margin:0 auto; min-width:920px; max-width:1050px; padding:0 30px}
-#body-content, #ftr-content {background-color:#131a20}
+#body-content, #ftr-content {background-color:#fff}
 #body-content {padding-bottom:40px; padding-top:30px}
 #body {padding-top:48px}
 
 
 /* Popups */
-.popup {text-shadow:none; background:#12151a ; color:#c9d1d9; border:1px solid #30363d; border-radius:2px; z-index:300}
+.popup {text-shadow:none; background:#f0f0f0 ; color:#101010; border:1px solid #30363d; border-radius:2px; z-index:300}
 .popup h3 {margin:0; padding:10px}
 .withArrow.popup:before {border-color:#666}
 .withArrow.popup:after {border-color:#fff}
@@ -448,7 +623,7 @@ pre {border:0px dashed #ccc;}
 /* Popup menus */
 .popupMenu {list-style-type:none; padding:6px 0; margin:0}
 .popupMenu li > a, .popupMenu li > span {display:block; padding:3px 25px 3px 35px; overflow:hidden; white-space:nowrap}
-.popupMenu li > a {color:#c9d1d9}
+.popupMenu li > a {color:#101010}
 .popupMenu li > span {color:#888 !important}
 .popupMenu li > a:hover, ul.popupMenu li.selected > a {text-decoration:none; background:#1e252d; color:#fff !important}
 .popupMenu li > a:hover *, ul.popupMenu li.selected > a * {color:#fff}
@@ -457,7 +632,7 @@ pre {border:0px dashed #ccc;}
 
 /* Popup buttons */
 .popupButton {border:solid transparent; border-width:1px 1px 0}
-.popupWrapper.active .popupButton {border-bottom:0px solid #ccc; position:relative; z-index:301; border-radius:10px 10px 0 0 !important; background:#12151a  !important}
+.popupWrapper.active .popupButton {border-bottom:0px solid #ccc; position:relative; z-index:301; border-radius:10px 10px 0 0 !important; background:#f0f0f0  !important}
 .popupWrapper {display:inline-block}
 
 
@@ -473,7 +648,7 @@ pre {border:0px dashed #ccc;}
 
 
 /* Header */
-#hdr {background:#1b2228; position:fixed; width:100%; z-index:100; padding-top: 5px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);}
+#hdr {background:#f0f0f0; position:fixed; width:100%; z-index:100; padding-top: 5px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);}
 #hdr-inner {padding-right:580px; white-space:nowrap}
 #hdr h1 {display:inline-block; max-width:62%; font-size:20px; padding:10px 0; margin: 0 -30px 0 0; font-weight:300; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
 #hdr h1 img {display:inline; vertical-align:-8px; margin-right:5px; border:0; width:65%}
@@ -495,12 +670,12 @@ pre {border:0px dashed #ccc;}
 
 
 /* Text inputs */
-input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {font-weight:300; background:#12151a; border:1px solid #30363d; color:#c9d1d9; padding: 3px 10px 3px 10px; border-radius:20px; vertical-align:-1px; margin:0; -webkit-appearance:none}
+input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {font-weight:300; background:#f0f0f0; border:1px solid #30363d; color:#101010; padding: 3px 10px 3px 10px; border-radius:20px; vertical-align:-1px; margin:0; -webkit-appearance:none}
 input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=number]:focus, input[type=email]:focus, .input:focus {outline:0px solid #666;}
 
 
 /* Buttons */
-.button {background:#283344; font-weight:600; border:1px solid #30363d; margin-bottom:1px; white-space:nowrap; height:30px; font-size:90%; padding:0 10px 2px; line-height:30px; -webkit-appearance:none}
+.button {background:#f0f0f0; font-weight:600; border:1px solid #30363d; margin-bottom:1px; white-space:nowrap; height:30px; font-size:90%; padding:0 10px 2px; line-height:30px; -webkit-appearance:none}
 .button.big {height:34px; font-size:90%; padding:0 10px 0; line-height:28px}
 .button:hover, .button:active {border-color:#666}
 .button:active {background-color:#666}
@@ -527,27 +702,27 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 .post .previewCheckbox {margin:0 5px; white-space:nowrap}
 
 /* Controls (icons with hover/click effects) */
-[class*=control-] {opacity:0.4; transition:opacity 0.05s linear; width:12px; height:12px; padding:6px; margin:-6px -1px; font-size:14px; text-decoration:none !important; color:#c9d1d9 !important}
+[class*=control-] {opacity:0.4; transition:opacity 0.05s linear; width:12px; height:12px; padding:6px; margin:-6px -1px; font-size:14px; text-decoration:none !important; color:#101010 !important}
 [class*=control-]:hover {opacity:0.7}
 [class*=control-]:active {opacity:1}
 [class*=control-].disabled {opacity: 0.2 !important}
 
 /* "Things" - distinguishable items such as posts, activity items, plugins, and skins. */
-.thing {border:1px solid #30363d; border-radius:8px; border-bottom:1px solid #30363d; color:#c1c1c1; background-color:#131a20; padding:1px; position:relative;}
-.thing:before {border-color:#131a20; border:1px;}
-.thing:after {border-color:#131a20; border:1px;}
+.thing {border:1px solid #30363d; border-radius:8px; border-bottom:1px solid #30363d; color:#414141; background-color:#fff; padding:1px; position:relative;}
+.thing:before {border-color:#fff; border:1px;}
+.thing:after {border-color:#fff; border:1px;}
 
 /* Posts */
 
 .postList, .activityList {list-style-type:none; margin:0; padding:0; position:relative}
-.timeMarker {padding:7px 13px; text-transform:uppercase; font-size:85%; letter-spacing:1px; background:#131a20; color:#c9d1d9; display:inline-block; clear:both; border-radius:3px; margin-bottom:15px}
+.timeMarker {padding:7px 13px; text-transform:uppercase; font-size:85%; letter-spacing:1px; background:#fff; color:#101010; display:inline-block; clear:both; border-radius:3px; margin-bottom:15px}
 
 .post {margin-bottom:20px; padding-left:79px; padding-bottom:2px; position:relative}
 .post div.avatar {float:left; margin-left:-79px}
 
 .highlight .postContent {box-shadow:0 0 0 2px #0d419d}
 
-.postHeader {margin-bottom:2px; padding:10px 10px 10px 15px; overflow:hidden; color:#888; background: #1b2228; border-bottom:1px solid #30363d;}
+.postHeader {margin-bottom:2px; padding:10px 10px 10px 15px; overflow:hidden; color:#888; background: #f0f0f0; border-bottom:1px solid #30363d;}
 .postHeader h3 {display:inline; margin:0}
 .postHeader h3, .postHeader h3 a {color:#000}
 .postHeader .info {display:inline}
@@ -560,11 +735,11 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 .deleted .postHeader {margin:0; padding:6px 5px 6px 12px}
 .deleted .postHeader * {color:#888}
 .deleted .controls {margin-top:1px}
-.deleted .thing {border:1px solid #1b2228; background:#221919;}
+.deleted .thing {border:1px solid #f0f0f0; background:#221919;}
 .deleted .thing:before, .deleted .thing:after {display:none}
 
 
-.postBody   {font-weight: normal; background-color:#131a20;}
+.postBody   {font-weight: normal; background-color:#fff;}
 
 #loginSheet {
     width: 480px !important;

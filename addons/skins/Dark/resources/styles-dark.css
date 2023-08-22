@@ -1,0 +1,564 @@
+/*
+Dark Skin Styles
+This stylesheet contains styles that define Dark-specific fonts, sizes, and colors, and the layout of the
+wrapper (header + footer). Interface-specific styles are included in skins/base/base.css and can be overridden
+here if necessary.
+*/
+
+/* The News Bubble
+------------------------------------------------------------------------------------------------------------------------------- */
+/* Primary color */
+.dark .conversationList .title a,
+.dark.conversationList .unread .title a,
+.dark.action .name, .action a, .action strong,
+.dark.postHeader h3, .postHeader h3 a,
+.dark.button, .dark .button i,.dark .button:hover,
+.dark #hdr-inner > a,.dark #hdr-inner > h1 a,.dark #hdr-inner > ul > li > a,
+.dark #hdr,
+.dark .tabs li.selected a,
+.dark .channelList .channel,
+.dark #conversationTitle a,
+.dark #pluginList > li,
+.dark #skinList > li,
+.dark #languageList > li,
+.dark .memberList strong a,
+.dark .scrubber li.selected > a,
+.dark .scrubber li ul li.selected a,
+.dark a
+{
+	color:#c1c1c1;
+}
+
+.dark .tabs.big li.selected a,
+.dark #hdr .active .popupButton,
+.dark #hdr #notifications.new,
+.dark .button.submit,
+.dark .popupMenu li > a:hover,.dark  ul.popupMenu li.selected > a,.dark  .unreadIndicator
+{
+	background-color:#000;
+}
+
+.dark .sheet.active,
+.dark .popup,
+.dark .popupWrapper.active .popupButton,
+.dark input[type=text]:focus,.dark  input[type=password]:focus,.dark  input[type=number]:focus,.dark  input[type=email]:focus,.dark  textarea:focus,.dark  .input:focus,
+.dark #hdr,
+.dark .withArrow.popup:before,
+.dark .scrubber > li.selected
+{
+	border-color:#999;
+}
+
+
+/* Secondary color (light text) */
+.dark .tabs li > a,
+.dark .channel,
+.dark .list .col-replies,.dark  .list .col-replies a,
+.dark .action,
+.dark .timeMarker,
+.dark .conversationList .excerpt,
+.dark .postHeader .info > span,.dark  .postHeader .info > a,
+.dark #ftr,
+.dark #hdr h1 span,
+.dark .channel
+{
+	color:#aaa;
+}
+
+
+/* Tertiary color (light lines) */
+.dark .channel,
+.dark .list > li,
+.dark .thing,
+.dark .sheet, .sheet h3,.dark  .sheet .section,.dark  .sheet .buttons,
+.dark input[type=text],.dark  input[type=password],.dark  input[type=number],.dark  input[type=email],.dark  textarea,.dark  .input,
+.dark .tabs li.selected a,
+.dark .tabs li a:hover,
+.dark .tabs.big,
+.dark #adminMenu li.separator
+{
+	border-color:#30363d;
+}
+.dark .tabs .pathItem.selected a:before
+{
+	border-left-color:#30363d;
+}
+
+.dark .tabs .pathItem.selected a:after
+{
+	border-left-color:#30363d;
+}
+
+.dark .button
+{
+	background-color:{tertiary}
+}
+
+
+.sel-dark-toggle{color:inherit!important;background-color: inherit;
+border: 0;
+cursor: hand;
+cursor: pointer;}
+
+
+.dark .sel-dark-toggle .i__sun{display:block!important}
+.dark .sel-dark-toggle .i__moon{display:none!important}
+
+
+
+.dark .mode-switch {
+  color: var(--dark-color);
+}
+
+
+.dark .hiddenContent{
+    background: #12151a !important;
+	border: 1px solid #30363d !important;
+	color: #c1c1c1 !important;
+}
+
+.dark .hiddenContent:before{
+	color: #990000 !important;
+}
+
+
+
+/* Notifications button */
+.dark #hdr #notifications {color: rgba(200, 200, 200, 0.3);}
+
+.dark #hdr #notifications.new,.dark #hdr .active .popupButton {background-color:#ff3c3c;}
+.dark #hdr #notifications.new,.dark #hdr .active .popupButton, .dark #hdr .active .popupButton i {color:#fff !important}
+
+.dark .jumpToLast {color:#617177;}
+
+.dark .scrubberMore {
+  background: #1b2228;
+  border: 1px solid #3c3c3c;
+}
+
+.dark .triangle-border {
+  border:1px solid #0d419d;
+  color:#c9d1d9;
+  background:#14243b;
+}
+
+
+/* code */
+.dark .hljs {
+  background: #000 !important;
+  color: #bfa24c !important;
+}
+.dark pre {
+  border: 1px solid #494949 !important;
+}
+
+.dark code {background: #000 !important;
+  color: #b9b9b9 !important;
+  border: 1px solid #494949 !important;
+}
+
+/* Global */
+.dark body {background:#131a20; color:#c9d1d9}
+
+
+
+.dark #hdr .link-newConversation {background-image: linear-gradient(to right, #3ba624 0%, #2c823c 51%, #1a9928 100%);}
+        .dark #hdr .link-newConversation {
+            color: white; 
+          }
+
+.dark #hdr .link-newConversation:hover {
+           color: #fff;
+          }
+
+
+/* Start New Discussion Green Button
+#hdr .link-newConversation {background-color:#23b636; color:#fff; border:0px; }
+#hdr .link-newConversation:hover {background-color:#2ea041; color:#fff; border:0px;}
+*/
+
+/* ScrollToTop */
+.dark .scrollToTop{
+
+color: #d0d1d2;
+background: #1b2228;
+}
+.dark .scrollToTop:hover{
+background-color: darken(fadein(#1b2228, 5%), 5%);
+}
+
+/* Links */
+.dark .link-external a,.dark  .icon-external-link {color:#58a6ff}
+
+/* Signature */
+.dark .signature {
+    border-top:0px solid #eee;
+    color:#c9d1d9;
+	background-color: #131a20;
+}
+
+.dark .signature-no-likes {
+    border-top:0px solid #eee;
+    color:#c9d1d9;
+	background-color: #131a20;
+}
+
+/* Search boxes */
+
+.dark .search .icon-search { color:#a6a4a4;}
+
+.dark .message { background:#364f57; }
+
+/* Generic text styles */
+.dark small,.dark  .subText {color:#999}
+.dark .disabled {color:#999;}
+.dark span.highlight {background:#fdef34;}
+.dark .hasControls .controls {color:#999}
+.dark .help {color:#999; }
+
+
+/* Member List */
+
+.dark .memberList strong a {color:#000}
+
+
+/* Form elements */
+
+.dark input.error,.dark input.error:focus {border-color:#f59e79 !important}
+.dark.form div.error {color:#db3000;}
+
+
+/* Sheets */
+.dark  .sheet {background: #1b2228;}
+.dark .sheet {border:1px solid #d5d5d5; background: #1b2228;}
+.dark .sheet.active {background:#131a20; box-shadow:0 5px 20px rgba(0, 0, 0, 0.2);}
+.dark .sheetOverlay {background:rgba(255, 255, 255, 0.9); }
+
+.dark .scrollShadowTop {box-shadow:0 3px 3px rgba(0, 0, 0, 0.05)}
+.dark .scrollShadowBottom {box-shadow:0 -3px 3px rgba(0, 0, 0, 0.05)}
+
+
+/* Conversation list */
+
+.dark .conversationList .excerpt {color:#aaa; }
+.dark .conversationList .justVisited {border-color:#005d73;}
+
+
+/* The channel breadcrumb tab */
+.dark .tabs .pathItem a:first-child { background:#131a20;}
+.dark .tabs .pathItem.selected a:before,
+.dark  .tabs .pathItem.selected a:after { border-left-color:#d5d5d5}
+.dark .tabs .pathItem.selected a:after { border-left-color:#fff;}
+
+
+.dark .conversationList .col-replies span { color:#aaa;}
+.dark .list .col-replies {color:#aaa; }
+.dark .list .col-replies i {color:#aaa; }
+
+.dark .list .col-views {color:#aaa; }
+.dark .list .col-views i {color:#aaa;}
+.dark .list .col-replies span i {color:#aaa;}
+
+
+/* In the TOPIC itself*/
+.dark .conversationViews {color:#aaa;}
+
+
+
+
+/* Unread indicators */
+.dark .unreadIndicator {color: #fff;
+background-color: #FD4C4C;
+}
+
+.dark .notificationsList li.unread {
+  background-color: #213a46;
+}
+
+/* Channel list */
+.dark .channelList {background:#131a20}
+.dark .channelList > li { background:#131a20}
+.dark .channelList .description { color:#888;}
+.dark .channelList .stats {color:#888}
+.dark .channelList .unsubscribed {background:#07111a}
+.dark .channelList .unsubscribed .description {color:#bbb}
+
+
+/* Generic lists */
+.dark .list { border-bottom:0px solid #131a20; }
+.dark .list > li {border:1px solid #373737; background-color:#131a20;}
+.dark .list > li:hover {background-color:#1b2228}
+
+
+
+/* Likes */
+.dark .likes {
+	border-top:0px solid #eee;
+	background-color:#131a20;
+}
+
+
+/* Post content (code, quotes, headers) */
+
+.dark blockquote {background: #1b2228; color: #6c8293; border: 0px solid #0d419d;}
+.dark blockquote cite a {color:#555}
+.dark blockquote.collapsed:after { background:rgba(0, 0, 0, 0.1)}
+.dark blockquote a.expand { background:#ddd;  color:#888; }
+.dark blockquote a.expand:active {background:#ccc}
+
+.dark pre {border:0px dashed #ccc;}
+
+/* Posts */
+
+.dark .replyPlaceholder .postHeader h3 { color:#999}
+.dark .postBody a { color:#03a9f4}
+.dark .postBody img { border: 1px solid #484848;}
+
+.dark .button.submit {background-color:#23b636; color:#fff; }
+.dark .button.submit:hover {background-color:#2ea041; color:#fff;}
+
+/* Structured forms */
+
+.dark .form > li.sep {border-top:0px solid #32353c; border-bottom:1px solid #32353c;}
+
+.dark .colorSwatch { border:1px solid rgba(0, 0, 0, 0.2)}
+
+
+.dark .form input[type=text],.dark  .form input[type=password],.dark  .form input[type=number],.dark  .form input[type=email],.dark  .form select,.dark  .form textarea,.dark  .form .input { color:#c9d1d9; background:#12151a; border: 1px solid #30363d}
+
+
+/* Tabs */
+.dark .tabs.big li.selected a { padding:11px 14px; border:1px solid #30363d; color:#c9d1d9; border-radius:3px; background:#131a20;}
+.dark .tabs li.selected a { border:1px solid #30363d; color:#c9d1d9; border-radius:3px; background:#131a20;}
+.dark .tabs.big:focus {outline:1px solid red;}
+
+
+/* Miscellaneous */
+.dark .avatar {border-radius:32px; background:#131a20; border:1px solid #30363d;}
+.dark .scrubber > li {border-left:0px solid #999; }
+.dark .scrubber > li:hover {border-left-color:#999;}
+.dark .scrubber > li i {color:#a6a4a4; }
+.dark .scrubber > li:hover i {color:#bbb}
+
+
+/* Layout */
+.dark #body-content, .dark #ftr-content {background-color:#131a20}
+
+
+
+/* Popups */
+.dark .popup { background:#12151a ; color:#c9d1d9; border:1px solid #30363d;}
+
+.dark .withArrow.popup:before {border-color:#666}
+.dark .withArrow.popup:after {border-color:#fff}
+
+
+/* Popup menus */
+
+.dark .popupMenu li > a {color:#c9d1d9}
+.dark .popupMenu li > span {color:#888 !important}
+.dark .popupMenu li > a:hover,.dark  ul.popupMenu li.selected > a { background:#1e252d; color:#fff !important}
+.dark .popupMenu li > a:hover *,.dark  ul.popupMenu li.selected > a * {color:#fff}
+.dark .popupMenu li.sep {border-top:0px solid #ccc;}
+
+/* Popup buttons */
+.dark .popupWrapper.active .popupButton {border-bottom:0px solid #ccc; background:#12151a  !important}
+
+
+/* Tooltips */
+.dark .tooltip {color:#fff; background:#111; background:rgba(0, 0, 0, 0.9); }
+.dark .withArrow.tooltip:after {border-color:rgba(0, 0, 0, 0.9)}
+
+
+
+/* Header */
+ .dark #hdr {background:#1b2228; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);}
+
+
+/* Text inputs */
+.dark input[type=text],.dark  input[type=password],.dark  input[type=number],.dark  input[type=email],.dark  textarea,.dark  .input {background:#12151a; border:1px solid #30363d; color:#c9d1d9;}
+.dark input[type=text]:focus,.dark  input[type=password]:focus,.dark  textarea:focus,.dark  input[type=number]:focus,.dark  input[type=email]:focus,.dark  .input:focus {outline:0px solid #666;}
+
+
+/* Buttons */
+.dark .button {background:#283344; border:1px solid #30363d; }
+.dark .button:hover,.dark .button:active {border-color:#666}
+.dark .button:active {background-color:#666}
+
+/***************************************/
+/* Overrides of base.css (uabclst)     */
+/***************************************/
+
+/* Edit post */
+.dark .post .postBody textarea { border-top:0px solid #000; border-bottom:1px solid #30363d;}
+
+
+/* Controls (icons with hover/click effects) */
+.dark [class*=control-] {color:#c9d1d9 !important}
+
+
+/* "Things" - distinguishable items such as posts, activity items, plugins, and skins. */
+.dark .thing {border:1px solid #30363d;  border-bottom:1px solid #30363d; color:#c1c1c1; background-color:#131a20; }
+.dark .thing:before {border-color:#131a20;}
+.dark .thing:after {border-color:#131a20; }
+
+/* Posts */
+
+.dark .timeMarker { background:#131a20; color:#c9d1d9; }
+
+.dark .highlight .postContent {box-shadow:0 0 0 2px #0d419d}
+
+.dark .postHeader { color:#888; background: #1b2228; border-bottom:1px solid #30363d;}
+
+.dark  .postHeader h3 a {color:#999}
+.dark .postHeader .info > span,.dark  .postHeader .info > a { color:#888}
+
+
+
+.dark .deleted .postHeader * {color:#888}
+.dark .deleted .thing {border:1px solid #1b2228; background:#221919;}
+
+
+.dark .postBody   {background-color:#131a20;}
+
+.dark #loginSheet {
+    width: 480px !important;
+}
+
+
+/******************************************/
+/*          Channels are colored          */
+/******************************************/
+
+.channel.channel-1 {
+	 
+  background:transparent;
+  border-color: #3572a5 !important;
+  color: #3572a5 !important;
+}
+
+.tabs li a.channel-1:hover {
+	background:transparent;
+    border-color: #3572a5 !important;
+    color: #3572a5 !important;
+}
+
+
+.channel.channel-3 {
+	background:transparent;
+  border-color: #8e0 !important;
+  color: #8e0 !important;
+}
+
+.tabs li a.channel-3:hover {
+	background:transparent;
+    border-color: #8e0 !important;
+    color: #8e0 !important;
+}
+
+.channel.channel-4 {
+	background:transparent;
+  border-color: #B59E8C !important;
+  color: #B59E8C !important;
+}
+
+.tabs li a.channel-4:hover {
+	background:transparent;
+    border-color: #B59E8C !important;
+    color: #B59E8C !important;
+}
+
+.channel.channel-5 {
+	background:transparent;
+  border-color: #4b93d1 !important;
+  color: #4b93d1 !important;
+}
+
+.tabs li a.channel-5:hover {
+	background:transparent;
+    border-color: #4b93d1 !important;
+    color: #4b93d1 !important;
+}
+
+.channel.channel-6 {
+	background:transparent;
+  border-color: #9354ca !important;
+  color: #9354ca !important;
+}
+
+.tabs li a.channel-6:hover {
+	background:transparent;
+    border-color: #9354ca !important;
+    color: #9354ca !important;
+}
+
+.channel.channel-7 {
+	background:transparent;
+  border-color: #ef564f !important;
+  color: #ef564f !important;
+}
+
+.tabs li a.channel-7:hover {
+	background:transparent;
+    border-color: #ef564f !important;
+    color: #ef564f !important;
+}
+
+.channel.channel-8 {
+	background:transparent;
+  border-color: #FF8C00 !important;
+  color: #FF8C00 !important;
+}
+
+.tabs li a.channel-8:hover {
+	background:transparent;
+    border-color: #FF8C00 !important;
+    color: #FF8C00 !important;
+}
+
+.channel.channel-9 {
+	background:transparent;
+  border-color: #3A935D !important;
+  color: #3A935D !important;
+}
+.tabs li a.channel-9:hover {
+	background:transparent;
+    border-color: #3A935D !important;
+    color: #3A935D !important;
+}
+
+.channel.channel-10 {
+	background:transparent;
+  border-color: #00a8a8 !important;
+  color: #00a8a8 !important;
+}
+
+.tabs li a.channel-10:hover {
+	background:transparent;
+    border-color: #00a8a8 !important;
+    color: #00a8a8 !important;
+}
+
+.channel.channel-11 {
+	background:transparent;
+  border-color: #FF1493 !important;
+  color: #FF1493 !important;
+}
+
+.tabs li a.channel-11:hover {
+	background:transparent;
+    border-color: #FF1493 !important;
+    color: #FF1493 !important;
+}
+
+.channel.channel-12 {
+	background:transparent;
+  border-color: #227093 !important;
+  color: #227093 !important;
+}
+
+.tabs li a.channel-12:hover {
+	background:transparent;
+    border-color: #227093 !important;
+    color: #227093 !important;
+}
