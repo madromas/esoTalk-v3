@@ -13,19 +13,12 @@ abstract class ETPlugin extends ETPluggable {
 
 
 /**
- * The path to the directory, from the esoTalk root, which this plugin resides in.
- * @var string
- */
-protected $path;
-
-
-/**
  * Class constructor, which sets up the plugin so it knows which folder it's in.
  *
  * @param string $path The path to the directory, from the esoTalk root, which this plugin resides in.
  * @return void
  */
-public function __construct($path)
+public function __construct(protected $path)
 {
 	$this->path = $path;
 }
