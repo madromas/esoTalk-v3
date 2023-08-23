@@ -9,10 +9,10 @@ here if necessary.
 ------------------------------------------------------------------------------------------------------------------------------- */
 /* Primary color */
 .dark .conversationList .title a,
-.dark.conversationList .unread .title a,
-.dark.action .name, .action a, .action strong,
-.dark.postHeader h3, .postHeader h3 a,
-.dark.button, .dark .button i,.dark .button:hover,
+.dark .conversationList .unread .title a,
+.dark .action .name, .action a, .action strong,
+.dark .postHeader h3, .postHeader h3 a,
+.dark .button, .dark .button i,.dark .button:hover,
 .dark #hdr-inner > a,.dark #hdr-inner > h1 a,.dark #hdr-inner > ul > li > a,
 .dark #hdr,
 .dark .tabs li.selected a,
@@ -196,13 +196,13 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 /* Signature */
 .dark .signature {
     border-top:0px solid #eee;
-    color:#c9d1d9;
+    color:#757575;
 	background-color: #131a20;
 }
 
 .dark .signature-no-likes {
     border-top:0px solid #eee;
-    color:#c9d1d9;
+    color:#757575;
 	background-color: #131a20;
 }
 
@@ -233,7 +233,7 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 
 /* Sheets */
 .dark  .sheet {background: #1b2228;}
-.dark .sheet {border:1px solid #d5d5d5; background: #1b2228;}
+.dark .sheet {border:1px solid #484848; background: #1b2228;}
 .dark .sheet.active {background:#131a20; box-shadow:0 5px 20px rgba(0, 0, 0, 0.2);}
 .dark .sheetOverlay {background:rgba(255, 255, 255, 0.9); }
 
@@ -247,11 +247,26 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 .dark .conversationList .justVisited {border-color:#005d73;}
 
 
+
+
+
+
+
+
+
+
+
+
 /* The channel breadcrumb tab */
-.dark .tabs .pathItem a:first-child { background:#131a20;}
-.dark .tabs .pathItem.selected a:before,
-.dark  .tabs .pathItem.selected a:after { border-left-color:#d5d5d5}
-.dark .tabs .pathItem.selected a:after { border-left-color:#fff;}
+.dark .tabs .pathItem {margin-right:20px;}
+.dark .tabs .pathItem a {position:relative; float:left; padding-left:20px; margin-left:1px !important}
+.dark .tabs .pathItem.selected a {border-radius:0}
+.dark .tabs .pathItem a:first-child { padding-left:7px; border-radius:3px 0 0 3px; background:#131a20;}
+.dark .tabs .pathItem.selected a:before,.dark  .tabs .pathItem.selected a:after {z-index:1; content:" "; border:13px solid transparent; height:0; width:0; right:-27px; top:-1px; position:absolute; border-left-color:#282f35}
+.dark .tabs .pathItem.selected a:after {float:left; border-left-color:#282f35; right:-24px; border-width:12px; top:0}
+.dark .tabs .pathEnd.selected a:last-child {border-radius:0 3px 3px 0}
+.dark .tabs .pathEnd.selected a:only-child {border-radius:3px}
+.dark .tabs .pathEnd.selected a:last-child:before,.dark .tabs .pathEnd.selected a:last-child:after {display:none}
 
 
 .dark .conversationList .col-replies span { color:#aaa;}

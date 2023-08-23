@@ -444,9 +444,9 @@ p, ul, pre {line-height:1.5em}
 .tabs .pathItem {margin-right:20px;}
 .tabs .pathItem a {position:relative; float:left; padding-left:20px; margin-left:1px !important}
 .tabs .pathItem.selected a {border-radius:0}
-.tabs .pathItem a:first-child {padding-left:7px; border-radius:3px 0 0 3px; background:#fff;}
-.tabs .pathItem.selected a:before, .tabs .pathItem.selected a:after {z-index:1; content:" "; border:13px solid transparent; height:0; width:0; right:-27px; top:-1px; position:absolute; border-left-color:#d5d5d5}
-.tabs .pathItem.selected a:after {float:left; border-left-color:#fff; right:-24px; border-width:12px; top:0}
+.tabs .pathItem a:first-child {padding-left:7px; border-radius:3px 0 0 3px; background:#ffffff;}
+.tabs .pathItem.selected a:before, .tabs .pathItem.selected a:after {z-index:1; content:" "; border:13px solid transparent; height:0; width:0; right:-27px; top:-1px; position:absolute; border-left-color:#63686d}
+.tabs .pathItem.selected a:after {float:left; border-left-color:#63686d; right:-24px; border-width:12px; top:0}
 .tabs .pathEnd.selected a:last-child {border-radius:0 3px 3px 0}
 .tabs .pathEnd.selected a:only-child {border-radius:3px}
 .tabs .pathEnd.selected a:last-child:before, .tabs .pathEnd.selected a:last-child:after {display:none}
