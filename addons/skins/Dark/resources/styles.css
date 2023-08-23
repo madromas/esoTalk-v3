@@ -200,7 +200,7 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
 #hdr .popupButton:hover {text-decoration:none}
 #hdr #notifications {color: rgba(200, 200, 200, 0.3);}
 
-#hdr .button {border-radius:50px; font-size:100%; padding:8px 10px; margin:-7px 0}
+#hdr .button {border-radius:50px; font-size:100%; padding:8px 10px; margin:-7px 0; box-shadow: 0 2px 6px rgba(176, 176, 176, 0.35);}
 
 #hdr #notifications.new, #hdr .active .popupButton {background-color:#ff3c3c;}
 #hdr #notifications.new, #hdr .active .popupButton, #hdr .active .popupButton i {color:#fff !important}
@@ -522,7 +522,7 @@ margin-right: 5px;}
 
 /* Generic lists */
 .list {margin:0; border-bottom:0px solid #fff; line-height:1.5em; padding:5px; list-style-type:none}
-.list > li {border:0px solid #b3b3b3; background-color:#fff; border-radius: 10px; margin-bottom: 5px;}
+.list > li {border:0px solid #b3b3b3; background-color:#fff; border-radius: 10px; margin-bottom: 5px; box-shadow: 0 2px 6px rgba(176, 176, 176, 0.35);}
 .list > li:hover {background-color:#f5fcff}
 .list .controls {visibility:hidden}
 .list > li:hover .controls {visibility:visible}
@@ -648,7 +648,7 @@ pre {border:0px dashed #ccc;}
 
 
 /* Header */
-#hdr {background:#d9f5ff; position:fixed; width:100%; z-index:100; padding-top: 5px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);}
+#hdr {background:#d9f5ff; position:fixed; width:100%; z-index:100; padding-top: 5px; box-shadow: 0 2px 6px rgba(172, 172, 172, 0.35);}
 #hdr-inner {padding-right:580px; white-space:nowrap}
 #hdr h1 {display:inline-block; max-width:62%; font-size:20px; padding:10px 0; margin: 0 -30px 0 0; font-weight:400; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
 #hdr h1 img {display:inline; vertical-align:-8px; margin-right:5px; border:0; width:65%}
@@ -675,7 +675,7 @@ input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=n
 
 
 /* Buttons */
-.button {background:#fff; font-weight:600; border:0px solid #30363d; margin-bottom:1px; white-space:nowrap; height:30px; font-size:90%; padding:0 10px 2px; line-height:30px; -webkit-appearance:none}
+.button {background:#fff; font-weight:600; border:0px solid #30363d; margin-bottom:1px; white-space:nowrap; height:30px; font-size:90%; padding:0 10px 2px; line-height:30px; -webkit-appearance:none; box-shadow: 0 2px 6px rgba(176, 176, 176, 0.35);}
 .button.big {height:34px; font-size:90%; padding:0 10px 0; line-height:28px}
 .button:hover, .button:active {box-shadow:#666}
 .button:active {background-color:#f5fcff}
@@ -708,7 +708,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 [class*=control-].disabled {opacity: 0.2 !important}
 
 /* "Things" - distinguishable items such as posts, activity items, plugins, and skins. */
-.thing {border:0px solid #30363d; border-radius:8px; color:#414141; background-color:#fff; padding:1px; position:relative;}
+.thing {border:0px solid #30363d; border-radius:8px; color:#414141; background-color:#fff; padding:1px; position:relative;box-shadow: 0 2px 6px rgba(176, 176, 176, 0.35);}
 .thing:before {border-color:#fff; border:1px;}
 .thing:after {border-color:#fff; border:1px;}
 
