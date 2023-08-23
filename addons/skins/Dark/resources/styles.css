@@ -708,7 +708,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 [class*=control-].disabled {opacity: 0.2 !important}
 
 /* "Things" - distinguishable items such as posts, activity items, plugins, and skins. */
-.thing {border:1px solid #30363d; border-radius:8px; border-bottom:1px solid #30363d; color:#414141; background-color:#fff; padding:1px; position:relative;}
+.thing {border:0px solid #30363d; border-radius:8px; color:#414141; background-color:#fff; padding:1px; position:relative;}
 .thing:before {border-color:#fff; border:1px;}
 .thing:after {border-color:#fff; border:1px;}
 
@@ -722,7 +722,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 
 .highlight .postContent {box-shadow:0 0 0 2px #0d419d}
 
-.postHeader {margin-bottom:2px; padding:10px 10px 10px 15px; overflow:hidden; color:#888; background: #f5fcff; border-bottom:1px solid #30363d;}
+.postHeader {margin-bottom:2px; padding:10px 10px 10px 15px; overflow:hidden; color:#888; background: #f5fcff; border-bottom:0px solid #30363d;}
 .postHeader h3 {display:inline; margin:0}
 .postHeader h3, .postHeader h3 a {color:#000}
 .postHeader .info {display:inline}
