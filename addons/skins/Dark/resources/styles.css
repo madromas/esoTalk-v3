@@ -200,7 +200,7 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
 #hdr .popupButton:hover {text-decoration:none}
 #hdr #notifications {color: rgba(200, 200, 200, 0.3);}
 
-#hdr .button {border-radius:50px; font-size:100%; padding:6px 10px; margin:-7px 0}
+#hdr .button {border-radius:50px; font-size:100%; padding:8px 10px; margin:-7px 0}
 
 #hdr #notifications.new, #hdr .active .popupButton {background-color:#ff3c3c;}
 #hdr #notifications.new, #hdr .active .popupButton, #hdr .active .popupButton i {color:#fff !important}
@@ -219,8 +219,8 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
   padding:10px;
   margin: 10px 10px 15px 10px;
   border:1px solid #0d419d;
-  color:#101010;
-  background:#14243b;
+  color: #fff;
+background: #4d7ec4;
   /* css3 */
   -webkit-border-radius:10px;
   -moz-border-radius:10px;
@@ -302,7 +302,7 @@ text-align: center;
 cursor: pointer;
 border-radius: 30px;
 padding: 6px 0;
-color: #d0d1d2;
+color: #2a2c2d;
 background: #d9f5ff;
 opacity: 0.7;
 border: 0;
@@ -406,8 +406,8 @@ p, ul, pre {line-height:1.5em}
 
 
 /* Sheets */
-.sheet {background: #d9f5ff;}
-.sheet {margin:30px auto; width:600px; padding:1px; border:1px solid #d5d5d5; background: #d9f5ff;}
+
+.sheet {margin:30px auto; width:600px; padding:1px; border:1px solid #d5d5d5; background: #f5fcff;}
 .sheet.active {background:#fff; border-radius:3px; box-shadow:0 5px 20px rgba(0, 0, 0, 0.2); top:80px; margin:0; z-index:200}
 .sheetOverlay {background:rgba(255, 255, 255, 0.9); z-index:150; position:fixed; top:0; left:0; bottom:0; right:0}
 
@@ -581,7 +581,7 @@ pre {border:0px dashed #ccc;}
 .colorSwatch {display:inline-block; height:21px; width:21px; border-radius:3px; margin-right:5px; vertical-align:-8px; border:1px solid rgba(0, 0, 0, 0.2)}
 
 
-.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:100%; color:#101010; background:#d9f5ff; border: 1px solid #30363d}
+.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:100%; color:#101010; background:#fff; border: 1px solid #30363d}
 
 
 /* Tabs */
@@ -610,7 +610,7 @@ pre {border:0px dashed #ccc;}
 
 
 /* Popups */
-.popup {text-shadow:none; background:#d9f5ff ; color:#101010; border:1px solid #30363d; border-radius:2px; z-index:300}
+.popup {text-shadow:none; background:#fff ; color:#101010; border:1px solid #30363d; border-radius:2px; z-index:300}
 .popup h3 {margin:0; padding:10px}
 .withArrow.popup:before {border-color:#666}
 .withArrow.popup:after {border-color:#fff}
@@ -625,8 +625,8 @@ pre {border:0px dashed #ccc;}
 .popupMenu li > a, .popupMenu li > span {display:block; padding:3px 25px 3px 35px; overflow:hidden; white-space:nowrap}
 .popupMenu li > a {color:#101010}
 .popupMenu li > span {color:#888 !important}
-.popupMenu li > a:hover, ul.popupMenu li.selected > a {text-decoration:none; background:#1e252d; color:#fff !important}
-.popupMenu li > a:hover *, ul.popupMenu li.selected > a * {color:#fff}
+.popupMenu li > a:hover, ul.popupMenu li.selected > a {text-decoration:none; background:#fff; color:#888 !important}
+.popupMenu li > a:hover *, ul.popupMenu li.selected > a * {color:#888}
 .popupMenu li.sep {border-top:0px solid #ccc; margin:5px}
 .popupMenu li > a i, .popupMenu li > span i {margin-left:-23px; float:left; width:15px; text-align:right; line-height:20px; font-size:14px}
 
@@ -650,13 +650,13 @@ pre {border:0px dashed #ccc;}
 /* Header */
 #hdr {background:#d9f5ff; position:fixed; width:100%; z-index:100; padding-top: 5px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);}
 #hdr-inner {padding-right:580px; white-space:nowrap}
-#hdr h1 {display:inline-block; max-width:62%; font-size:20px; padding:10px 0; margin: 0 -30px 0 0; font-weight:300; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+#hdr h1 {display:inline-block; max-width:62%; font-size:20px; padding:10px 0; margin: 0 -30px 0 0; font-weight:400; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
 #hdr h1 img {display:inline; vertical-align:-8px; margin-right:5px; border:0; width:65%}
 #hdr h1 span {margin-left:10px}
 #backButton {float:left; margin-right:10px; margin-left:-30px; font-size:20px; line-height:20px; margin-top:17px; text-decoration:none}
 
 #mainMenu {margin-left:30px; display:inline; padding:18px 0}
-#userMenu {float:right; padding:18px 0; margin-right:-580px; margin-left:-18px;}
+#userMenu {float:right; padding:15px 0; margin-right:-580px; margin-left:-18px;}
 #userMenu .item-user {font-weight:600}
 #userMenu .item-user .avatar {vertical-align:middle; margin:-5px 8px -2px -5px}
 #userMenu.menu > li {margin-left:18px; text-align:left}
@@ -735,7 +735,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 .deleted .postHeader {margin:0; padding:6px 5px 6px 12px}
 .deleted .postHeader * {color:#888}
 .deleted .controls {margin-top:1px}
-.deleted .thing {border:1px solid #d9f5ff; background:#221919;}
+.deleted .thing {border:1px solid #d9f5ff;}
 .deleted .thing:before, .deleted .thing:after {display:none}
 
 
