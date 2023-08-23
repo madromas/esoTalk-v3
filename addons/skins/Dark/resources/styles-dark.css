@@ -10,8 +10,8 @@ here if necessary.
 /* Primary color */
 .dark .conversationList .title a,
 .dark .conversationList .unread .title a,
-.dark .action .name, .action a, .action strong,
-.dark .postHeader h3, .postHeader h3 a,
+.dark .action .name,.dark .action a,.dark .action strong,
+.dark .postHeader h3,.dark .postHeader h3 a,
 .dark .button, .dark .button i,.dark .button:hover,
 .dark #hdr-inner > a,.dark #hdr-inner > h1 a,.dark #hdr-inner > ul > li > a,
 .dark #hdr,

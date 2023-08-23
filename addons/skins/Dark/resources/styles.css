@@ -26,7 +26,7 @@ here if necessary.
 .scrubber li ul li.selected a,
 a
 {
-	color:#555;
+	color:#454545;
 }
 
 .tabs.big li.selected a,
@@ -62,7 +62,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=number]:focus, in
 #hdr h1 span,
 .channel
 {
-	color:#666;
+	color:#3c3c3c;
 }
 
 
@@ -184,7 +184,7 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
 
 
 .hiddenContent{
-    background: #f0f0f0 !important;
+    background: #d9f5ff !important;
 	border: 1px solid #30363d !important;
 	color: #414141 !important;
 }
@@ -210,7 +210,7 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
 
 .scrubberMore {
   text-align: center;
-  background: #f0f0f0;
+  background: #d9f5ff;
   border: 1px solid #3c3c3c;
 }
 
@@ -258,7 +258,7 @@ code {background: #000 !important;
   border-radius: 10px; }
 
 /* Global */
-body {font-size:14px; font-weight:normal; margin:0; overflow-y:scroll; background:#fff; color:#000}
+body {font-size:14px; font-weight:normal; margin:0; overflow-y:scroll; background:#f2f2f2; color:#000}
 body, input, textarea, select {font-family: poppins,sans-serif;}
 input, textarea, select {font-size:100%; max-width: 100%;}
 strong {font-weight:600; padding-left:10px;}
@@ -303,7 +303,7 @@ cursor: pointer;
 border-radius: 30px;
 padding: 6px 0;
 color: #d0d1d2;
-background: #f0f0f0;
+background: #d9f5ff;
 opacity: 0.7;
 border: 0;
 font-weight: 900;
@@ -314,7 +314,7 @@ font-weight: 900;
 }
 .scrollToTop:hover{
     text-decoration:none;
-background-color: darken(fadein(#f0f0f0, 5%), 5%);
+background-color: darken(fadein(#d9f5ff, 5%), 5%);
 }
 
 /* Links */
@@ -406,8 +406,8 @@ p, ul, pre {line-height:1.5em}
 
 
 /* Sheets */
-.sheet {background: #f0f0f0;}
-.sheet {margin:30px auto; width:600px; padding:1px; border:1px solid #d5d5d5; background: #f0f0f0;}
+.sheet {background: #d9f5ff;}
+.sheet {margin:30px auto; width:600px; padding:1px; border:1px solid #d5d5d5; background: #d9f5ff;}
 .sheet.active {background:#fff; border-radius:3px; box-shadow:0 5px 20px rgba(0, 0, 0, 0.2); top:80px; margin:0; z-index:200}
 .sheetOverlay {background:rgba(255, 255, 255, 0.9); z-index:150; position:fixed; top:0; left:0; bottom:0; right:0}
 
@@ -522,8 +522,8 @@ margin-right: 5px;}
 
 /* Generic lists */
 .list {margin:0; border-bottom:0px solid #fff; line-height:1.5em; padding:5px; list-style-type:none}
-.list > li {border:1px solid #b3b3b3; background-color:#fff; border-radius: 10px; margin-bottom: 5px;}
-.list > li:hover {background-color:#f0f0f0}
+.list > li {border:0px solid #b3b3b3; background-color:#fff; border-radius: 10px; margin-bottom: 5px;}
+.list > li:hover {background-color:#f5fcff}
 .list .controls {visibility:hidden}
 .list > li:hover .controls {visibility:visible}
 .popup .list > li:last-child {border-bottom:0}
@@ -545,7 +545,7 @@ margin-right: 5px;}
 /* Post content (code, quotes, headers) */
 .postBody h4 {margin:1.2em 0 0.8em; font-size:130%;}
 
-blockquote {background: #f0f0f0; color: #6c8293; margin:0 -1px 1em; padding:5px 7px 1px 36px; position:relative; border-radius: 9px; border: 0px solid #0d419d;}
+blockquote {background: #d9f5ff; color: #6c8293; margin:0 -1px 1em; padding:5px 7px 1px 36px; position:relative; border-radius: 9px; border: 0px solid #0d419d;}
 blockquote cite {display:inline; font-style:normal; font-weight:bold; margin-right:5px}
 blockquote cite a {color:#555}
 blockquote p {margin-bottom:0.5em}
@@ -581,7 +581,7 @@ pre {border:0px dashed #ccc;}
 .colorSwatch {display:inline-block; height:21px; width:21px; border-radius:3px; margin-right:5px; vertical-align:-8px; border:1px solid rgba(0, 0, 0, 0.2)}
 
 
-.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:100%; color:#101010; background:#f0f0f0; border: 1px solid #30363d}
+.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:100%; color:#101010; background:#d9f5ff; border: 1px solid #30363d}
 
 
 /* Tabs */
@@ -604,13 +604,13 @@ pre {border:0px dashed #ccc;}
 
 /* Layout */
 #hdr-content, #body-content, #ftr-content {margin:0 auto; min-width:920px; max-width:1050px; padding:0 30px}
-#body-content, #ftr-content {background-color:#fff}
+#body-content, #ftr-content {background-color:#f2f2f2}
 #body-content {padding-bottom:40px; padding-top:30px}
 #body {padding-top:48px}
 
 
 /* Popups */
-.popup {text-shadow:none; background:#f0f0f0 ; color:#101010; border:1px solid #30363d; border-radius:2px; z-index:300}
+.popup {text-shadow:none; background:#d9f5ff ; color:#101010; border:1px solid #30363d; border-radius:2px; z-index:300}
 .popup h3 {margin:0; padding:10px}
 .withArrow.popup:before {border-color:#666}
 .withArrow.popup:after {border-color:#fff}
@@ -631,8 +631,8 @@ pre {border:0px dashed #ccc;}
 .popupMenu li > a i, .popupMenu li > span i {margin-left:-23px; float:left; width:15px; text-align:right; line-height:20px; font-size:14px}
 
 /* Popup buttons */
-.popupButton {border:solid transparent; border-width:1px 1px 0}
-.popupWrapper.active .popupButton {border-bottom:0px solid #ccc; position:relative; z-index:301; border-radius:10px 10px 0 0 !important; background:#f0f0f0  !important}
+.popupButton {border:solid transparent; border-width:0px 0px 0}
+.popupWrapper.active .popupButton {border-bottom:0px solid #ccc; position:relative; z-index:301; border-radius:10px 10px 0 0 !important; background:#fff  !important}
 .popupWrapper {display:inline-block}
 
 
@@ -648,7 +648,7 @@ pre {border:0px dashed #ccc;}
 
 
 /* Header */
-#hdr {background:#f0f0f0; position:fixed; width:100%; z-index:100; padding-top: 5px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);}
+#hdr {background:#d9f5ff; position:fixed; width:100%; z-index:100; padding-top: 5px; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);}
 #hdr-inner {padding-right:580px; white-space:nowrap}
 #hdr h1 {display:inline-block; max-width:62%; font-size:20px; padding:10px 0; margin: 0 -30px 0 0; font-weight:300; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
 #hdr h1 img {display:inline; vertical-align:-8px; margin-right:5px; border:0; width:65%}
@@ -670,15 +670,15 @@ pre {border:0px dashed #ccc;}
 
 
 /* Text inputs */
-input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {font-weight:300; background:#f0f0f0; border:1px solid #30363d; color:#101010; padding: 3px 10px 3px 10px; border-radius:20px; vertical-align:-1px; margin:0; -webkit-appearance:none}
+input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {font-weight:300; background:#fff; border:0px solid #30363d; color:#101010; padding: 3px 10px 3px 10px; border-radius:20px; vertical-align:-1px; margin:0; -webkit-appearance:none}
 input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=number]:focus, input[type=email]:focus, .input:focus {outline:0px solid #666;}
 
 
 /* Buttons */
-.button {background:#f0f0f0; font-weight:600; border:1px solid #30363d; margin-bottom:1px; white-space:nowrap; height:30px; font-size:90%; padding:0 10px 2px; line-height:30px; -webkit-appearance:none}
+.button {background:#fff; font-weight:600; border:0px solid #30363d; margin-bottom:1px; white-space:nowrap; height:30px; font-size:90%; padding:0 10px 2px; line-height:30px; -webkit-appearance:none}
 .button.big {height:34px; font-size:90%; padding:0 10px 0; line-height:28px}
-.button:hover, .button:active {border-color:#666}
-.button:active {background-color:#666}
+.button:hover, .button:active {box-shadow:#666}
+.button:active {background-color:#f5fcff}
 .button.disabled {opacity:0.25; cursor:Dark; border-color:transparent !important}
 
 a.button {padding:8px 10px; height:auto; line-height:1em; display:inline-block}
@@ -722,7 +722,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 
 .highlight .postContent {box-shadow:0 0 0 2px #0d419d}
 
-.postHeader {margin-bottom:2px; padding:10px 10px 10px 15px; overflow:hidden; color:#888; background: #f0f0f0; border-bottom:1px solid #30363d;}
+.postHeader {margin-bottom:2px; padding:10px 10px 10px 15px; overflow:hidden; color:#888; background: #f5fcff; border-bottom:1px solid #30363d;}
 .postHeader h3 {display:inline; margin:0}
 .postHeader h3, .postHeader h3 a {color:#000}
 .postHeader .info {display:inline}
@@ -735,7 +735,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 .deleted .postHeader {margin:0; padding:6px 5px 6px 12px}
 .deleted .postHeader * {color:#888}
 .deleted .controls {margin-top:1px}
-.deleted .thing {border:1px solid #f0f0f0; background:#221919;}
+.deleted .thing {border:1px solid #d9f5ff; background:#221919;}
 .deleted .thing:before, .deleted .thing:after {display:none}
 
 
