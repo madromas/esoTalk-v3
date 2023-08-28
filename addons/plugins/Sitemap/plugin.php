@@ -81,7 +81,7 @@ public function action_create()
          }
      }
 
-		$sitemap->createSitemapIndex("https://hub.madway.net", 'now');
+		$sitemap->createSitemapIndex("/", 'now');
 	}
 
 	public function settings($sender)
