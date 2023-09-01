@@ -179,7 +179,8 @@ classes.add(cl);
 <div id='ftr'>
 <div id='ftr-content'>
 <ul class='menu'>
-<?php echo $data["metaMenuItems"]; ?>
+
+<?php if (!empty($data["metaMenuItems"])) echo $data["metaMenuItems"]; ?>
 <?php if (!empty($data["statisticsMenuItems"])) echo $data["statisticsMenuItems"]; ?>
 </ul>
 </div>

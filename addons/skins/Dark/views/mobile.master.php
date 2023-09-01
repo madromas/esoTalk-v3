@@ -77,7 +77,7 @@ $(function(){ //on document ready
 <li><a href='<?php echo URL("conversation/start"); ?>' class='link-newConversation'>New conversation</a></li>
 
 <li class='sep'></li>
-<?php echo $data["userMenuItems"]; ?>
+<?php if (!empty($data["userMenuItems"])) echo $data["userMenuItems"]; ?>
 </ul>
 
 <h1 id='forumTitle'><a href='<?php echo URL(""); ?>'><?php echo $data["forumTitle"]; ?></a></h1>
@@ -135,7 +135,7 @@ classes.add(cl);
 <ul class='menu'>
 
 
-<?php echo $data["metaMenuItems"]; ?>
+<?php if (!empty($data["metaMenuItems"])) echo $data["metaMenuItems"]; ?>
 </ul>
 </div>
 </div>
