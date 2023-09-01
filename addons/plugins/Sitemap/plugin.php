@@ -18,10 +18,33 @@ ET::$pluginInfo["Sitemap"] = array(
 	)
 );
 
+
+if (!function_exists("conversationURL")) {
+
+/**
+ * Construct a URL to a conversation, given its ID and title.
+ *
+ * @param int $conversationId The ID of the conversation.
+ * @param string $title The title of the conversation.
+ * @return string The URL to the conversation (to be used in the URL function.)
+ *
+ * @package esoTalk
+ */
+function conversationURL($conversationId, $title = "")
+{
+	return $conversationId.(($title = slug($title)) ? "-$title" : "");
+}
+
+}
+
 class ETPlugin_Sitemap extends ETPlugin
 {
 	public function setup($oldVersion = "")
 	{
+
+$form = ETFactory::make("form");
+
+		
 		// Don't enable this plugin if we are not running PHP >= 5.3.0.
 		if (version_compare(PHP_VERSION, '5.3.0') < 0) {
 			return "PHP >= 5.3.0 is required to enable this plugin.<br />However, you are running PHP ".PHP_VERSION;
@@ -32,8 +55,6 @@ class ETPlugin_Sitemap extends ETPlugin
 
 			// Submit the sitemap to Google and Bing.
 			$this->autoSubmit();
-
-			ET::$controller->message(T("Sitemap generated!"), "success autoDismiss");
 
 			return true;
 		}
