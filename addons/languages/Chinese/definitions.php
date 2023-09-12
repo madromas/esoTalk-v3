@@ -19,18 +19,18 @@ $definitions["charset"] = "utf-8";
 $definitions["date.full"] = "%c";
 
 $definitions["month"] = array(
-  "January"   => "January",
-  "February"  => "February",
-  "March"     => "March",
-  "April"     => "April",
-  "May"       => "May",
-  "June"      => "June",
-  "July"      => "July",
-  "August"    => "August",
-  "September" => "September",
-  "October"   => "October",
-  "November"  => "November",
-  "December"  => "December"
+  "January"   => "一月",
+  "February"  => "二月",
+  "March"     => "三月",
+  "April"     => "四月",
+  "May"       => "五月",
+  "June"      => "六月",
+  "July"      => "七月",
+  "August"    => "八月",
+  "September" => "九月",
+  "October"   => "十月",
+  "November"  => "十一月",
+  "December"  => "十二月"
 );
 
 $definitions["%d day ago"] = "昨天";
