@@ -12,7 +12,9 @@ if (!defined("IN_ESOTALK")) exit;
 ?>
 <h1><?php echo T("Fatal Error"); ?></h1>
 
-<h2><?php printf(T("message.fatalError"), "https://madway.net"); ?></h2>
+<h2><?php printf(T("message.fatalError")); ?></h2>
+
+
 
 <?php if (C("esoTalk.debug", true)): ?>
 <div class='details'>
