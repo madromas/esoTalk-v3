@@ -463,7 +463,7 @@ $definitions["message.esoTalkUpdateAvailable"] = "Eine neue Version, %s, ist ver
 $definitions["message.esoTalkUpdateAvailableHelp"] = "Um Sicherheitsprobleme zu vermeiden, empfehlen wir immer die aktuellste Version zu installieren. Vielleicht sind sogar coole, neue Funktionen dabei!";
 $definitions["message.esoTalkUpToDate"] = "Deine Forum-Version ist aktuell.";
 $definitions["message.esoTalkUpToDateHelp"] = "<!-- IGG -->";
-$definitions["message.fatalError"] = "<p>The Forum has encountered an nasty error which is making it impossible to do whatever it is that you're doing. But don't feel down - <strong>here are a few things you can try</strong>:</p>\n<ul>\n<li>Go outside, walk the dog, have a coffee... then <strong><a href='%1\$s'>try again</a></strong>!</li>\n<li>If you are the forum administrator, then you can <strong>get help on the <a href='%2\$s'>forum website</a></strong>.</li>\n<li>Try hitting the computer - that sometimes works for me.</li>\n</ul>";
+$definitions["message.fatalError"] = "Fatal error";
 $definitions["message.fileUploadFailed"] = "Something went wrong and the file you selected could not be uploaded. Perhaps it's too big, or in the wrong format?";
 $definitions["message.fileUploadFailedMove"] = "The file you uploaded could not be copied to its destination. Please contact the forum administrator.";
 $definitions["message.fileUploadNotImage"] = "The file you uploaded is not an image in an acceptable format.";
