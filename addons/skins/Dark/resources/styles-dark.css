@@ -49,7 +49,6 @@ here if necessary.
 	border-color:#999;
 }
 
-
 /* Secondary color (light text) */
 .dark .tabs li > a,
 .dark .channel,
@@ -304,7 +303,7 @@ background-color: #FD4C4C;
 
 /* Generic lists */
 .dark .list { border-bottom:0px solid #131a20; }
-.dark .list > li {border:1px solid #373737; background-color:#131a20;}
+.dark .list > li {border:1px solid #373737; background-color:#131a20; box-shadow: 0 0px 0px rgba(176, 176, 176, 0.35);}
 .dark .list > li:hover {background-color:#1b2228}
 
 
@@ -399,9 +398,13 @@ background-color: #FD4C4C;
 
 
 /* Buttons */
-.dark .button {background:#283344; border:1px solid #30363d; }
+.dark .button {background:#283344; border:1px solid #30363d; box-shadow: 0 0px 0px rgba(176, 176, 176, 0.35);}
 .dark .button:hover,.dark .button:active {border-color:#666}
 .dark .button:active {background-color:#666}
+
+.dark #hdr .button {
+  box-shadow: 0 0px 0px rgba(176, 176, 176, 0.35);
+}
 
 /***************************************/
 /* Overrides of base.css (uabclst)     */
@@ -416,7 +419,7 @@ background-color: #FD4C4C;
 
 
 /* "Things" - distinguishable items such as posts, activity items, plugins, and skins. */
-.dark .thing {border:1px solid #30363d;  border-bottom:1px solid #30363d; color:#c1c1c1; background-color:#131a20; }
+.dark .thing {box-shadow: 0 0px 0px rgba(176, 176, 176, 0.35);border:1px solid #30363d;  border-bottom:1px solid #30363d; color:#c1c1c1; background-color:#131a20; }
 .dark .thing:before {border-color:#131a20;}
 .dark .thing:after {border-color:#131a20; }
 
