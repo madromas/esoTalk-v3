@@ -209,7 +209,7 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 
 .dark .search .icon-search { color:#a6a4a4;}
 
-.dark .message { background:#364f57; }
+.dark .message { background:#1b2228; }
 
 /* Generic text styles */
 .dark small,.dark  .subText {color:#999}
