@@ -171,7 +171,7 @@ $definitions["Enable"] = "Enable";
 $definitions["Enabled"] = "Enabled";
 $definitions["Enter a conversation title"] = "Enter a conversation title";
 $definitions["Error"] = "Error";
-$definitions["esoTalk version"] = "version";
+$definitions["esoTalk version"] = "Version";
 $definitions["Everyone"] = "Everyone";
 
 $definitions["Share"] = "Share";
