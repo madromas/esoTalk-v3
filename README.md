@@ -49,7 +49,7 @@ To upgrade esoTalk from an older version, simply:
 
 ### Troubleshooting
 
-If you are having problems installing esoTalk, view the [Github](https://github.com/madromas/esoTalk-v3) page. Or visit (https://phatballs.net)
+If you are having problems installing esoTalk, view the [Github](https://github.com/madromas/esoTalk-v3) page.
 
 ### License
 GPL-2.0 License
