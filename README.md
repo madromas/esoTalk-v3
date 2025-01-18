@@ -38,6 +38,7 @@ Installing esoTalk is super easy. In brief, simply:
 1. [Download esoTalk.](https://github.com/madromas/esoTalk-v3)
 2. Extract and upload the files to your PHP-enabled web server.
 3. Visit the location in your web browser and follow the instructions in the installer.
+4. Before installation click on "Advanced options" and make sure the address of your website is spelled correctly http or https (whichever you have).
 
 ### Upgrading
 
