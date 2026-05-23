@@ -146,16 +146,11 @@ vertical-align: middle;
 
 
 /* code */
-.dark .hljs {
-  background: #000 !important;
-  color: #bfa24c !important;
-}
 .dark pre {
   border: 1px solid #494949 !important;
 }
 
 .dark code {background: #000 !important;
-  color: #b9b9b9 !important;
   border: 1px solid #494949 !important;
 }
 
