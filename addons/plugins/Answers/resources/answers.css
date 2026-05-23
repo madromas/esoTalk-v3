@@ -23,3 +23,11 @@
 	font-size: 12px;
 	margin-right: 2px;
 }
+
+.dark .label-answered, .dark .gambit-answered {
+	color:#33c488 !important;
+}
+
+.dark .embedded-answer h3, .dark .embedded-answer h3 a {
+	color:#33c488;
+}
