@@ -19,7 +19,7 @@ if (!defined("IN_ESOTALK")) exit;
 
 <?php echo $data["head"]; ?>
 
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta property="og:title" content="<?php echo sanitizeHTML($data["pageTitle"]); ?>" />
     <meta property="og:description" content="If you are normal, you have got to be MAD!" />
 	<meta property="og:url" content="<?php echo URL('',true); ?>" />
@@ -37,7 +37,7 @@ if (!defined("IN_ESOTALK")) exit;
 <link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet">
 
 </head>
-<body class='<?php echo $data["bodyClass"]; ?>'>
+<body>
 
 
 
@@ -129,28 +129,37 @@ $(document).ready(function(){
           <circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/>  
          </svg></button></li>
 		 
- <script>
+<script>
 const
-g=i=>document.getElementById(i),
-classes=g('h').classList,
-cl="dark";
+g = i => document.getElementById(i),
+classes = g('h').classList,
+cl = "dark";
 
-if(localStorage.getItem("toggled-ttl")>Date.now())
-classes.toggle(cl,localStorage.getItem("toggled"));
 
-g("toggle-darkmod").addEventListener("click",function(e){
-e.preventDefault();
-
-if(classes.contains(cl)) {
-localStorage.removeItem("toggled");
-localStorage.removeItem("toggled-ttl");
-classes.remove(cl);
-}
-else {
-localStorage.setItem("toggled",1);
-localStorage.setItem("toggled-ttl",Date.now() + 60*86400000);
 classes.add(cl);
+
+
+if (localStorage.getItem("toggled-ttl") > Date.now()) {
+   
+    if (localStorage.getItem("toggled") === "0") {
+        classes.remove(cl);
+    }
 }
+
+g("toggle-darkmod").addEventListener("click", function(e) {
+    e.preventDefault();
+
+    if (classes.contains(cl)) {
+        localStorage.setItem("toggled", 0);
+        localStorage.setItem("toggled-ttl", Date.now() + 60 * 86400000);
+        classes.remove(cl);
+    } 
+    
+    else {
+        localStorage.setItem("toggled", 1);
+        localStorage.setItem("toggled-ttl", Date.now() + 60 * 86400000);
+        classes.add(cl);
+    }
 });
 </script>
 

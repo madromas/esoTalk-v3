@@ -93,28 +93,33 @@ $(function(){ //on document ready
          </svg></button></li>
 		 
 		</div> 
- <script>
+<script>
 const
-g=i=>document.getElementById(i),
-classes=g('h').classList,
-cl="dark";
+g = i => document.getElementById(i),
+classes = g('h').classList,
+cl = "dark";
 
-if(localStorage.getItem("toggled-ttl")>Date.now())
-classes.toggle(cl,localStorage.getItem("toggled"));
-
-g("toggle-darkmod").addEventListener("click",function(e){
-e.preventDefault();
-
-if(classes.contains(cl)) {
-localStorage.removeItem("toggled");
-localStorage.removeItem("toggled-ttl");
-classes.remove(cl);
-}
-else {
-localStorage.setItem("toggled",1);
-localStorage.setItem("toggled-ttl",Date.now() + 60*86400000);
 classes.add(cl);
+
+if (localStorage.getItem("toggled-ttl") > Date.now()) {
+
+    if (localStorage.getItem("toggled") === "0") {
+        classes.remove(cl);
+    }
 }
+
+g("toggle-darkmod").addEventListener("click", function(e) {
+    e.preventDefault();
+    if (classes.contains(cl)) {
+        localStorage.setItem("toggled", 0);
+        localStorage.setItem("toggled-ttl", Date.now() + 60 * 86400000);
+        classes.remove(cl);
+    } 
+    else {
+        localStorage.setItem("toggled", 1);
+        localStorage.setItem("toggled-ttl", Date.now() + 60 * 86400000);
+        classes.add(cl);
+    }
 });
 </script>
 
