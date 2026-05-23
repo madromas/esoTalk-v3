@@ -1,0 +1,142 @@
+/**
+ * OpauthConnect
+ * 
+ * @copyright Copyright © 2012 Oleksandr Golubtsov
+ * @license   GPLv2 License
+ * @package   OpauthСonnect
+ * 
+ * This file is part of OpauthСonnect plugin. Please see the included license file for usage information
+ */
+
+.section-form {
+    border: none!important;
+    padding-top: 0px!important;
+    padding-left: 35px!important;
+}
+
+.section-form label {
+    padding-right: 5px;
+}
+
+.section-form div.error {
+    padding-left: 50px;
+    color: red;
+}
+
+#social-container {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#social-container a {
+    position: relative;
+    margin: 0 auto;
+    text-decoration: none;
+    margin-left: 4px;
+    display: block;
+    width: 200px;
+    height: 15px;
+    padding-top: 8px;
+    text-align: left;
+    padding-left: 20px;
+    margin-bottom: 7px;
+}
+
+#social-container a .icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 7px;
+}
+
+#social-container a img {
+    z-index: 20;
+    position: relative;
+}
+
+#social-container a:hover .active-bg {
+    width: 41px;
+    height: 41px;
+    display: block;
+    position: absolute;
+    margin: 3px;
+    z-index: 10;    
+}
+
+.active-bg.tw {
+   background: #9AE4E8; 
+}
+
+.active-bg.fb {
+   background: #4C66A4; 
+}
+
+.active-bg.gg {
+   background: #d34836; 
+}
+
+#remember-container {
+    margin-top: 5px;
+    margin-left: 5px;
+    position: relative;
+}
+
+.form-confirm-info label {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.form-confirm-info .submit {
+    float: right;
+    margin-right: 7px;
+}
+
+.confirm-info-sheet-wrapper form {
+    margin-top: 10px;
+}
+
+.confirm-info-sheet {
+    width: 470px;
+}
+
+li.or-separator {
+    padding-left: 0px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.advanced-info-button {
+    margin-bottom: 20px!important;
+}
+
+li.generate-password {
+    padding-left: 0px;
+}
+
+li.generate-password div.generate-password-wrapper {
+    width: 380px;
+    position: relative;
+    margin: 0 auto;
+}
+
+li.generate-password div.generate-password-wrapper div {
+    position: relative;
+    float: left;
+}
+
+li.generate-password div.generate-password-wrapper div.generate-password-label {
+    width: 360px;
+    padding-left: 5px;
+    padding-top: 1px;
+    cursor: pointer;
+}
+
+.form > li.advanced-info {
+    display: none;
+}
+
+.form-confirm-info div.error {
+    margin-left: 20px;
+}

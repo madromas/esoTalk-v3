@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services>
+    <service name="Twitter" machine-name="twitter">
+        <icon>twitter-thumb.gif</icon>
+        <settings>
+            <key>key</key>
+            <secret>secret</secret>
+        </settings>
+        <static-settings>
+        </static-settings>
+    </service>
+    <service name="Facebook" machine-name="facebook">
+        <icon>facebook-thumb.png</icon>
+        <settings>
+            <key>app_id</key>
+            <secret>app_secret</secret>
+        </settings>
+        <static-settings>
+            <scope>email</scope>
+        </static-settings>
+    </service>
+    <service name="Google" machine-name="google">
+        <icon>google-thumb.png</icon>
+        <settings>
+            <key>client_id</key>
+            <secret>client_secret</secret>
+        </settings>
+        <static-settings>
+        </static-settings>
+    </service>
+    <service name="VKontakte" machine-name="vkontakte">
+        <icon>vkontakte-thumb.png</icon>
+        <settings>
+            <key>app_id</key>
+            <secret>app_secret</secret>
+        </settings>
+        <static-settings>
+        </static-settings>
+    </service>
+</services>
