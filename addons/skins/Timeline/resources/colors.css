@@ -1,0 +1,77 @@
+/* Primary color */
+.conversationList .title a,
+.conversationList .unread .title a,
+.action .name, .action a, .action strong,
+.postHeader h3, .postHeader h3 a,
+.button, .button i, .button:hover,
+#hdr-inner > a, #hdr-inner > h1 a, #hdr-inner > ul > li > a,
+.tabs li.selected a,
+.channelList .channel,
+#conversationTitle a,
+#pluginList > li,
+#skinList > li,
+#languageList > li,
+.memberList strong a,
+.scrubber li.selected > a,
+.scrubber li ul li.selected a,.avatar,
+a
+{
+	color:#354059
+}
+
+.tabs.big li.selected a,
+#hdr .active .popupButton,
+#hdr #notifications.new,
+.button.submit,
+.popupMenu li > a:hover, ul.popupMenu li.selected > a
+{
+	background-color:#354059
+}
+
+.sheet.active,
+input[type=text]:focus, input[type=password]:focus, input[type=number]:focus, input[type=email]:focus, textarea:focus, .input:focus,
+.withArrow.popup:before,
+{
+	border-color:#354059
+}
+
+
+/* Secondary color (light text) */
+.tabs li > a,
+.channel,
+.list .col-replies, .list .col-replies a,
+.action,
+.timeMarker,
+.conversationList .excerpt,
+.postHeader .info > span, .postHeader .info > a,
+#hdr h1 span,#toggle + label,
+.channel
+{
+	color:#999999
+}
+
+
+/* Tertiary color (light lines) */
+.popup,
+.popupWrapper.active .popupButton,
+.scrubber > li.selected,
+.channel,
+.list > li,
+.thing,
+.sheet, .sheet h3, .sheet .section, .sheet .buttons,
+input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input,
+.tabs li.selected a,
+.tabs li a:hover,
+.tabs.big,#hdr,#ftr,.triangle-border,.list,.area, .sheet,
+#adminMenu li.separator
+{
+	border-color:#eaeaea
+}
+.tabs .pathItem.selected a:before
+{
+	border-left-color:#eaeaea
+}
+.button,a.channel:hover, #conversationBody::before
+{
+	background-color:#eaeaea
+}
