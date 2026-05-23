@@ -62,7 +62,7 @@ public function autoLink( $link = array())
   if( !$forcelink && ( $link[1] == 'http://' || $link[1] == 'https://' ) )
   {
 	  $width = isset($width) ? $width : '640';
-	  $height = isset($height) ? $height : '380';
+	  $height = isset($height) ? $height : '';
 	// Webm
 	if( strtolower( substr( $link[2], -5 ) ) == '.webm')
 	return '<video width="'.$width.'" height="'.$height.'" type="video/webm" controls="controls"><source src="'.$link[0].'" ></source></video>';
