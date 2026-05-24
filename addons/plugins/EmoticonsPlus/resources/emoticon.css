@@ -1,0 +1,54 @@
+.emoticon {
+    display: inline; /* Emojis should flow with text */
+    text-indent: 0; 
+    width: auto; 
+    height: auto; 
+    background: none;
+}
+
+/* Fix the dropdown layout */
+#emoticonDropDown {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 8px;
+    z-index: 9999;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+#emoticonDropDown ul {
+    display: flex;
+    flex-wrap: wrap;
+    width: 180px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#emoticonDropDown li {
+    list-style-type: none;
+    margin: 2px;
+    padding: 0;
+}
+
+#emoticonDropDown a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    line-height: 24px;
+    text-decoration: none;
+    font-size: 18px; /* Standard emoji size */
+    transition: background 0.2s;
+}
+
+#emoticonDropDown a:hover {
+    background-color: #e0e0e0;
+    border-radius: 4px;
+}
+
+.post-emoji {
+    font-size: 1.1em;
+    vertical-align: middle;
+}
