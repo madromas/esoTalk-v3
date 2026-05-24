@@ -26,7 +26,7 @@ here if necessary.
 .dark .scrubber li ul li.selected a,
 .dark a
 {
-	color:#c1c1c1;
+	color:#e1e7ef;
 }
 
 .dark .tabs.big li.selected a,
@@ -61,7 +61,7 @@ here if necessary.
 .dark #hdr h1 span,
 .dark .channel
 {
-	color:#aaa;
+	color:#a1aab9;
 }
 
 
@@ -139,9 +139,9 @@ vertical-align: middle;
 }
 
 .dark .triangle-border {
-  border:1px solid #0d419d;
+  border:1px solid rgba(135, 206, 250);
   color:#c9d1d9;
-  background:#14243b;
+  background:rgba(135, 206, 250, .2);
 }
 
 
@@ -216,7 +216,7 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 
 /* Member List */
 
-.dark .memberList strong a {color:#000}
+.dark .memberList strong a {color:#e1e7ef}
 
 
 /* Form elements */
@@ -237,7 +237,7 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 
 /* Conversation list */
 
-.dark .conversationList .excerpt {color:#aaa; }
+.dark .conversationList .excerpt {color:#a1aab9; }
 .dark .conversationList .justVisited {border-color:#005d73;}
 
 
@@ -263,17 +263,17 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 .dark .tabs .pathEnd.selected a:last-child:before,.dark .tabs .pathEnd.selected a:last-child:after {display:none}
 
 
-.dark .conversationList .col-replies span { color:#aaa;}
-.dark .list .col-replies {color:#aaa; }
-.dark .list .col-replies i {color:#aaa; }
+.dark .conversationList .col-replies span { color:#e1e7ef;}
+.dark .list .col-replies {color:#e1e7ef; }
+.dark .list .col-replies i {color:#e1e7ef; }
 
-.dark .list .col-views {color:#aaa; }
-.dark .list .col-views i {color:#aaa;}
-.dark .list .col-replies span i {color:#aaa;}
+.dark .list .col-views {color:#e1e7ef; }
+.dark .list .col-views i {color:#e1e7ef;}
+.dark .list .col-replies span i {color:#e1e7ef;}
 
 
 /* In the TOPIC itself*/
-.dark .conversationViews {color:#aaa;}
+.dark .conversationViews {color:#e1e7ef;}
 
 
 
@@ -322,7 +322,7 @@ background-color: #FD4C4C;
 
 /* Posts */
 
-.dark .replyPlaceholder .postHeader h3 { color:#999}
+.dark .replyPlaceholder .postHeader h3 { color:#a1aab9}
 .dark .postBody a { color:#03a9f4}
 .dark .postBody img { border: 1px solid #484848;}
 
@@ -414,7 +414,7 @@ background-color: #FD4C4C;
 
 
 /* "Things" - distinguishable items such as posts, activity items, plugins, and skins. */
-.dark .thing {box-shadow: 0 0px 0px rgba(176, 176, 176, 0.35);border:1px solid #30363d;  border-bottom:1px solid #30363d; color:#c1c1c1; background-color:#131a20; }
+.dark .thing {box-shadow: 0 0px 0px rgba(176, 176, 176, 0.35);border:1px solid #30363d;  border-bottom:1px solid #30363d; color:#e1e7ef; background-color:#131a20; }
 .dark .thing:before {border-color:#131a20;}
 .dark .thing:after {border-color:#131a20; }
 
@@ -426,8 +426,8 @@ background-color: #FD4C4C;
 
 .dark .postHeader { color:#888; background: #1b2228; border-bottom:1px solid #30363d;}
 
-.dark  .postHeader h3 a {color:#999}
-.dark .postHeader .info > span,.dark  .postHeader .info > a { color:#888}
+.dark  .postHeader h3 a {color:#a1aab9}
+.dark .postHeader .info > span,.dark  .postHeader .info > a { color:#a1aab9}
 
 
 
@@ -446,135 +446,141 @@ background-color: #FD4C4C;
 /*          Channels are colored          */
 /******************************************/
 
-.channel.channel-1 {
+.dark .channel.channel-1 {
 	 
   background:transparent;
   border-color: #3572a5 !important;
   color: #3572a5 !important;
 }
 
-.tabs li a.channel-1:hover {
+.dark .tabs li a.channel-1:hover {
 	background:transparent;
     border-color: #3572a5 !important;
     color: #3572a5 !important;
 }
 
 
-.channel.channel-3 {
+.dark .channel.channel-3 {
 	background:transparent;
   border-color: #8e0 !important;
   color: #8e0 !important;
 }
 
-.tabs li a.channel-3:hover {
+.dark .tabs li a.channel-3:hover {
 	background:transparent;
     border-color: #8e0 !important;
     color: #8e0 !important;
 }
 
-.channel.channel-4 {
+.dark .channel.channel-4 {
 	background:transparent;
   border-color: #B59E8C !important;
   color: #B59E8C !important;
 }
 
-.tabs li a.channel-4:hover {
+.dark .tabs li a.channel-4:hover {
 	background:transparent;
     border-color: #B59E8C !important;
     color: #B59E8C !important;
 }
 
-.channel.channel-5 {
+.dark .channel.channel-5 {
 	background:transparent;
   border-color: #4b93d1 !important;
   color: #4b93d1 !important;
 }
 
-.tabs li a.channel-5:hover {
+.dark .tabs li a.channel-5:hover {
 	background:transparent;
     border-color: #4b93d1 !important;
     color: #4b93d1 !important;
 }
 
-.channel.channel-6 {
+.dark .channel.channel-6 {
 	background:transparent;
   border-color: #9354ca !important;
   color: #9354ca !important;
 }
 
-.tabs li a.channel-6:hover {
+.dark .tabs li a.channel-6:hover {
 	background:transparent;
     border-color: #9354ca !important;
     color: #9354ca !important;
 }
 
-.channel.channel-7 {
+.dark .channel.channel-7 {
 	background:transparent;
   border-color: #ef564f !important;
   color: #ef564f !important;
 }
 
-.tabs li a.channel-7:hover {
+.dark .tabs li a.channel-7:hover {
 	background:transparent;
     border-color: #ef564f !important;
     color: #ef564f !important;
 }
 
-.channel.channel-8 {
+.dark .channel.channel-8 {
 	background:transparent;
   border-color: #FF8C00 !important;
   color: #FF8C00 !important;
 }
 
-.tabs li a.channel-8:hover {
+.dark .tabs li a.channel-8:hover {
 	background:transparent;
     border-color: #FF8C00 !important;
     color: #FF8C00 !important;
 }
 
-.channel.channel-9 {
+.dark .channel.channel-9 {
 	background:transparent;
   border-color: #3A935D !important;
   color: #3A935D !important;
 }
-.tabs li a.channel-9:hover {
+.dark .tabs li a.channel-9:hover {
 	background:transparent;
     border-color: #3A935D !important;
     color: #3A935D !important;
 }
 
-.channel.channel-10 {
+.dark .channel.channel-10 {
 	background:transparent;
   border-color: #00a8a8 !important;
   color: #00a8a8 !important;
 }
 
-.tabs li a.channel-10:hover {
+.dark .tabs li a.channel-10:hover {
 	background:transparent;
     border-color: #00a8a8 !important;
     color: #00a8a8 !important;
 }
 
-.channel.channel-11 {
+.dark .channel.channel-11 {
 	background:transparent;
   border-color: #FF1493 !important;
   color: #FF1493 !important;
 }
 
-.tabs li a.channel-11:hover {
+.dark .tabs li a.channel-11:hover {
 	background:transparent;
     border-color: #FF1493 !important;
     color: #FF1493 !important;
 }
 
-.channel.channel-12 {
+.dark .channel.channel-12 {
 	background:transparent;
   border-color: #227093 !important;
   color: #227093 !important;
 }
 
-.tabs li a.channel-12:hover {
+.dark .tabs li a.channel-12:hover {
 	background:transparent;
     border-color: #227093 !important;
     color: #227093 !important;
+}
+
+.dark #loading
+ {
+    background: #30364b;
+    color: #b2b0ac;
 }

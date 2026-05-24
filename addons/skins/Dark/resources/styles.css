@@ -200,7 +200,7 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
 #hdr .popupButton:hover {text-decoration:none}
 #hdr #notifications {color: rgba(200, 200, 200, 0.3);}
 
-#hdr .button {border-radius:50px; font-size:100%; padding:8px 10px; margin:-7px 0; box-shadow: 0 2px 6px rgba(176, 176, 176, 0.35);}
+#hdr .button {border-radius:10px; font-size:100%; padding:8px 10px; margin:-7px 0; box-shadow: 0 2px 6px rgba(176, 176, 176, 0.35);}
 
 #hdr #notifications.new, #hdr .active .popupButton {background-color:#ff3c3c;}
 #hdr #notifications.new, #hdr .active .popupButton, #hdr .active .popupButton i {color:#fff !important}
@@ -218,9 +218,8 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
   position:relative;
   padding:10px;
   margin: 10px 10px 15px 10px;
-  border:1px solid #0d419d;
-  color: #fff;
-background: #4d7ec4;
+  border:1px solid rgba(135, 206, 250);
+  background: rgba(135, 206, 250, .2);
   /* css3 */
   -webkit-border-radius:10px;
   -moz-border-radius:10px;
@@ -422,7 +421,7 @@ p, ul, pre {line-height:1.5em}
 
 /* Conversation list: adjust the typography. */
 .conversationList .title {font-weight:normal; font-size:15px; margin-left: -10px;}
-.conversationList .unread .title a {font-weight:600}
+.conversationList .unread .title a {font-weight:500}
 .conversationList .action * {font-weight:normal}
 
 
@@ -667,7 +666,7 @@ pre {border:0px dashed #ccc;}
 
 
 /* Text inputs */
-input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {font-weight:300; background:#fff; border:0px solid #30363d; color:#101010; padding: 3px 10px 3px 10px; border-radius:20px; vertical-align:-1px; margin:0; -webkit-appearance:none}
+input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {font-weight:300; background:#fff; border:0px solid #30363d; color:#101010; padding: 3px 10px 3px 10px; border-radius:10px; vertical-align:-1px; margin:0; -webkit-appearance:none}
 input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=number]:focus, input[type=email]:focus, .input:focus {outline:0px solid #666;}
 
 
