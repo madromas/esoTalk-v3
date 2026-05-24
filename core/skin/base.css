@@ -155,7 +155,7 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 #hdr .popupButton:hover {text-decoration:none}
 #hdr #notifications {color: rgba(40, 40, 40, 0.3)}
 
-#hdr .button {border-radius:50px; font-size:100%; padding:8px 11px; margin:-7px 0}
+#hdr .button {border-radius:10px; font-size:100%; padding:8px 11px; margin:-7px 0}
 
 #hdr #notifications.new, #hdr .active .popupButton {background-color:#ff3c3c;}
 #hdr #notifications.new, #hdr .active .popupButton, #hdr .active .popupButton i {color:#fff !important}
@@ -738,13 +738,13 @@ input.error, input.error:focus {border-color:#f59e79 !important}
 .fieldGroup, .checkboxGroup {line-height:1.7em}
 .colorSwatch {display:inline-block; height:21px; width:21px; border-radius:3px; margin-right:5px; vertical-align:-8px; border:1px solid rgba(0, 0, 0, 0.2)}
 
-.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:110%; border: 1px solid;border-radius: 20px !important; outline: 0;
+.form input[type=text], .form input[type=password], .form input[type=number], .form input[type=email], .form select, .form textarea, .form .input {margin:0 3px 3px 0; width:260px; font-size:110%; border: 1px solid;border-radius: 10px !important; outline: 0;
 box-sizing: border-box; padding: 6px 12px;}
 .form input.color {font-size:100%; padding:3px; width:70px}
 
 
 /* Buttons */
-.button {height:23px; cursor:pointer; padding:1px 10px 3px; border:1px solid #bbb; border-radius:50px; line-height:19px; margin:0}
+.button {height:23px; cursor:pointer; padding:1px 10px 3px; border:1px solid #bbb; border-radius:10px; line-height:19px; margin:0}
 .button.big {height:26px; font-size:100%; padding:0 10px 2px; line-height:26px}
 
 .button i {margin:0 2px; font-size:14px; color:#666; line-height:12px}
