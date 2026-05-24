@@ -252,7 +252,7 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 
 
 /* The channel breadcrumb tab */
-.dark .tabs .pathItem {margin-right:20px;}
+.dark .tabs .pathItem {margin-right:10px;}
 .dark .tabs .pathItem a {position:relative; float:left; padding-left:20px; margin-left:1px !important}
 .dark .tabs .pathItem.selected a {border-radius:0}
 .dark .tabs .pathItem a:first-child { padding-left:7px; border-radius:3px 0 0 3px; background:#131a20;}
