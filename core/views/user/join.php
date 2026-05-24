@@ -19,6 +19,8 @@ $form = $data["form"];
 
 <?php echo $form->open(); ?>
 
+<?php $this->trigger("RenderOpauth"); ?>
+
 <div class='sheetBody'>
 
 <div class='section'>
