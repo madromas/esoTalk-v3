@@ -231,7 +231,7 @@ $definitions["Installed Plugins"] = "Installed Plugins";
 $definitions["Installed plugins"] = "Installed plugins";
 $definitions["Installed Skins"] = "Installed Skins";
 $definitions["Installed skins"] = "Installed skins";
-$definitions["is %s"] = "is %s";
+$definitions["is %s"] = " is %s";
 
 $definitions["Joined"] = "Joined";
 $definitions["just now"] = "just now";
