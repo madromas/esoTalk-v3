@@ -26,12 +26,12 @@
         <a href="<?php print $service['url']; ?>" class="button toggle">
             <i class="icon"><img src="<?php print $service['icon']; ?>" alt="<?php print $service_name." icon"; ?>"/></i>
             <?php print T('Log in using ').$service_name; ?>
+            
+            <label class="inline-remember" 
+                   onclick="event.stopPropagation();" 
+                   title="<?php print T('Keep me logged in'); ?>">
+                <input type="checkbox" name="remember" <?php if($data["remember"]): ?>checked<?php endif; ?>>
+            </label>
         </a>
     <?php endforeach; ?>
-</div>
-    
-<div id="remember-container">
-    <a href="#" class="button toggle <?php if($data["remember"]): ?>button-pressed<?php endif; ?>">
-        <i class="icon-check<?php if(!$data["remember"]): ?>-empty<?php endif; ?>"></i> <?php print T('Keep me logged in'); ?>
-    </a>
 </div>
