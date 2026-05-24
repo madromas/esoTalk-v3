@@ -451,7 +451,7 @@ p, ul, pre {line-height:1.5em}
 negative margins so they overlap the padding of the <li>. */
 .conversationList .col-conversation {width:90%; display:inline-block; margin-left:1em;}
 .conversationList .col-star {float:left; width:1em; margin-left:-13em; padding-left:0.5em}
-.conversationList .col-channel {float:left; width:12em; margin-left:-11em; text-align:right}
+.conversationList .col-channel {float:left; text-align:right}
 .conversationList .col-replies {float:right; margin-right:-16em; width:14em}
 
 .conversationList .col-views {float:right; margin-right:-16em; width:14em; margin-top:1.5em}
@@ -474,12 +474,11 @@ negative margins so they overlap the padding of the <li>. */
 /* NEW. Show author of first post closest to the left border*/
 /* Needs a code addition in file views/conversations/conversation.php */
 /* see file code_addition.php */
-.conversationList .col-firstPost {float: left;
-width: 13em;
-margin-left: -12em;
-font-size: 90%;
-overflow: hidden;
-white-space: nowrap;}
+.conversationList .col-firstPost {
+	width: 4em !important;        /* Narrow width for just the avatar */
+    margin-left: -12em !important; /* Pulls it into the new padding space */
+    float: left;
+}
 
 /* Show/hide stars on hover */
 .conversationList .col-star {visibility:visible}
@@ -739,6 +738,11 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 
 #loginSheet {
     width: 480px !important;
+}
+
+
+.list .col-star {
+    display: none !important;
 }
 
 
