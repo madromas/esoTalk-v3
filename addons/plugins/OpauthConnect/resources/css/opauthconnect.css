@@ -31,17 +31,13 @@
 }
 
 #social-container a {
-    position: relative;
-    margin: 0 auto;
-    text-decoration: none;
-    margin-left: 4px;
-    display: block;
-    width: 200px;
-    height: 15px;
-    padding-top: 8px;
-    text-align: left;
-    padding-left: 20px;
-    margin-bottom: 7px;
+   display: flex;
+    align-items: center; 
+    gap: 10px; 
+    width: fit-content;
+    height: 30px;
+    padding: 0 15px;
+    margin: 5px auto;
 }
 
 #social-container a .icon {
