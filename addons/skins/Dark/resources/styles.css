@@ -437,7 +437,7 @@ p, ul, pre {line-height:1.5em}
 
 
 /* The channel breadcrumb tab */
-.tabs .pathItem {margin-right:10px;}
+.tabs .pathItem {margin-right:20px;}
 .tabs .pathItem a {position:relative; float:left; padding-left:20px; margin-left:1px !important}
 .tabs .pathItem.selected a {border-radius:0}
 .tabs .pathItem a:first-child {padding-left:7px; border-radius:3px 0 0 3px; background:#ffffff;}
