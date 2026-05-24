@@ -27,7 +27,7 @@ class ETPlugin_Upyun extends ETPlugin {
   }
   public function handler_conversationController_getEditControls($sender, &$controls, $id)
   {
-    addToArrayString($controls, "imageup", "<a href='javascript:UPyun.imageup(\"$id\");void(0)' title='".T("文件上传")."' class='control-fixed'><i class='icon-paper-clip'></i></a>", 0);
+    addToArrayString($controls, "imageup", "<a href='javascript:UPyun.imageup(\"$id\");void(0)' title='".T("File Upload")."' class='control-fixed'><i class='icon-paper-clip'></i></a>", 0);
 
   }
  
