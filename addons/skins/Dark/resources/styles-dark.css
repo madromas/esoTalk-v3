@@ -46,7 +46,7 @@ here if necessary.
 .dark .withArrow.popup:before,
 .dark .scrubber > li.selected
 {
-	border-color:#999;
+	border-color:#484848;
 }
 
 /* Secondary color (light text) */
@@ -229,7 +229,7 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 .dark  .sheet {background: #1b2228;}
 .dark .sheet {border:1px solid #484848; background: #1b2228;}
 .dark .sheet.active {background:#131a20; box-shadow:0 5px 20px rgba(0, 0, 0, 0.2);}
-.dark .sheetOverlay {background:rgba(255, 255, 255, 0.9); }
+.dark .sheetOverlay {background: rgba(20, 26, 32, 0.9);}
 
 .dark .scrollShadowTop {box-shadow:0 3px 3px rgba(0, 0, 0, 0.05)}
 .dark .scrollShadowBottom {box-shadow:0 -3px 3px rgba(0, 0, 0, 0.05)}
