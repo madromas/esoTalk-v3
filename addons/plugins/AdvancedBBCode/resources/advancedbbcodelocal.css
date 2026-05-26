@@ -1,7 +1,44 @@
+span.abbcode {
+    position: relative; 
+    display: inline-block;
+    vertical-align: middle;
+}
 
-.abbcodelist {display:none; position:absolute; margin-left:200px; height:212px; overflow-y:auto; width:80px; overflow-x:hidden; color:#666; background-color:#fff; list-style-type:none; cursor:pointer; padding:3px 6px 3px 6px; border:1px solid #aaa; border-radius:3px; z-index:300; opacity:0.9}
-.abbcodelist > li:hover {color:#000; background-color:#ddd}
-.abbcodelist > li a {color:#666}
-.abbcodelist > li:hover a {color:#000}
 
-.abbcode:hover .abbcodelist {display:block}
+ul.abbcodelist {
+    display: none; 
+    position: absolute;
+    top: 100%; 
+    left: 0;   
+    
+    /* Box sizing */
+    margin: 0;
+    padding: 0;
+    width: 120px; 
+    height: auto; 
+    max-height: 200px; 
+    
+    /* Styling */
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    z-index: 1; 
+    opacity: 1;
+    list-style-type: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+span.abbcode:hover ul.abbcodelist {
+    display: block;
+}
+
+ul.abbcodelist li {
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #666;
+}
+
+ul.abbcodelist li:hover {
+    background-color: #ddd;
+    color: #000;
+}
