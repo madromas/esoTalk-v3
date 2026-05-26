@@ -593,3 +593,26 @@ background-color: #FD4C4C;
     background: #30364b;
     color: #b2b0ac;
 }
+
+.dark ul.abbcodelist{
+background-color: #1b2228;
+    border: 1px solid #30363d;
+}
+
+.dark ul.abbcodelist li
+ {
+    color: #c9d1d9;
+}
+.dark ul.abbcodelist li:hover {
+    background-color: #131a20;
+    color: #c9d1d9;
+}
+
+.dark #emoticonDropDown {
+    background: #1b2228;
+    border: 1px solid #30363d;
+}
+
+.dark #emoticonDropDown a:hover {
+    background-color: #131a20;
+}

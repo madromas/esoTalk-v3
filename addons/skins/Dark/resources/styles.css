@@ -688,7 +688,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 
 /* Edit post */
 .post.edit .postBody {padding:0}
-.post.edit .controls {margin-top:0}
+.post.edit .controls {margin-top:-2px}
 .post .postBody textarea {height:25em; width:100%; border-top:0px solid #000; border-bottom:1px solid #30363d; border-radius:0; resize:none; padding:12px; line-height:1.5em; outline:0; box-sizing:border-box; display:block}
 .post .postBody .preview {padding:12px 12px}
 .post .editButtons {padding:7px; text-align:right; overflow:hidden; clear:both}
@@ -717,7 +717,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 
 .highlight .postContent {box-shadow:0 0 0 2px #0d419d}
 
-.postHeader {margin-bottom:2px; padding:10px 10px 10px 15px; overflow:hidden; color:#888; background: #f5fcff; border-bottom:0px solid #30363d;}
+.postHeader {margin-bottom:2px; padding:10px 10px 10px 15px; overflow:visible; color:#888; background: #f5fcff; border-bottom:0px solid #30363d;}
 .postHeader h3 {display:inline; margin:0}
 .postHeader h3, .postHeader h3 a {color:#000}
 .postHeader .info {display:inline}
