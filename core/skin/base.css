@@ -55,47 +55,69 @@ margin-top: -6px;
   span.group-administrator {
     color: #fff;
     background-color: #E66B6B;
-    padding: 1px 8px 1px 8px;
+    padding: 1px 5px 1px 5px;
     border-radius: 10px;
+    font-weight: normal;
+    font-size: 12px;
 }
 
 span.group-suspended {
     color: #fff;
     background-color: #423D4D;
-    padding: 1px 8px 1px 8px;
+    padding: 1px 5px 1px 5px;
     border-radius: 10px;
+    font-weight: normal;
+    font-size: 12px;
 }
 
 span.group-moderator {
     color: #fff;
     background-color: #423D4D;
-    padding: 1px 8px 1px 8px;
+    padding: 1px 5px 1px 5px;
     border-radius: 10px;
+    font-weight: normal;
+    font-size: 12px;
 }
 
 span.group-1 {
     color: #fff;
     background-color: #325173;
-    padding: 1px 8px 1px 8px;
+    padding: 1px 5px 1px 5px;
     border-radius: 10px;
+    font-weight: normal;
+    font-size: 12px;
 }
 
 span.group-2 {
     color: #fff;
     background-color: #0A9CD5;
-    padding: 1px 8px 1px 8px;
+    padding: 1px 5px 1px 5px;
     border-radius: 10px;
+    font-weight: normal;
+    font-size: 12px;
 }
 
 span.group-3 {
-    
+    display: inline-block;
+    color: transparent;      
+    font-size: 0;            
+    width: 16px;            
+    height: 16px;            
+    background-image: url('verified-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    margin-top: -3px;      
 }
 
 span.group-4 {
     color: #fff;
     background-color: #32733F;
-    padding: 1px 8px 1px 8px;
+    padding: 1px 5px 1px 5px;
     border-radius: 10px;
+    font-weight: normal;
+    font-size: 12px;
 }
 
 
@@ -167,6 +189,8 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 .loadingOverlay {background:#fff url(loading.gif) no-repeat center 10px; z-index:250}
 .loading {background:url(loading.gif) center 10px no-repeat; height:40px}
 
+.dark .loadingOverlay {background:#131a20 url(loading.gif) no-repeat center 10px; z-index:250}
+
 
 /* Generic areas */
 .area, .sheet {border-radius:10px; margin-bottom:30px; margin-top:0;}
@@ -199,10 +223,10 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 /* Stars */
 .starButton {}
 .starButton:hover {text-decoration:none}
-.star {color:#fc0 !important; font-size:12px}
+.star {color:#58a6ff6b !important; font-size:12px}
 .star.icon-star-empty {color:#ccc !important}
-.starButton:hover .star {color:#fc0 !important; text-decoration:none}
-.starButton:active .star {color:#da0 !important; text-decoration:none}
+.starButton:hover .star {color:##58a6ff6b !important; text-decoration:none}
+.starButton:active .star {color:#58a6ff6b !important; text-decoration:none}
 .gambit-starred {color:#efcb00 !important}
 
 
