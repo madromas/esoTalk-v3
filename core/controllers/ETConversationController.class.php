@@ -1309,11 +1309,13 @@ public function formatPostForTemplate($post, $conversation)
 	if (!$post["deleteTime"]) {
 
 		// Add the user's online status / last action next to their name.
-		if (empty($post["preferences"]["hideOnline"])) {
-			$lastAction = ET::memberModel()->getLastActionInfo($post["lastActionTime"], $post["lastActionDetail"]);
-			if ((array)$lastAction[1]) $lastAction[1] = " (".sanitizeHTML((array)$lastAction[1]).")";
-			if ($lastAction) array_unshift($formatted["info"], "<".(!empty($lastAction[1]) ? "a href='{$lastAction[1]}'" : "span")." class='online' title='".T("Online")."{$lastAction[1]}'><i class='icon-circle'></i></".(!empty($lastAction[1]) ? "a" : "span").">");
-		}
+if (empty($post["preferences"]["hideOnline"])) {
+    $lastAction = ET::memberModel()->getLastActionInfo($post["lastActionTime"], $post["lastActionDetail"]);
+    if ($lastAction) {
+        if (isset($post["lastActionDetail"]["title"])) $lastAction[0] = sanitizeHTML($post["lastActionDetail"]["title"]);
+        array_unshift($formatted["info"], "<" . (!empty($lastAction[1]) ? "a href='{$lastAction[1]}'" : "span") . " class='online' title='" . T("Online") . " (" . $lastAction[0] . ")'><i class='icon-circle'></i></" . (!empty($lastAction[1]) ? "a" : "span") . ">");
+    }
+}
 
 		// Show the user's group type.
 		$formatted["info"][] = "<span class='group'>".memberGroup($post["account"], $post["groups"])."</span>";
