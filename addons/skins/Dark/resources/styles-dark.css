@@ -430,15 +430,13 @@ background-color: #FD4C4C;
 .dark .postHeader .info > span,.dark  .postHeader .info > a { color:#a1aab9}
 
 .message.warning {
-    background-color: rgba(210, 153, 34, 0.15); /* Faint yellow */
-    border-color: rgba(210, 153, 34, 0.4);      /* Subtle border */
-    color: #e3b341;                             /* Readable yellow-gold */
+    border: 1px solid #ebb;
+    color: #c00;
 }
 
 .message.success {
-    background-color: rgba(63, 185, 80, 0.15);  /* Faint green */
-    border-color: rgba(63, 185, 80, 0.4);       /* Subtle border */
-    color: #57ab5a;                             /* Readable green */
+    border-color: rgba(63, 185, 80, 0.4);
+    color: #57ab5a; 
 }
 
 .dark .deleted .postHeader * {color:#888}
