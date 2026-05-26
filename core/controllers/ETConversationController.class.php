@@ -1285,20 +1285,31 @@ public function formatPostForTemplate($post, $conversation)
 
 	// Construct the post array for use in the post view (conversation/post).
 	$formatted = array(
-		"id" => "p".$post["postId"],
-		"title" => memberLink($post["memberId"], $post["username"]),
-		"avatar" => (!$post["deleteTime"] and $avatar) ? "<a href='".URL(memberURL($post["memberId"], $post["username"]))."'>$avatar</a>" : false,
-		"class" => $post["deleteTime"] ? array("deleted") : array(),
-		"info" => array(),
-		"controls" => array(),
-		"body" => !$post["deleteTime"] ? $this->displayPost($post["content"]) : false,
-		"footer" => array(),
+    "id" => "p" . $post["postId"],
+    "title" => memberLink($post["memberId"], $post["username"]),
+    "badge" => array(), // Added this new array
+    "info" => array(),
+    "avatar" => (!$post["deleteTime"] and $avatar) ? "<a href='".URL(memberURL($post["memberId"], $post["username"]))."'>$avatar</a>" : false,
+    "class" => $post["deleteTime"] ? array("deleted") : array(),
+    "controls" => array(),
+    "body" => !$post["deleteTime"] ? $this->displayPost($post["content"]) : false,
+    "footer" => array(),
 
-		"data" => array(
-			"id" => $post["postId"],
-			"memberid" => $post["memberId"]
-		)
-	);
+    "data" => array(
+        "id" => $post["postId"],
+        "memberid" => $post["memberId"]
+    )
+);
+
+// Show the user's group type.
+$formatted["badge"][] = "<span class='group label-group' title='" . strip_tags(memberGroup($post["account"], $post["groups"])) . "'>" . 
+                        memberGroup($post["account"], $post["groups"]) . 
+                        "</span>";
+
+$formatted["class"][] = "group-".$post["account"];
+foreach ($post["groups"] as $k => $v) {
+    if ($k) $formatted["class"][] = "group-".$k;
+}
 
 	$date = smartTime($post["time"], true);
 
@@ -1316,13 +1327,6 @@ if (empty($post["preferences"]["hideOnline"])) {
         array_unshift($formatted["info"], "<" . (!empty($lastAction[1]) ? "a href='{$lastAction[1]}'" : "span") . " class='online' title='" . T("Online") . " (" . $lastAction[0] . ")'><i class='icon-circle'></i></" . (!empty($lastAction[1]) ? "a" : "span") . ">");
     }
 }
-
-		// Show the user's group type.
-		$formatted["info"][] = "<span class='group'>".memberGroup($post["account"], $post["groups"])."</span>";
-		$formatted["class"][] = "group-".$post["account"];
-		foreach ($post["groups"] as $k => $v) {
-			if ($k) $formatted["class"][] = "group-".$k;
-		}
 
 		// If the post has been edited, show the time and by whom next to the controls.
 		if ($post["editMemberId"]) $formatted["controls"][] = "<span class='editedBy'>".sprintf(T("Edited %s by %s"), "<span title='"._strftime(T("date.full"), $post["editTime"])."' data-timestamp='".$post["editTime"]."'>".relativeTime($post["editTime"], true)."</span>", memberLink($post["editMemberId"], $post["editMemberName"]))."</span>";
