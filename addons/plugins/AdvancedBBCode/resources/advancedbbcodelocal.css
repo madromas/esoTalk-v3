@@ -1,24 +1,18 @@
 span.abbcode {
     position: relative; 
     display: inline-block;
-    vertical-align: middle;
 }
-
 
 ul.abbcodelist {
     display: none; 
     position: absolute;
     top: 100%; 
     left: 0;   
-    
-    /* Box sizing */
     margin: 0;
     padding: 0;
     width: 120px; 
     height: auto; 
     max-height: 200px; 
-    
-    /* Styling */
     background-color: #fff;
     border: 1px solid #aaa;
     border-radius: 3px;
