@@ -2,6 +2,7 @@
 // Copyright 2011 Toby Zerner, Simon Zerner
 // This file is part of esoTalk. Please see the included license file for usage information.
 
+
 if (!defined("IN_ESOTALK")) exit;
 
 /**
@@ -27,7 +28,26 @@ endif; ?>>
 
 <div class='postHeader'>
 <div class='info'>
-<h3><?php echo $post["title"]; ?></h3>
+<h3>
+    <?php 
+    echo $post["title"]; 
+    
+    // Check if the user is an administrator
+    // We look up the account type for the current post author
+    $member = ET::SQL()
+        ->select("account")
+        ->from("member")
+        ->where("memberId", $post["memberId"])
+        ->exec()
+        ->firstRow();
+
+    if ($member && $member["account"] === "administrator"): ?>
+        <span class='verified-badge' title='Administrator' style='color:#f39c12; margin-left:5px;'>
+            <i class='icon-star'></i>
+        </span>
+    <?php endif; ?>
+</h3>
+<?php if (!empty($post["badge"])) foreach ((array)$post["badge"] as $badge) echo $badge, "\n"; ?>
 <?php if (!empty($post["info"])) foreach ((array)$post["info"] as $info) echo $info, "\n"; ?>
 </div>
 <div class='controls'>
