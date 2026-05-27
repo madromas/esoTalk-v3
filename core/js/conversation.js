@@ -524,6 +524,7 @@ initPosts: function() {
 	$("#conversationPosts h3 a").tooltip({alignment: "left", className: "withArrow withArrowBottom"});
 	$("#conversationPosts .time").tooltip({alignment: "left", className: "withArrow withArrowBottom"});
 	$("#conversationPosts .group").tooltip({alignment: "left", className: "withArrow withArrowBottom"});
+	$("#conversationPosts .markAsAnswer").tooltip({alignment: "left", className: "withArrow withArrowBottom"});
 	$("#conversationPosts .online").tooltip({alignment: "left", offset: [-9, 0], className: "withArrow withArrowBottom"}).css("cursor", "pointer");
 
 	// Add click handlers to the post controls.
