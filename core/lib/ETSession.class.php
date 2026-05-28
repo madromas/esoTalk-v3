@@ -244,9 +244,15 @@ protected function clearRememberToken($memberId)
  */
 public function setCookie($name, $value, $expire = 0)
 {
-	return setcookie(C("esoTalk.cookie.name")."_".$name, $value, ['expires' => $expire, 'path' => C("esoTalk.cookie.path", getWebPath('')), 'domain' => C("esoTalk.cookie.domain"), 'secure' => C("esoTalk.https"), 'httponly' => true]);
+    return setcookie(C("esoTalk.cookie.name")."_".$name, $value, [
+        'expires' => $expire, 
+        'path' => C("esoTalk.cookie.path", getWebPath('')), 
+        'domain' => C("esoTalk.cookie.domain"), 
+        'secure' => C("esoTalk.https"), 
+        'httponly' => true,
+        'samesite' => 'Lax' // Add this line
+    ]);
 }
-
 
 /**
  * Set a cookie to remember a user.
