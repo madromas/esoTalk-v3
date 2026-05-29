@@ -198,7 +198,7 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
 /* Notifications button */
 #hdr .popupWrapper {margin:-5px 0; display:inline-block}
 #hdr .popupButton:hover {text-decoration:none}
-#hdr #notifications {color: rgba(200, 200, 200, 0.3);}
+#hdr #notifications {color: #565656;}
 
 #hdr .button {border-radius:10px; font-size:100%; padding:8px 10px; margin:-7px 0; box-shadow: 0 2px 6px rgba(176, 176, 176, 0.35);}
 
@@ -645,7 +645,7 @@ pre {border:0px dashed #ccc;}
 /* Header */
 #hdr {background:#d9f0ff; position:fixed; width:100%; z-index:100; padding-top: 5px; box-shadow: 0 2px 6px rgba(172, 172, 172, 0.35);}
 #hdr-inner {padding-right:580px; white-space:nowrap}
-#hdr h1 {display:inline-block; max-width:55%; font-size:20px; padding:10px 0; margin: 0 -30px 0 0; font-weight:400; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+#hdr h1 {display:inline-block; max-width:40%; font-size:20px; padding:10px 0; margin: 0 -30px 0 0; font-weight:400; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
 #hdr h1 img {display:inline; vertical-align:-8px; margin-right:5px; border:0; width:65%}
 #hdr h1 span {margin-left:10px}
 #backButton {float:left; margin-right:10px; margin-left:-30px; font-size:20px; line-height:20px; margin-top:17px; text-decoration:none}

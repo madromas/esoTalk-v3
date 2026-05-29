@@ -126,7 +126,7 @@ vertical-align: middle;
 
 
 /* Notifications button */
-.dark #hdr #notifications {color: rgba(200, 200, 200, 0.3);}
+.dark #hdr #notifications {color: #a1aab9;}
 
 .dark #hdr #notifications.new,.dark #hdr .active .popupButton {background-color:#ff3c3c;}
 .dark #hdr #notifications.new,.dark #hdr .active .popupButton, .dark #hdr .active .popupButton i {color:#fff !important}
