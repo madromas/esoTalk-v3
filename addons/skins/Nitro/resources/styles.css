@@ -1,0 +1,263 @@
+/*
+Default Skin Styles
+This stylesheet contains styles that define Default-specific fonts, sizes, and colors, and the layout of the
+wrapper (header + footer). Interface-specific styles are included in skins/base/base.css and can be overridden
+here if necessary.
+*/
+
+/* Global */
+body {font-size:14px; font-weight:300; margin:0; overflow-y:scroll; background:#ECECEC; color:#666}
+body, input, textarea, select {font-family:open sans,lucida grande,lucida sans unicode,helvetica,arial,sans-serif}
+input, textarea, select {font-size:100%}
+strong {font-weight:600}
+
+
+/* Links */
+a {text-decoration:none}
+a:hover {text-decoration:none; color:#000}
+
+
+/* Inline styles */
+small {font-size:85%}
+
+
+/* Block styles */
+h1 {font-size:150%; font-weight:300}
+h2 {font-size:160%; font-weight:300}
+h3 {font-size:115%; font-weight:600}
+h4 {font-weight:600}
+p, ul, pre {line-height:1.6em}
+.bodyHeader h1 {line-height:1.5em}
+
+
+/* Sheets */
+.sheet h3 {font-weight:300}
+.sheet, .area {background:#fff}
+
+
+/* Conversation list: adjust the typography. */
+.conversationList .title {font-weight:300; font-size:16px}
+.conversationList .unread .title a {font-weight:600}
+.conversationList .action * {font-weight:300}
+
+
+/* Channel list */
+.channelList .channel {font-weight:600}
+
+
+/* Posts */
+.postHeader h3 {font-size:120%; font-weight:600}
+.postBody h4 {font-weight:300}
+.replyPlaceholder .postHeader h3 {font-weight:300}
+.postBody {line-height:1.75em; font-size:16px}
+.postBody a {font-weight:600}
+
+
+/* Tabs */
+.tabs.big li.selected a {color:#fff; border:0; padding:11px 14px}
+
+
+/* Miscellaneous */
+.permissionsGrid .group th {font-weight:300}
+.action .name, .action a, .action strong {font-weight:600}
+.avatar {border-radius:32px}
+.scrubber li.selected > a {font-weight:600}
+
+
+/* Layout */
+#hdr-content, #body-content, #ftr-content {margin:0 auto; min-width:760px; max-width:1100px; padding:0 30px}
+#body-content, #ftr-content {background-color:#fff}
+#body-content {padding-bottom:20px; padding-top:10px}
+#body {padding-top:0px}
+
+
+/* Menus (inline lists) */
+.menu {font-size:95%; list-style-type:none; margin-top:0; margin-bottom:0; padding:0; line-height:1}
+.menu > li {display:inline-block}
+
+
+/* Header */
+#hdr {background:#fff; position:fixed; width:100%; z-index:100; border-bottom:1px solid}
+#hdr-inner {padding-right:580px;}
+#hdr h1 {display:inline-block; max-width:100%; font-size:20px; padding:14px 0; margin:0; font-weight:300; overflow:hidden; white-space:nowrap; text-overflow:ellipsis}
+#hdr h1 img {display:inline; vertical-align:-5px; margin-right:5px; border:0}
+#hdr h1 span {margin-left:10px}
+#backButton {float:left; margin-right:10px; margin-left:-30px; font-size:20px; line-height:20px; margin-top:17px; text-decoration:none}
+
+#mainMenu {margin-left:30px; display:inline; padding:18px 0}
+#userMenu {float:right; padding:18px 0; margin-right:-580px; margin-left:-18px;}
+#userMenu .item-user {font-weight:600}
+#userMenu .item-user .avatar {vertical-align:middle; margin:-5px 8px -5px 0}
+#userMenu.menu > li {margin-left:18px; text-align:left}
+
+#hdr .button {border-radius:4px; font-size:100%; padding:9px 12px; margin:-7px 0}
+#hdr #notifications {color:#10131b}
+#hdr #notifications.new {color:#fff !important}
+
+
+/* Footer */
+#ftr {font-size:90%; z-index:100;}
+#ftr-content {padding-top:20px; padding-bottom:20px}
+#ftr li {margin-right:10px}
+#ftr .item-copyright {float:right; margin:0}
+
+
+/* Text inputs */
+input[type=text], input[type=password], input[type=number], input[type=email], textarea, .input {font-weight:300; background:#fff; border:1px solid; padding:5px; border-radius:3px; vertical-align:-1px; margin:0; -webkit-appearance:none}
+input[type=text]:focus, input[type=password]:focus, textarea:focus, input[type=number]:focus, input[type=email]:focus, .input:focus {outline:0}
+
+
+/* Buttons */
+.button {background:#f6f6f6; font-weight:600; border:1px solid transparent; margin-bottom:1px; white-space:nowrap; height:30px; font-size:90%; padding:0 10px 2px; line-height:30px; -webkit-appearance:none}
+.button.big {height:34px; font-size:90%; padding:0 10px 0; line-height:28px}
+.button:hover, .button:active {border-color:#ddd}
+.button:active {background-color:#ddd}
+.button.disabled {opacity:0.25; cursor:default; border-color:transparent !important}
+
+a.button {padding:8px 10px; height:auto; line-height:1em; display:inline-block}
+a.button.big {padding:10px; height:auto; line-height:1em}
+
+.button.submit {color:#fff}
+.button.submit:hover {border-color:#000; color:#fff}
+
+.buttonGroup .button {margin-right:-3px}
+
+/* CUSTOM CSS */
+
+.avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 3px;
+    background: #f5f5f5;
+    text-align: center;
+    font-size: 30px;
+    line-height: 64px;
+    color: #bbb;
+    display: inline-block;
+}
+div.avatar {padding:3px;border:1px solid #dadada;}
+.avatar.thumb {width:30px; height:30px; font-size:12px; line-height:20px; vertical-align:middle;padding:3px;border:1px solid #dadada;margin-right:3px;}
+.channel {border-radius: 3px; background: #f5f5f5;}
+#hdr { 
+    min-width:760px;
+	max-width:1100px;
+	padding:0 30px;
+    border-radius: 4px 4px 0px 0px;
+    background: #1379C1;
+    color: rgba(51,51,51,0.7);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: -35px;
+    position: relative;
+}	
+
+#hdr a { color: #ececec!important;}
+#hdr #notifications {color: #1379C1!important;}
+#ftr-content {
+
+    background: #1379C1;
+    color: #ececec!important;
+    border-radius: 0px 0px 4px 4px;
+	margin-top:-225px;
+
+
+}
+#ftr-content a { color: #ececec!important;}
+#hdr .button {
+    border: 1px solid #bebebe;
+    color: #1379C1!important;
+}
+.col-replies {
+border: 1px solid #1379c1;
+border-radius: 4px;
+color: #1379c1!important;
+}
+.col-replies a{
+color: #1379c1!important;
+}
+.memberList .col-replies {
+    width: 10%;
+    color: #1379c1!important;
+    padding: 5px;
+}
+.memberList .col-replies  a  {;
+    color: #1379c1!important;
+}
+.conversationList .col-replies {
+    float: right;
+    margin-right: -31em;
+    min-width: 60px;
+    text-align: center;
+    margin-bottom: -2px;
+}
+div#conversations {background: #fff;}
+#forumTitle a {font-family: Ubuntu; font-size:25px;}
+#userMenu.menu > li {margin-left: 5px;}
+#hdr .item-notifications {margin-right: 0px;}
+#userMenu li {color: #eaeaea;}
+.col-replies:after {
+    font-family: FontAwesome;
+    content: "\f0e6";
+    font-size: 18px;
+    margin-left: 5px;
+}
+.mfd:before {font-family: FontAwesome;content: "\f135";font-size: 16px;color: #354059; margin-left: 10px;background:#fff;padding:3px;border-radius:3px;}
+.styleswitch {
+    position: relative;
+    float: right;
+    margin-top: -10px;
+    margin-right: -3px;
+
+}
+.link_1:before {font-family: FontAwesome;content: "\f0c1";font-size: 16px; margin-right: 10px;}
+.link_2:before {font-family: FontAwesome;content: "\f128";font-size: 16px; margin-right: 10px;}
+.link_3:before {font-family: FontAwesome;content: "\f095";font-size: 16px; margin-right: 10px;}
+.header {height:150px; background:#094d7d;}
+.header_content{margin:0 auto; min-width:760px; max-width:1100px;}
+
+
+.footer {height:200px; background:#094d7d;width:100%;margin-top: 15px;}
+
+
+.title_alt {float:left;font-family: Ubuntu;color: #fff!important;text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.23); font-size:45px;margin-top: 45px;}
+.title_alt:before {font-family: FontAwesome;content: "\f135";color: #fff!important;text-shadow: 2px 3px 0 rgba(0, 0, 0, 0.23); font-size:45px; margin-right: 10px;}
+#hdr .button {
+border: 1px solid #bebebe;
+}
+@font-face {
+font-family: Ubuntu;
+ src: local("Ubuntu"),
+url(fonts/Ubuntu.ttf);
+ }
+
+#footer_container {
+    margin: auto;
+    width: 100%;
+    overflow: auto;
+    padding-bottom: 15px;
+}
+
+#footer_container > ul {
+        padding: 0;
+    margin: auto;
+}
+
+#footer_container > ul > li {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.footer_block {
+    width: 240px;
+	height:100px;
+    padding: 10px;
+    background: #1274b9;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+.scrubberContent {
+    background: rgba(255, 255, 255, 0.94);
+    padding: 10px;
+    border-radius: 4px;
+}
