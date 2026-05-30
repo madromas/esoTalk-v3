@@ -107,27 +107,29 @@ Following are 10 of the top members.
 </div>
 
 
-<div class='sheet' id='onlineSheet'>
-<div class='sheetContent'>
-
-<h3 style="text-align:center"><?php echo T("Members nearby your rank"); ?></h3>
-
-<div class='sheetBody'>
-
-<div class='section' id='onlineList'>
-<ul class='list'>
-
-<?php if($data["nearbyMembers"]): ?>
-
-<?php foreach ($data["nearbyMembers"] as $member): ?>
-<li>
-<span class='action'>
-<?php echo $member["rank"], ". ", $member["avatar"], " ", memberLink($member["memberId"], $member["username"]), " +", number_format($member["reputationPoints"]), " Reputation Points"; ?>
-</span>
-</li>
-<?php endforeach; ?>
-
-<?php else: echo "Congrats! You're already in the top 10."; ?>
+<?php if (ET::$session->userId): ?>
+    <div class='sheet' id='nearbySheet'>
+        <div class='sheetContent'>
+            <h3 style="text-align:center"><?php echo T("Members nearby your rank"); ?></h3>
+            <div class='sheetBody'>
+                <div class='section' id='onlineList'>
+                    <ul class='list'>
+                        <?php if(!empty($data["nearbyMembers"])): ?>
+                            <?php foreach ($data["nearbyMembers"] as $member): ?>
+                                <li>
+                                    <span class='action'>
+                                        <?php echo $member["rank"], ". ", $member["avatar"], " ", memberLink($member["memberId"], $member["username"]), " +", number_format($member["reputationPoints"]), " Reputation Points"; ?>
+                                    </span>
+                                </li>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            Congrats! You're already in the top 10 (or no nearby members found).
+                        <?php endif; ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php endif; ?>
 
 </ul>
