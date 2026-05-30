@@ -39,20 +39,26 @@ class ETPlugin_Reputation extends ETPlugin {
 	}
 
 	// Add some default language definitions.
-	public function handler_init($sender)
-	{
-		//If reputation points is not enabled by Admin, break
-		if(!C("plugin.Reputation.showReputationPublic")) return;
+	// Add some default language definitions.
+public function handler_init($sender)
+{
+    //If reputation points is not enabled by Admin, break
+    if(!C("plugin.Reputation.showReputationPublic")) return;
 
-		ET::define("message.reputationConversationStarted", "Way to go! You just earned reputation for starting a conversation!");
-		ET::define("message.reputationReplyToConversation", "Hurray! You just earned reputation for posting a reply! <br> Start an interesting converstion for more.");
+    ET::define("message.reputationConversationStarted", "Way to go! You just earned reputation for starting a conversation!");
+    ET::define("message.reputationReplyToConversation", "Hurray! You just earned reputation for posting a reply! <br> Start an interesting converstion for more.");
 
-		//Add reputation points to the header (top bar)
-		$reputationMenu = "+ ".T(number_format(ET::$session->user["reputationPoints"]). " RP");
-		$reputationMenu = "<a href='".URL("reputation")."'>$reputationMenu</a>";
-		$sender->addToMenu("user", "reputation", $reputationMenu, 1);
-		return;
-	}
+    // Add reputation points to the header (top bar)
+    // Check if user is logged in to show points; otherwise, just show the link text
+    $rpDisplay = ET::$session->userId ? "+ ".number_format(ET::$session->user["reputationPoints"])." RP" : "Reputation";
+    $reputationMenu = "<a href='".URL("reputation")."'>$reputationMenu</a>";
+    
+    // Updated line to use the new display variable
+    $reputationMenu = "<a href='".URL("reputation")."'>$rpDisplay</a>";
+    
+    $sender->addToMenu("user", "reputation", $reputationMenu, 1);
+    return;
+}
 
 	//Retrieve reputation points if enabled and exist
 	public function handler_postModel_getPostsBefore($controller, $sql)
