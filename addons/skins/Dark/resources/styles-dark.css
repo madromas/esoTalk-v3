@@ -290,8 +290,8 @@ background-color: #FD4C4C;
 /* Channel list */
 .dark .channelList {background:#131a20}
 .dark .channelList > li { background:#131a20}
-.dark .channelList .description { color:#888;}
-.dark .channelList .stats {color:#888}
+.dark .channelList .description { color:#a1aab9;}
+.dark .channelList .stats {color:#a1aab9}
 .dark .channelList .unsubscribed {background:#07111a}
 .dark .channelList .unsubscribed .description {color:#bbb}
 

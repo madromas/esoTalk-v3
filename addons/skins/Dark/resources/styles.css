@@ -757,17 +757,16 @@ a.button.big {padding:10px; height:auto; line-height:1em}
     color: #3572a5 !important;
 }
 
-
 .channel.channel-3 {
 	background:transparent;
-  border-color: #8e0 !important;
-  color: #8e0 !important;
+  border-color: #FF1493 !important;
+  color: #FF1493 !important;
 }
 
 .tabs li a.channel-3:hover {
 	background:transparent;
-    border-color: #8e0 !important;
-    color: #8e0 !important;
+    border-color: #FF1493 !important;
+    color: #FF1493 !important;
 }
 
 .channel.channel-4 {
@@ -855,15 +854,16 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 
 .channel.channel-11 {
 	background:transparent;
-  border-color: #FF1493 !important;
-  color: #FF1493 !important;
+  border-color: #8e0 !important;
+  color: #8e0 !important;
 }
 
 .tabs li a.channel-11:hover {
 	background:transparent;
-    border-color: #FF1493 !important;
-    color: #FF1493 !important;
+    border-color: #8e0 !important;
+    color: #8e0 !important;
 }
+
 
 .channel.channel-12 {
 	background:transparent;
