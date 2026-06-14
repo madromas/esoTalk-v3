@@ -203,7 +203,7 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
 #hdr .button {border-radius:10px; font-size:100%; padding:8px 10px; margin:-7px 0; box-shadow: 0 2px 6px rgba(176, 176, 176, 0.35);}
 
 #hdr #notifications.new, #hdr .active .popupButton {background-color:#ff3c3c;}
-#hdr #notifications.new, #hdr .active .popupButton, #hdr .active .popupButton i {color:#fff !important}
+#hdr #notifications.new, #hdr .active .popupButton, #hdr .active .popupButton i {color:#000 !important}
 #hdr .item-notifications {margin-right:-10px}
 
 .jumpToLast {color:#617177;}
