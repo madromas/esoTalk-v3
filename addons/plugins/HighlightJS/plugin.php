@@ -18,17 +18,18 @@ class ETPlugin_HighlightJS extends ETPlugin{
 		$HighlightJS = C('plugin.HighlightJS.customstyle');
 
 		if($HighlightJS)
-			$CustomHighlightCSS= "<link rel=\"stylesheet\" href=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/".$HighlightJS.".min.css\">";
+			$CustomHighlightCSS= "<link rel=\"stylesheet\" href=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/".$HighlightJS.".min.css\">";
 		else
-			$CustomHighlightCSS= "<link rel=\"stylesheet\" href=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css\">";
+			$CustomHighlightCSS= "<link rel=\"stylesheet\" href=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css\">";
 			
-		$JSHeader = "<script src=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js\"></script>";
+		$JSHeader = "<script src=\"//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js\"></script>";
 		
 		$codeToRun = "<script type=\"text/javascript\">$(document).ready(function() { $('pre').each(function(i, block) { hljs.highlightBlock(block); });});</script>";
 
 		$sender->addToHead($CustomHighlightCSS);
 		$sender->addToHead($JSHeader);
 		$sender->addJSFile($this->resource("highlightactions.js"));
+		$sender->addCSSFile($this->resource("highlight.css"));
 	}
 	public function handler_conversationController_editPostAfter($sender)
 	{
