@@ -17,7 +17,7 @@ foreach ($conversation["labels"] as $label) $className .= " label-$label";
 <li id='c<?php echo $conversation["conversationId"]; ?>' style="position: relative;" class='<?php echo $className; ?>'>
 
     <?php if ($conversation["starred"]): ?>
-    <span class="following-indicator label label-shit" 
+    <span class="following-indicator label" 
           title="Following" 
           style="position: absolute; left: 0; top: 0; bottom: 0; width: 4px; z-index: 10; cursor: help; background-color: #58a6ff6b; display: block;">
     </span>
@@ -58,7 +58,7 @@ foreach ($conversation["labels"] as $label) $className .= " label-$label";
             // Get the formatted excerpt
             $excerpt = ET::formatter()->init($conversation["firstPost"])->firstLine()->format()->inline(true)->clip(200)->get();
             // Strip the <video> tags out
-            echo "<div class='excerpt'>".strip_tags($excerpt, '<p><a><b><i><strong><em><ul><li><br>')."</div>";
+            echo "<div class='excerpt'>".strip_tags($excerpt, '<p><a><b><strong><em><ul><li><br>')."</div>";
         }
         ?>
     </div>

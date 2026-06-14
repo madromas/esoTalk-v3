@@ -427,7 +427,7 @@ p, ul, pre {line-height:1.5em}
 
 /* Conversation list */
 #conversations {margin-top:-11px}
-.conversationList li {overflow:hidden; padding-right:27em; padding-left:13.5em}
+.conversationList li {overflow:hidden; padding-right:27em; padding-left:1em}
 .conversationList .excerpt {color:#565656; font-size:90%;}
 .conversationList .justVisited {border-color:#005d73; border-style:solid; position:relative}
 .conversationList .controls {margin-left:10px}
@@ -449,9 +449,9 @@ p, ul, pre {line-height:1.5em}
 
 /* Conversation list column layout. The conversation column is almost 100% width, then the others have
 negative margins so they overlap the padding of the <li>. */
-.conversationList .col-conversation {width:90%; display:inline-block; margin-left:1em;}
+.conversationList .col-conversation {width:75%; display:inline-block; margin-left:1em;}
 .conversationList .col-star {float:left; width:1em; margin-left:-13em; padding-left:0.5em}
-.conversationList .col-channel {float:left; text-align:right}
+.conversationList .col-channel {float:right; text-align:right;width:auto;}
 .conversationList .col-replies {float:right; margin-right:-16em; width:14em}
 
 .conversationList .col-views {float:right; margin-right:-16em; width:14em; margin-top:1.5em}
@@ -470,13 +470,7 @@ negative margins so they overlap the padding of the <li>. */
 /* In the TOPIC itself*/
 .conversationViews {color:#565656; font-weight:400; margin-bottom:10px; font-size:13px}
 
-
-/* NEW. Show author of first post closest to the left border*/
-/* Needs a code addition in file views/conversations/conversation.php */
-/* see file code_addition.php */
 .conversationList .col-firstPost {
-	width: 4em !important;        /* Narrow width for just the avatar */
-    margin-left: -12em !important; /* Pulls it into the new padding space */
     float: left;
 }
 

@@ -30,11 +30,7 @@ if (!defined("IN_ESOTALK")) exit;
   
     <link rel="shortcut icon" type="image/png" href="<?php echo URL('',true); ?>favicon.png" />
   <?php } ?> 
-  <link rel="manifest" href="/manifest.json">
-<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
-<link rel="shortcut icon" href="/favicon.png" />
 <link rel="stylesheet" type="text/css" href="/fancybox/fancybox.css">
-<link type="text/css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -162,13 +158,6 @@ g("toggle-darkmod").addEventListener("click", function(e) {
     }
 });
 </script>
-
-
-
-
-
-
- 
 
 <li><a href='<?php echo URL("conversation/start"); ?>' class='link-newConversation button'><?php echo T("New Conversation"); ?></a></li>
 
