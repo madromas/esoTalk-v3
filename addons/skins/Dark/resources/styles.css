@@ -327,6 +327,7 @@ a:hover {text-decoration:none;}
     color:#101010;
     word-wrap: break-word;
 	background-color: #fff;
+	border-radius:8px;
 }
 .signature p {margin-bottom:0}
 .signature-no-likes {
@@ -723,7 +724,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 
 .deleted .postHeader {margin:0; padding:6px 5px 6px 12px}
 .deleted .postHeader * {color:#888}
-.deleted .controls {margin-top:1px}
+.deleted .controls {margin-top:0px}
 .deleted .thing {border:1px solid #d9f5ff;}
 .deleted .thing:before, .deleted .thing:after {display:none}
 
