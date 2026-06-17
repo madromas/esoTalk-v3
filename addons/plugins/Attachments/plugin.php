@@ -335,36 +335,51 @@ class ETPlugin_Attachments extends ETPlugin {
 
 	// Construct and process the settings form.
 	public function settings($sender)
-	{
-		// Set up the settings form.
-		$form = ETFactory::make("form");
-		$form->action = URL("admin/plugins/settings/Attachments");
-		$form->setValue("allowedFileTypes", implode(" ", (array)C("plugin.Attachments.allowedFileTypes")));
-		$form->setValue("maxFileSize", C("plugin.Attachments.maxFileSize"));
+{
+    // Set up the settings form.
+    $form = ETFactory::make("form");
+    $form->action = URL("admin/plugins/settings/Attachments");
+    
+    // Convert array from config to a space-separated string for the text box
+    $allowed = C("plugin.Attachments.allowedFileTypes");
+    $form->setValue("allowedFileTypes", is_array($allowed) ? implode(" ", $allowed) : $allowed);
+    $form->setValue("maxFileSize", C("plugin.Attachments.maxFileSize"));
 
-		// If the form was submitted...
-		if ($form->validPostBack("attachmentsSave")) {
+    $maxSize = C("plugin.Attachments.maxFileSize");
+    // If the value is a large byte number, divide by 1024 for display
+    if ($maxSize >= 102400) { 
+        $maxSize = $maxSize / 1024;
+    }
+    $form->setValue("maxFileSize", $maxSize);
 
-			// Construct an array of config options to write.
-			$config = array();
-			$fileTypes = $form->getValue("allowedFileTypes");
-			$config["plugin.Attachments.allowedFileTypes"] = $fileTypes ? explode(" ", $fileTypes) : "";
-			$config["plugin.Attachments.maxFileSize"] = $form->getValue("maxFileSize");
+    // If the form was submitted...
+    if ($form->validPostBack("attachmentsSave")) {
 
-			if (!$form->errorCount()) {
+        $fileTypes = $form->getValue("allowedFileTypes");
 
-				// Write the config file.
-				ET::writeConfig($config);
+        // Convert the space-separated string back into an array for storage
+        $config = array();
+        $config["plugin.Attachments.allowedFileTypes"] = $fileTypes ? explode(" ", trim($fileTypes)) : array();
 
-				$sender->message(T("message.changesSaved"), "success autoDismiss");
-				$sender->redirect(URL("admin/plugins"));
+        // Get the value and convert if it's a "small" number (KB)
+        $maxSize = $form->getValue("maxFileSize");
+        if ($maxSize > 0 && $maxSize < 10485760) {
+            $maxSize = $maxSize * 1024;
+        }
+        $config["plugin.Attachments.maxFileSize"] = $maxSize;
 
-			}
-		}
+        if (!$form->errorCount()) {
+            // Write the config file.
+            ET::writeConfig($config);
 
-		$sender->data("attachmentsSettingsForm", $form);
-		return $this->view("settings");
-	}
+            $sender->message(T("message.changesSaved"), "success autoDismiss");
+            $sender->redirect(URL("admin/plugins"));
+        }
+    }
+
+    $sender->data("attachmentsSettingsForm", $form);
+    return $this->view("settings");
+}
 
 	/*
 	|--------------------------------------------------------------------------

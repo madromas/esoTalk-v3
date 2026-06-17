@@ -124,9 +124,10 @@ class AttachmentController extends ETController {
 
 		// Set the allowed file types based on config.
 		$allowedFileTypes = C("plugin.Attachments.allowedFileTypes");
-		if (!empty($allowedFileTypes))
-			//$uploader->allowedExtensions = $allowedFileTypes;
-		$uploader->allowedExtensions = explode(' ', $allowedFileTypes);
+
+if (!empty($allowedFileTypes)) {
+    $uploader->allowedExtensions = is_array($allowedFileTypes) ? $allowedFileTypes : explode(' ', $allowedFileTypes);
+}
 
 		// Set the max file size based on config.
 		if ($size = C("plugin.Attachments.maxFileSize"))
