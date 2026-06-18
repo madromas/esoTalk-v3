@@ -4,6 +4,8 @@ This stylesheet contains all of the styles that lay out the esoTalk interfaces a
 allows skin stylesheets to focus mainly on styling the page wrapper (header, footer) and elements like links
 and buttons. Then they can style anything else if need be. Easy!
 
+
+/*
 z-index order reference:
 0 default
 200 sheets
@@ -13,6 +15,27 @@ z-index order reference:
 600 messages
 */
 
+#channels.channels.tabs {
+   
+    flex-direction: column;
+    list-style: none;
+}
+
+.sidebar-layout {
+    display: flex; 
+    gap: 15px; 
+    align-items: flex-start;
+}
+
+#channel-sidebar {
+    width: 150px;
+    margin-top: 10px;
+    flex-shrink: 0;
+}
+#discussion-main {
+    flex-grow: 1;
+    width: 100%;
+}
 
 /* Unread */
 .unreadButton {}
@@ -258,8 +281,8 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 .message.hasIcon img {float:left; margin:-2px 8px -2px -3px}
 .message code {background:none}
 
-.message.warning {background-color:#fde; border:1px solid #ebb; color:#c00}
-.message.success {background-color:#cfd; border:1px solid #aeb; color:#050}
+.message.warning {background-color:#fde!important; border:1px solid #ebb; color:#c00!important}
+.message.success {background-color:#cfd!important; border:1px solid #aeb; color:#050!important}
 
 
 /* Class that can be applied to an <a> in a message to make the full message clickable. */
@@ -413,7 +436,7 @@ a.channel:hover {text-decoration:none; border-color:#aaa}
 
 
 /* Channel list */
-#channelList {margin-top:-11px}
+#channelList {margin-top:0px}
 .channelList {background:#f5f5f5}
 .channelList > li {padding:10px; background:#fff}
 .channelList .channel {padding:3px 6px; font-size:85%; font-weight:bold;}
@@ -458,7 +481,7 @@ a.channel:hover {text-decoration:none; border-color:#aaa}
 
 
 /* Conversation list */
-#conversations {margin-top:-11px}
+#conversations {margin-top:0px!important}
 .conversationList li {overflow:hidden; padding-right:27em; padding-left:13em}
 .conversationList .title {font-weight:normal}
 .conversationList .title a {color:#000}
