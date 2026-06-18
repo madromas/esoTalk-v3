@@ -187,8 +187,13 @@ public function action_index($channelSlug = false)
 		$this->addToHead("<meta name='keywords' content='".sanitizeHTML(($k = C("esoTalk.meta.keywords")) ? $k : implode(",", $keywords))."'>");
 		$arraySplice = array_splice($keywords, count($keywords) - 1, 1);
 		$lastKeyword = reset($arraySplice);
-		$this->addToHead("<meta name='description' content='".sanitizeHTML(($d = C("esoTalk.meta.description")) ? $d
-			: sprintf(T("forumDescription"), C("esoTalk.forumTitle"), implode(", ", $keywords), $lastKeyword))."'>");
+		$this->addToHead("<meta name='description' content='" . sanitizeHTML(
+    ($d = C("esoTalk.meta.description")) ? $d : 
+    (
+        ($f = C("esoTalk.forumDescription")) ? $f : 
+        sprintf(T("forumDescription"), C("esoTalk.forumTitle"), implode(", ", $keywords), $lastKeyword)
+    )
+) . "'>");
 
 		// If this is not technically the homepage (if it's a search page) the we don't want it to be indexed.
 		if ($searchString) $this->addToHead("<meta name='robots' content='noindex, noarchive'>");
