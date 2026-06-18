@@ -21,7 +21,7 @@ if (!defined("IN_ESOTALK")) exit;
 
     <meta name="mobile-web-app-capable" content="yes">
     <meta property="og:title" content="<?php echo sanitizeHTML($data["pageTitle"]); ?>" />
-    <meta property="og:description" content="If you are normal, you have got to be MAD!" />
+    
 	<meta property="og:url" content="<?php echo URL('',true); ?>" />
 	<?php if(file_exists('uploads/logo.png')) { ?>
     <meta property="og:image" content="<?php echo URL('',true); ?>uploads/logo.png" />
@@ -110,12 +110,6 @@ $(document).ready(function(){
 
 <ul id='userMenu' class='menu'>
 <?php echo $data["userMenuItems"]; ?>
-
-
-
-
-
-
 
 <li class="item-Links mode-switch">
      <button  class="sel-dark-toggle" id="toggle-darkmod">
