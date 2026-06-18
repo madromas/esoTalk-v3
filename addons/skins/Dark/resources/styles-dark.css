@@ -429,16 +429,6 @@ background-color: #FD4C4C;
 .dark  .postHeader h3 a {color:#a1aab9}
 .dark .postHeader .info > span,.dark  .postHeader .info > a { color:#a1aab9}
 
-.message.warning {
-    border: 1px solid #ebb;
-    color: #c00;
-}
-
-.message.success {
-    border-color: rgba(63, 185, 80, 0.4);
-    color: #57ab5a; 
-}
-
 .dark .deleted .postHeader * {color:#888}
 .dark .deleted .thing {border:1px solid #1b2228; background:#221919;}
 
