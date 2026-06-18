@@ -410,7 +410,7 @@ background-color: #FD4C4C;
 
 
 /* Controls (icons with hover/click effects) */
-.dark [class*=control-] {color:#c9d1d9 !important}
+.dark [class*=control-] {color:#2b2c2d !important}
 
 
 /* "Things" - distinguishable items such as posts, activity items, plugins, and skins. */
