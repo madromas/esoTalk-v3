@@ -13,12 +13,22 @@ self.addEventListener('fetch', (e) => {
     if (e.request.mode === 'navigate') {
         e.respondWith(
             fetch(e.request).catch(() => {
-                return caches.match(OFFLINE_URL);
+                return caches.match(OFFLINE_URL).then((response) => {
+                    // If response is undefined, return a simple text/html response
+                    return response || new Response('You are offline.', { 
+                        headers: {'Content-Type': 'text/html'} 
+                    });
+                });
             })
         );
     } else {
         e.respondWith(
-            fetch(e.request).catch(() => caches.match(e.request))
+            fetch(e.request).catch(() => {
+                return caches.match(e.request).then((response) => {
+                    // Only return the response if it was found in the cache
+                    return response || new Response(null, { status: 404 });
+                });
+            })
         );
     }
 });
