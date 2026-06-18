@@ -282,7 +282,7 @@ span.highlight {background:#fdef34; padding:1px 4px; border-radius:3px}
 .message code {background:none}
 
 .message.warning {background-color:#fde!important; border:1px solid #ebb; color:#c00!important}
-.message.success {background-color:#cfd!important; border:1px solid #aeb; color:#050!important}
+.message.success {background-color:#ccffddeb!important; border:1px solid #aeb; color:#050!important}
 
 
 /* Class that can be applied to an <a> in a message to make the full message clickable. */
