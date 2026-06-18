@@ -32,6 +32,26 @@ $(function() {
 <li class='sep'></li>
 
 <li>
+<label><?php echo T("Forum description"); ?></label>
+<div class='subText'>
+    <?php echo T("Used for SEO and social media meta tags. If left blank, a description will be generated automatically based on forum activity."); ?>
+</div>
+<?php echo $form->input("forumDescription"); ?>
+</li>
+
+<li class='sep'></li>
+
+<li>
+<label><?php echo T("Forum meta keywords"); ?></label>
+<div class='subText'>
+    <?php echo T("Comma-separated list of keywords for search engines. If left blank, keywords will be generated automatically."); ?>
+</div>
+<?php echo $form->input("forumKeywords"); ?>
+</li>
+
+<li class='sep'></li>
+
+<li>
 <label><?php echo T("Default forum language"); ?></label>
 <?php echo $form->select("language", $data["languages"]); ?>
 <div><a href='<?php echo URL("admin/languages"); ?>'><?php echo T("Manage Languages"); ?></a></div>
