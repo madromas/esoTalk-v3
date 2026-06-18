@@ -1,6 +1,6 @@
-# esoTalk v3 
+# esoTalk 
 
-## This is an updated version of the esoTalk forum v1.0.0g4 from 17 May 2014 (Added light/Dark mode support)
+## This is an updated version of the esoTalk forum v1.0.0g5 from 17 May 2014 (Added light/Dark mode support)
 
 ![lol1](https://github.com/madromas/esoTalk-v3/assets/64708726/1af99499-2792-4ef9-b044-c3474ab509e5)
 
