@@ -36,7 +36,6 @@ public function handler_init($sender)
 	$sender->addCSSFile($this->resource("styles.css"), true);
 	$sender->addCSSFile($this->resource("styles-dark.css"), true);
 	$sender->addToHead("<link rel='stylesheet' href='https://use.fontawesome.com/releases/v6.4.2/css/all.css'>");
-		$sender->addToHead("<link rel='shortcut icon' href='./favicon.png' />");
 
 	// If we're viewing from a mobile browser, add the mobile CSS and change the master view.
 	if ($isMobile = isMobileBrowser()) {
