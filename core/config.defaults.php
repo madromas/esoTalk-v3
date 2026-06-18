@@ -53,6 +53,8 @@ $config["esoTalk.database.connectionOptions"] = array(
 
 // Basic forum details.
 $config["esoTalk.forumTitle"] = "";
+$config["esoTalk.forumDescription"] = "";
+$config["esoTalk.meta.keywords"] = "";
 $config["esoTalk.forumLogo"] = false; // Path to an image file to replace the title (don't make it too big or it'll stretch the header!)
 $config["esoTalk.language"] = "English";
 $config["esoTalk.baseURL"] = "";
@@ -66,10 +68,6 @@ $config["esoTalk.gzipOutput"] = true; // Whether or not to compress the page out
 $config["esoTalk.https"] = true; // Whether or not to force HTTPS.
 $config["esoTalk.cache"] = false; // What type of cache to use.
 $config["esoTalk.visibleToGuests"] = true;
-
-// Meta information.
-$config["esoTalk.meta.keywords"] = "humor, fun, funny pictures, madway.net, madway, mad, way, funny videos, entertainment, stories, funny stories, dark humor";
-$config["esoTalk.meta.description"] = "If you are normal, you have got to be MAD!";
 
 // Skins and Plugins.
 $config["esoTalk.skin"] = "Dark"; // The active skin.
