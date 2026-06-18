@@ -31,7 +31,6 @@ if (!defined("IN_ESOTALK")) exit;
   
     <link rel="shortcut icon" type="image/png" href="<?php echo URL('',true); ?>favicon.png" />
   <?php } ?> 
-  <link rel="manifest" href="/manifest.json">
 <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
 <link rel="shortcut icon" href="/favicon.png" />
 <link rel="stylesheet" type="text/css" href="/fancybox/fancybox.css">
