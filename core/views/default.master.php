@@ -22,7 +22,8 @@ if (!defined("IN_ESOTALK")) exit;
 
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta property="og:title" content="<?php echo sanitizeHTML($data["pageTitle"]); ?>" />
-    <meta property="og:description" content="If you are normal, you have got to be MAD!" />
+    <meta name="description" content="<?php echo sanitizeHTML(C("esoTalk.forumDescription", "")); ?>" />
+    <meta name="keywords" content="<?php echo sanitizeHTML(C("esoTalk.meta.keywords", "")); ?>" />
 	<meta property="og:url" content="<?php echo URL('',true); ?>" />
 	<?php if(file_exists('uploads/logo.png')) { ?>
     <meta property="og:image" content="<?php echo URL('',true); ?>uploads/logo.png" />
@@ -30,7 +31,7 @@ if (!defined("IN_ESOTALK")) exit;
   <?php if(file_exists('favicon.png')) { ?>
   
     <link rel="shortcut icon" type="image/png" href="<?php echo URL('',true); ?>favicon.png" />
-  <?php } ?> 
+  <?php } ?>
 <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v6.4.2/css/all.css">
 <link rel="shortcut icon" href="/favicon.png" />
 <link rel="stylesheet" type="text/css" href="/fancybox/fancybox.css">
@@ -41,45 +42,6 @@ if (!defined("IN_ESOTALK")) exit;
 
 </head>
 <body class='<?php echo $data["bodyClass"]; ?>'>
-
-
-
-<script>
-//Infinite Scroll
-$(function(){ //on document ready
-    $(document).scroll(function (e) { //bind scroll event
-
-        var intBottomMargin = 60; //Pixels from bottom when script should trigger
-
-        //if less than intBottomMargin px from bottom
-        if ($(window).scrollTop() >= $(document).height() - $(window).height() - intBottomMargin) {
-          //  $(".viewMore").click(); //trigger click
-        }
-
-    });
-});
-</script>
-<a href='#' class='scrollToTop'><i class='fas fa-chevron-up'></i></a>
- <script>
-$(document).ready(function(){
-
-    //Check to see if the window is top if not then display button
-    $(window).scroll(function(){
-        if ($(this).scrollTop() > 100) {
-            $('.scrollToTop').fadeIn();
-        } else {
-            $('.scrollToTop').fadeOut();
-        }
-    });
-
-    //Click event to scroll to top
-    $('.scrollToTop').click(function(){
-        $('html, body').animate({scrollTop : 0},800);
-        return false;
-    });
-
-});
-</script> 
 
 <script src="/fancybox/fancybox.js"></script>
 <?php $this->trigger("pageStart"); ?>
