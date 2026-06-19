@@ -12,6 +12,8 @@ ET::$pluginInfo["Honeypot"] = array(
 	"license" => "MIT"
 );
 
+#[\AllowDynamicProperties]
+
 class ETPlugin_Honeypot extends ETPlugin {
 
         public function handler_renderBefore($sender)
