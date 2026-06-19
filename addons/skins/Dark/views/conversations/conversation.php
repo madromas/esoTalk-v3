@@ -55,10 +55,17 @@ foreach ($conversation["labels"] as $label) $className .= " label-$label";
             echo "<span class='controls'><a href='".URL($conversationURL."/?search=".urlencode($data["fulltextString"]))."' class='showMatchingPosts'>".T("Show matching posts")."</a></span>";
 
         if ($conversation["firstPost"]) {
-            // Get the formatted excerpt
+
             $excerpt = ET::formatter()->init($conversation["firstPost"])->firstLine()->format()->inline(true)->clip(200)->get();
-            // Strip the <video> tags out
-            echo "<div class='excerpt'>".strip_tags($excerpt, '<p><a><b><strong><em><ul><li><br>')."</div>";
+            
+            $excerpt = preg_replace('/<div class="hiddenContent">.*?<\/div>/s', '', $excerpt);
+            
+            $excerpt = preg_replace('/\[[^\]]*\]/', '', $excerpt);
+            
+            // Strip everything else except the allowed formatting
+            $excerpt = strip_tags($excerpt, '<p><a><b><strong><em><ul><li><br>');
+            
+            echo "<div class='excerpt'>".$excerpt."</div>";
         }
         ?>
     </div>
