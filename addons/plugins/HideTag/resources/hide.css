@@ -4,9 +4,8 @@
 	padding: 5px;
 	border: 1px solid #ffcbbf;
 	border-radius: 10px;
-	font-family: Arial, Helvetica, Verdana, sans-serif; /* font */ 
 	font-style:italic;
-	font-weight:bold;
+	font-size:90%;
 	color: #990000;
 }
 
