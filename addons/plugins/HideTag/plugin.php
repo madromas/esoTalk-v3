@@ -2,81 +2,58 @@
 if (!defined("IN_ESOTALK")) exit;
 
 ET::$pluginInfo["HideTag"] = array(
-	"name" => "HideTag",
-	"description" => "Enable [hide], [hide=100], [groups=1,4], [users=Toby,Tristan] and [visitor] tags to hide content.",
-	"version" => "1.0.0",
-	"author" => "Firestarter",
-	"authorURL" => "http://ifirestarter.ru",
-	"license" => "GPLv2"
+    "name" => "HideTag",
+    "description" => "Securely hide content (including attachments).",
+    "version" => "1.0.1",
+    "author" => "MadRomas",
+    "authorURL" => "https://madway.net",
+    "license" => "GPLv2"
 );
 
 class ETPlugin_HideTag extends ETPlugin {
 
-	public function handler_conversationController_renderBefore($sender){
-		$sender->addCssFile($this->resource("hide.css"));
-	}
-	
-	public function handler_memberController_renderBefore($sender){
-		$this->handler_conversationController_renderBefore($sender);
-	}
-	
-	public function handler_format_format( $sender ){
+    public function handler_conversationController_renderBefore($sender){
+        $sender->addCssFile($this->resource("hide.css"));
+    }
 
-		// [hide]Hello word[/hide]
-		$regexp = '!\[hide\](.*?)\[/hide\]!s';
-		while (preg_match($regexp, (string) $sender->content)) {
-			if (ET::$session->userId) {
-				$sender->content = preg_replace($regexp, "$1</p>", $sender->content);
-			} else {
-				$sender->content = preg_replace($regexp, 
-					"<div class=\"hiddenContent\">" . T("hidden.YouMustBeLoggedIn") . "<div class=\"content\" style=\"display:none;\">$1</div></div>", 
-					$sender->content);
-			}
-		}
-		
-		// [hide=100]Hello word[/hide]
-		$regexp = '!\[hide\=([0-9]+)\](.*?)\[/hide\]!s';
-		while (preg_match($regexp, (string) $sender->content, $matches)) {
-			if (ET::$session->userId AND ET::$session->user['countPosts'] >= (int)$matches[1] OR ET::$session->user['account']=='administrator' OR ET::$session->user['account']=='moderator') {
-				$sender->content = preg_replace($regexp, "$2</p>", $sender->content);
-			} else {
-				$sender->content = preg_replace($regexp, 
-					"<div class=\"hiddenContent\">" . T("hidden.YouMustHavePosts") . "<div class=\"content\" style=\"display:none;\">$2</div></div>", 
-					$sender->content);
-			}
-		}
-		
-		// [groups=1,4]Hello word[/groups]
-		$regexp = '!\[groups\=([a-zA-Z0-9-+.,_ ]+)\](.*?)\[/groups\]!s';
-		while (preg_match($regexp, (string) $sender->content, $matches)) {
-			$groups = explode(',', (string) $matches[1]); 
-			if (ET::$session->user['account']=='administrator' OR ET::$session->user['account']=='moderator' OR count(array_intersect($groups, ET::$session->getGroupIds())) > 0 ) {
-				$sender->content = preg_replace($regexp, "$2</p>", $sender->content);
-			} else {
-				$sender->content = preg_replace($regexp, 
-					"<div class=\"hiddenContent\">" . T("hidden.YouMustBeInGroups") . "<div class=\"content\" style=\"display:none;\">$2</div></div>", 
-					$sender->content);
-			}
-		}
-		
-		// [users=Toby,Tristan]Hello word[/users]
-		$regexp = '!\[users\=([a-zA-Z0-9-+.,_ ]+)\](.*?)\[/users\]!s';
-		while (preg_match($regexp, (string) $sender->content, $matches)) {
-			$users = explode(',', (string) $matches[1]); 
-			if (ET::$session->user['account']=='administrator' OR ET::$session->user['account']=='moderator' OR in_array(ET::$session->user['username'], $users)) {
-				$sender->content = preg_replace($regexp, "$2</p>", $sender->content);
-			} else {
-				$sender->content = preg_replace($regexp, 
-					"<div class=\"hiddenContent\">" . T("hidden.ContentForUsers") . "<div class=\"content\" style=\"display:none;\">$2</div></div>", 
-					$sender->content);
-			}
-		}
+    public function handler_conversationController_formatPostForTemplate($sender, &$formatted, $post, $conversation)
+    {
+        $this->secureContent($formatted["body"]);
+    }
 
-		// Hello, [visitor][/visitor]!
-		$regexp = '!\[visitor\]\[/visitor\]!s';
-		while (preg_match($regexp, (string) $sender->content, $matches)) {			
-			$sender->content = preg_replace($regexp, '<strong>' . ET::$session->user['username'] . "</strong></p>", $sender->content);			
-		}			
-	}
+    private function secureContent(&$content) {
+        $tags = [
+            'hide' => ['!\[hide\](.*?)\[/hide\]!s', "hidden.YouMustBeLoggedIn", 1],
+            'hide100' => ['!\[hide\=([0-9]+)\](.*?)\[/hide\]!s', "hidden.YouMustHavePosts", 2],
+            'groups' => ['!\[groups\=([a-zA-Z0-9-+.,_ ]+)\](.*?)\[/groups\]!s', "hidden.YouMustBeInGroups", 2],
+            'users' => ['!\[users\=([a-zA-Z0-9-+.,_ ]+)\](.*?)\[/users\]!s', "hidden.ContentForUsers", 2]
+        ];
+
+        foreach ($tags as $key => $data) {
+            $regexp = $data[0];
+            $message = T($data[1]);
+            $contentIndex = $data[2];
+
+            $content = preg_replace_callback($regexp, function($matches) use ($key, $message, $contentIndex) {
+                $isAuthorized = false;
+
+                if ($key == 'hide') {
+                    $isAuthorized = (bool)ET::$session->userId;
+                } elseif ($key == 'hide100') {
+                    $isAuthorized = (ET::$session->userId && ET::$session->user['countPosts'] >= (int)$matches[1]) || ET::$session->user['account'] == 'administrator' || ET::$session->user['account'] == 'moderator';
+                } elseif ($key == 'groups') {
+                    $groups = explode(',', (string)$matches[1]);
+                    $isAuthorized = ET::$session->user['account'] == 'administrator' || ET::$session->user['account'] == 'moderator' || count(array_intersect($groups, ET::$session->getGroupIds())) > 0;
+                } elseif ($key == 'users') {
+                    $users = explode(',', (string)$matches[1]);
+                    $isAuthorized = ET::$session->user['account'] == 'administrator' || ET::$session->user['account'] == 'moderator' || in_array(ET::$session->user['username'], $users);
+                }
+
+                return $isAuthorized ? $matches[$contentIndex] : "<div class=\"hiddenContent\">$message</div>";
+            }, $content);
+        }
+
+        // [visitor]...[/visitor]
+        $content = preg_replace('!\[visitor\](.*?)\[/visitor\]!s', '<strong>' . ET::$session->user['username'] . "</strong>", $content);
+    }
 }
-?>
