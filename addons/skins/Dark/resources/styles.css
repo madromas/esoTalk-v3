@@ -179,22 +179,6 @@ input[type=text], input[type=password], input[type=number], input[type=email], t
 	display: block;
 }
 
-
-
-
-
-.hiddenContent{
-    background: #d9f5ff !important;
-	border: 1px solid #30363d !important;
-	color: #414141 !important;
-}
-
-.hiddenContent:before{
-	color: #990000 !important;
-}
-
-
-
 /* Notifications button */
 #hdr .popupWrapper {margin:-5px 0; display:inline-block}
 #hdr .popupButton:hover {text-decoration:none}
@@ -556,7 +540,7 @@ pre {border:0px dashed #ccc;}
 .replyPlaceholder .postHeader h3 {font-weight:300; color:#999}
 .postBody {line-height:1.5em; font-size:14px}
 .postBody a {font-weight:400; color:#03a9f4}
-.postBody img {vertical-align: bottom;max-width: 80%; border: 1px solid #484848;border-radius:5px}
+.postBody img {vertical-align: bottom;max-width: 80%; border: 1px solid #e1e7ef;border-radius:5px}
 
 .button.submit {background-color:#23b636; color:#fff; border:0px; }
 .button.submit:hover {background-color:#2ea041; color:#fff; border:0px;}
