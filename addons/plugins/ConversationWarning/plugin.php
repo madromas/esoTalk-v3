@@ -9,7 +9,6 @@ ET::$pluginInfo["ConversationWarning"] = array(
 	"version" => "1.1.2",
 	"author" => "Tristan van Bokkem",
 	"authorEmail" => "tristanvanbokkem@gmail.com",
-	"authorURL" => "http://www.bitcoinclub.nl",
 	"license" => "GPLv2"
 );
 
