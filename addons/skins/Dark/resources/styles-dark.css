@@ -437,10 +437,6 @@ background-color: #FD4C4C;
 
 .dark .postBody   {background-color:#131a20;}
 
-.dark #loginSheet {
-    width: 480px !important;
-}
-
 /* Loading indicators */
 .dark #loading
  {
