@@ -43,7 +43,6 @@ border-radius: 10px;}
 #adminChannels .channelList li > div {padding:6px 0; cursor:move}
 #adminChannels .channelList > li > div {padding:10px 20px;}
 #adminChannels .channelList > li > div .channel {font-weight:bold}
-#adminChannels .channelList > li:hover {background-color:#1b2228}
 #adminChannels .channelList li.placeholder {background:#eee; border-top:1px solid #ccc}
 
 
@@ -65,7 +64,7 @@ border-radius: 10px;}
 /* Plugins */
 #pluginList {list-style:none; margin:20px 0 0 0; padding:0}
 #pluginList > li {margin-bottom:10px; padding:10px 12px}
-#pluginList > li.disabled {background:#141a20; color:#aaa; border:0; padding:11px 13px}
+#pluginList > li.disabled {opacity: 0.5; color:#aaa; border:0; padding:11px 13px}
 #pluginList > li > small {margin-left:7px}
 #pluginList img {opacity:0.5; vertical-align:-3px; margin-right:10px}
 #pluginList > li.enabled img {opacity:1}
