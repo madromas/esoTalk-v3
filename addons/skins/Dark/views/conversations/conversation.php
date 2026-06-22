@@ -56,7 +56,7 @@ foreach ($conversation["labels"] as $label) $className .= " label-$label";
 
         if ($conversation["firstPost"]) {
 
-            $excerpt = ET::formatter()->init($conversation["firstPost"])->firstLine()->format()->inline(true)->clip(200)->get();
+            $excerpt = ET::formatter()->init($conversation["firstPost"])->firstLine()->format()->inline(true)->clip(150)->get();
             
             $excerpt = preg_replace('/<div class="hiddenContent">.*?<\/div>/s', '', $excerpt);
             

@@ -481,8 +481,9 @@ margin-right: 5px;}
 
 /* Channel list */
 #channelList {margin-top:-11px}
-.channelList {background:#fff}
+.channelList {background:#eff4fd}
 .channelList > li {padding:10px; background:#fff}
+.channelList :hover {background:#f5fcff}
 .channelList .channel {padding:3px 6px; font-size:85%; font-weight:500;}
 .channelList .description {font-size:85%; margin-top:10px; color:#888; margin-bottom:0}
 .channelList .stats {font-size:85%; margin-left:10px; color:#888}
@@ -540,7 +541,7 @@ pre {border:0px dashed #ccc;}
 .replyPlaceholder .postHeader h3 {font-weight:300; color:#999}
 .postBody {line-height:1.5em; font-size:14px}
 .postBody a {font-weight:400; color:#03a9f4}
-.postBody img {vertical-align: bottom;max-width: 80%; border: 1px solid #e1e7ef;border-radius:5px}
+.postBody img {margin-bottom: .5em; vertical-align: bottom;max-width: 80%; border: 1px solid #e1e7ef;border-radius:5px}
 
 .button.submit {background-color:#23b636; color:#fff; border:0px; }
 .button.submit:hover {background-color:#2ea041; color:#fff; border:0px;}
