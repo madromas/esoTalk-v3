@@ -16,9 +16,10 @@ class ETPlugin_shit extends ETPlugin
 
     public function init()
     {
+        self::$icon_shit = "fas fa-poo";
 
-        ET::define("label.shit", "Shit");
-        ET::define("gambit.shit", "Shit");
+        ET::define("label.shit", "Shit Post");
+        ET::define("gambit.shit", "Shit Post");
 
         ET::conversationModel();
         ETConversationModel::addLabel("shit", "IF(c.shit = 1, 1, 0)", "fas fa-poo");
@@ -136,12 +137,12 @@ class ETPlugin_shit extends ETPlugin
     {
         if ($activity["data"]["shit"])
         return array(
-            sprintf(T('%s shit %s by you.'), name($activity["fromMemberName"]), "<strong>" . sanitizeHTML($activity["data"]["title"]) . "</strong>"),
+            sprintf(T('%s shit it %s by you.'), name($activity["fromMemberName"]), "<strong>" . sanitizeHTML($activity["data"]["title"]) . "</strong>"),
             URL(conversationURL($activity["data"]["conversationId"]))
         );
         else
         return array(
-            sprintf(T("A moderator un-shit %s by you."), "<strong>" . sanitizeHTML($activity["data"]["title"]) . "</strong>"),
+            sprintf(T("A moderator un-shit it %s by you."), "<strong>" . sanitizeHTML($activity["data"]["title"]) . "</strong>"),
             URL(conversationURL($activity["data"]["conversationId"]))
         );
     }
