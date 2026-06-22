@@ -22,7 +22,7 @@ $page = $data["page"];
 
 <?php if (!empty($page["content"])): ?>
 <div class='postBody'>
-<?php echo $page["content"]; ?>
+<?php echo nl2br($page["content"]); ?>
 </div>
 <?php endif; ?>
 

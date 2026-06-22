@@ -39,6 +39,7 @@ $page = $data["page"];
 <li>
 <label><?php echo T("Page content"); ?></label>
 <?php echo $form->input("content", "textarea"); ?>
+<small>HTML tags and line breaks are supported.</small>
 </li>
 <li class='sep'></li>
 
