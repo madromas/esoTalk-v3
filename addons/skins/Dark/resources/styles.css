@@ -483,7 +483,6 @@ margin-right: 5px;}
 #channelList {margin-top:-11px}
 .channelList {background:#eff4fd}
 .channelList > li {padding:10px; background:#fff}
-.channelList :hover {background:#f5fcff}
 .channelList .channel {padding:3px 6px; font-size:85%; font-weight:500;}
 .channelList .description {font-size:85%; margin-top:10px; color:#888; margin-bottom:0}
 .channelList .stats {font-size:85%; margin-left:10px; color:#888}
