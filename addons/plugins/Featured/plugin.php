@@ -17,6 +17,8 @@ class ETPlugin_Featured extends ETPlugin
     public function init()
     {
 
+        self::$icon_featured = "icon-lightbulb";
+
         ET::define("label.featured", "Featured");
         ET::define("gambit.featured", "featured");
 
