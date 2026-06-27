@@ -49,7 +49,7 @@ class ETPlugin_AboutMe extends ETPlugin {
 		$sender->data("birthday", sanitizeHTML(@$member["preferences"]["about_birthday"]));
 		$sender->data("location", sanitizeHTML(@$member["preferences"]["about_location"]));
 		$sender->data("email", sanitizeHTML(@$member["preferences"]["about_email"]));
-		$sender->data("icq", sanitizeHTML(@$member["preferences"]["about_icq"]));
+		$sender->data("discord", sanitizeHTML(@$member["preferences"]["about_discord"]));
 		$sender->data("url", sanitizeHTML(@$member["preferences"]["about_url"]));
 		if (array_key_exists("TimeZones", ET::$plugins)) {
 			$tz_id = @$member["preferences"]["timeZone"];
@@ -94,9 +94,9 @@ class ETPlugin_AboutMe extends ETPlugin {
 		$form->setValue("about_email", ET::$session->preference("about_email"));
 		$form->addField("section_email-no-sep", "about_email", array(__CLASS__, "fieldEmail"), array($sender, "savePreference"));
 		
-		$form->addSection("section_icq-no-sep", T("plugin.AboutMe.icq.label"), $pos++);
-		$form->setValue("about_icq", ET::$session->preference("about_icq"));
-		$form->addField("section_icq-no-sep", "about_icq", array(__CLASS__, "fieldICQ"), array($sender, "savePreference"));
+		$form->addSection("section_discord-no-sep", T("plugin.AboutMe.discord.label"), $pos++);
+		$form->setValue("about_discord", ET::$session->preference("about_discord"));
+		$form->addField("section_discord-no-sep", "about_discord", array(__CLASS__, "fieldDiscord"), array($sender, "savePreference"));
 		
 		$form->addSection("section_url-no-sep", T("plugin.AboutMe.url.label"), $pos++);
 		$form->setValue("about_url", ET::$session->preference("about_url"));
@@ -138,9 +138,9 @@ class ETPlugin_AboutMe extends ETPlugin {
 		return $form->input("about_email", "email");
 	}
 	
-	public static function fieldICQ($form)
+	public static function fieldDiscord($form)
 	{
-		return $form->input("about_icq", "text");
+		return $form->input("about_discord", "text");
 	}
 	
 	public static function fieldURL($form)
