@@ -15,5 +15,5 @@ $definitions["plugin.AboutMe.birthday.label"] = "Дата рождения";
 $definitions["plugin.AboutMe.birthday.desc"] = "Введите дату в формате ДД/ММ/ГГГГ";
 $definitions["plugin.AboutMe.location.label"] = "Местонахождение";
 $definitions["plugin.AboutMe.email.label"] = "E-mail";
-$definitions["plugin.AboutMe.icq.label"] = "ICQ";
+$definitions["plugin.AboutMe.discord.label"] = "Discord";
 $definitions["plugin.AboutMe.url.label"] = "URL";
