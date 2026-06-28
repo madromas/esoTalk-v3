@@ -15,6 +15,32 @@ z-index order reference:
 600 messages
 */
 
+.triangle-border {
+    position: relative;
+    padding: 10px;
+    margin: 5px 5px 10px 5px;
+    border: 1px solid rgba(135, 206, 250);
+    background: rgba(135, 206, 250, .2);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.triangle-border.left {
+  margin-left:30px;
+}
+
+/* Variant : for right positioned triangle
+------------------------------------------ */
+
+.triangle-border.right {
+  margin-right:30px;
+}
+
 #channels.channels.tabs {
    
     flex-direction: column;
@@ -472,7 +498,7 @@ a.channel:hover {text-decoration:none; border-color:#aaa}
 
 /* Conversations list view */
 #conversationsFilter {padding-bottom:25px}
-#conversationsFilter .search {margin-top:3px}
+#conversationsFilter .search {margin-right: 5px}
 
 
 /* Gambits */
@@ -805,3 +831,4 @@ a.button:hover {text-decoration:none}
 .buttonGroup .button:not(:only-child) {border-radius:0}
 .buttonGroup .button:not(:only-child):first-child {border-radius:3px 0 0 3px}
 .buttonGroup .button:not(:only-child):last-child {border-radius:0 3px 3px 0}
+
