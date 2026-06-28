@@ -126,11 +126,11 @@ class ETPlugin_Signature extends ETPlugin {
 
 		if ($signature)
 		{
-			return $form->input("signature", "text")." <small>(".T("Max characters:")." ".C("plugin.Signature.characters").", ".T("BBCode Allowed").")</small><br /><br /><small>".$signature."</small>";
+			return $form->input("signature", "text")." <small>(".T("Max characters:")." ".C("plugin.Signature.characters").", ".T("BBCode Allowed").")</small><br /><small>".$signature."</small>";
 		}
 		else
 		{
-			return $form->input("signature", "text")." <small>(".T("Max characters:")." ".C("plugin.Signature.characters").", ".T("BBCode Allowed").")</small><br /><br /><small>-</small>";
+			return $form->input("signature", "text")." <small>(".T("Max characters:")." ".C("plugin.Signature.characters").", ".T("BBCode Allowed").")</small><br /><small>".T("No signature")."</small>";
 		}
 	}
 
