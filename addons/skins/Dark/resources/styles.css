@@ -668,7 +668,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 
 .highlight .postContent {box-shadow:0 0 0 2px #0d419d}
 
-.postHeader {margin-bottom:2px; padding:10px 10px 10px 15px; overflow:visible; color:#888; background: #f5fcff; border-bottom:0px solid #30363d;}
+.postHeader {border-radius: 8px 8px 0 0;margin-bottom:2px; padding:10px 10px 10px 15px; overflow:visible; color:#888; background: #f5fcff; border-bottom:0px solid #30363d;}
 .postHeader h3 {display:inline; margin:0}
 .postHeader h3, .postHeader h3 a {color:#000}
 .postHeader .info {display:inline}
