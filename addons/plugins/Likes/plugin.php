@@ -135,7 +135,7 @@ public function handler_postModel_getPostsAfter($sender, &$posts)
 
 	if (!count($postsById)) return;
 	if (ET::$session->preference("disallowLikes", false)) return;
-	if (!ET::$session->preference("allowDislikes", false)) unset($keys["dislikes"]);
+	if (!ET::$session->preference("allowDislikes", true)) unset($keys["dislikes"]);
 
 	foreach ($keys as $k => $v) {
 		$result = ET::SQL()
@@ -291,7 +291,7 @@ public function canLike()
 
 public function canDislike()
 {
-	return (ET::$session->userId and !ET::$session->isSuspended() and ET::$session->preference("allowDislikes", false));
+	return (ET::$session->userId and !ET::$session->isSuspended() and ET::$session->preference("allowDislikes", true));
 }
 
 public function canLikePost(&$post, &$conversation)
