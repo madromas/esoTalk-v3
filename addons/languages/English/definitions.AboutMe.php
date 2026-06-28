@@ -15,5 +15,5 @@ $definitions["plugin.AboutMe.birthday.label"] = "Birthday";
 $definitions["plugin.AboutMe.birthday.desc"] = "Enter a valid date in DD/MM/YYYY format";
 $definitions["plugin.AboutMe.location.label"] = "Location";
 $definitions["plugin.AboutMe.email.label"] = "E-mail";
-$definitions["plugin.AboutMe.icq.label"] = "ICQ";
+$definitions["plugin.AboutMe.discord.label"] = "Discord";
 $definitions["plugin.AboutMe.url.label"] = "URL";
