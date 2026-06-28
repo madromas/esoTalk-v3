@@ -30,7 +30,18 @@ $url = $data["url"];
 		<li><label><?php echo T("plugin.TimeZones.localTime.label"); ?></label> <div><?php echo $data["localTime"]; ?></div></li>
 	<?php endif; ?>
 		<li><label><?php echo T("plugin.AboutMe.email.label"); ?></label> <div><?php echo "<a href='mailto:".$email."' class='link-email'>".$email."</a>"; ?></div></li>
-		<li><label><?php echo T("plugin.AboutMe.discord.label"); ?></label> <div><?php echo ($discord ? "<img src='http://status.icq.com/online.gif?icq=".$icq."&img=26' style='padding-right:5px'></img>" : "") . "<a href='http://www.icq.com/people/".$icq."' rel='nofollow external' target='_blank' class='link-external'>".$icq." </a>"; ?></div></li>
+		
+		<li>
+    <label><?php echo T("plugin.AboutMe.discord.label"); ?></label> 
+    <div>
+        <?php if ($discord): ?>
+            <a href="https://discord.com/users/<?php echo htmlspecialchars($discord); ?>" rel="nofollow external" target="_blank" class="link-external">
+                <i class="fa-brands fa-discord"></i> <?php echo htmlspecialchars($discord); ?>
+            </a>
+        <?php endif; ?>
+    </div>
+</li>
+
 		<li><label><?php echo T("plugin.AboutMe.url.label"); ?></label> <div><?php echo "<a href='".$url."' rel='nofollow external' target='_blank' class='link-external'>".$url." </a>"; ?></div></li>
 		<li><label><?php echo T("plugin.AboutMe.about.label"); ?></label> <div><?php echo $about; ?></div></li>
 
