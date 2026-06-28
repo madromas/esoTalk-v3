@@ -29,10 +29,13 @@ $(function() {
 <div class='section'>
 
 <ul class='list'>
-<?php foreach ($news as $new): ?>
-<li data-id='<?php echo $new["newId"]; ?>' class='hasControls'>
-<div class='controls'><a href='<?php echo URL("admin/news/edit/".$new["newId"]); ?>' class='control-edit' title='<?php echo T("Edit"); ?>'><i class='icon-edit'></i></a> <a href='<?php echo URL("admin/news/delete/".$new["newId"]."?token=".ET::$session->token); ?>' class='control-delete' title='<?php echo T("Delete"); ?>'><i class='icon-remove'></i></a></div>
-<strong><?php echo $new["title"]; ?></strong>
+<?php foreach ($news as $news): ?>
+<li data-id='<?php echo $news["newsId"]; ?>' class='hasControls'>
+<div class='controls'>
+    <a href='<?php echo URL("admin/news/edit/".$news["newsId"]); ?>' class='control-edit' title='<?php echo T("Edit"); ?>'><i class='icon-edit'></i></a> 
+    <a href='<?php echo URL("admin/news/delete/".$news["newsId"]."?token=".ET::$session->token); ?>' class='control-delete' title='<?php echo T("Delete"); ?>'><i class='icon-remove'></i></a>
+</div>
+<strong><?php echo $news["title"]; ?></strong>
 </li>
 <?php endforeach; ?>
 </ul>

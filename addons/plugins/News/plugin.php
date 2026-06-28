@@ -7,9 +7,9 @@ ET::$pluginInfo["News"] = array(
 	"name" => "News",
 	"description" => "Allows add forum news to esotalk.",
 	"version" => "2.0.0",
-  "author" => "esoTalk Team",
-  "authorEmail" => "5557720max@gmail.com",
-  "authorURL" => "https://github.com/phpSoftware/esoTalk-v2/",
+	"author" => "esoTalk Team",
+	"authorEmail" => "5557720max@gmail.com",
+	"authorURL" => "https://github.com/phpSoftware/esoTalk-v2/",
 	"license" => "MIT"
 );
 
@@ -18,14 +18,14 @@ class ETPlugin_News extends ETPlugin {
 	public function setup($oldVersion = "")
 	{
 		$structure = ET::$database->structure();
-		$structure->table("new")
-			->column("newId", "int(11) unsigned", false)
+		$structure->table("news") 
+			->column("newsId", "int(11) unsigned", false)
 			->column("title", "varchar(31)", false)
 			->column("content", "text")
 			->column("hideFromGuests", "tinyint(1)", 0)
 			->column("position", "int(11)", 0)
 			->column("startTime", "int(11)", false)
-			->key("newId", "primary")
+			->key("newsId", "primary")
 			->exec(false);
 
 		$this->createDefaultNews();
@@ -37,12 +37,11 @@ class ETPlugin_News extends ETPlugin {
 		$time = time();
 		$model = ET::getInstance("newsModel");
 		$model->setData(array(
-			//"newId"        => 1,
 			"title"          => "First news",
 			"content"        => "We are open.",
 			"hideFromGuests" => 0,
 			"position"       => 1,
-			"startTime"      =>$time
+			"startTime"      => $time
 		));
 		
 		return true;
@@ -55,7 +54,6 @@ class ETPlugin_News extends ETPlugin {
 		ETFactory::registerAdminController("news", "NewsAdminController", dirname(__FILE__)."/NewsAdminController.class.php");
 	}
 
-
 	public function handler_initAdmin($sender, $menu)
 	{
 		$menu->add("news", "<a href='".URL("admin/news")."'><i class='icon-pencil'></i> ".T("News")."</a>");
@@ -67,14 +65,13 @@ class ETPlugin_News extends ETPlugin {
 		$news = $model->get();
 		if($news){			
 			$string = '';
-			foreach($news as $new){
+			foreach($news as $news){
 				if (ET::$session->userId) {
-					$string.='<span title=\''.date("m.d.Y", $new['startTime']).'\'><strong>'.addslashes($new['title']).'</strong> '.addslashes($new['content']).'</span>';
+					$string.='<span title=\''.date("m.d.Y", $news['startTime']).'\'><strong>'.addslashes($news['title']).'</strong> '.addslashes($news['content']).'</span>';
 				} 
-				elseif($new['hideFromGuests']==0){
-					$string.='<span title=\''.date("m.d.Y", $new['startTime']).'\'><strong>'.addslashes($new['title']).'</strong> '.addslashes($new['content']).'</span>';
+				elseif($news['hideFromGuests']==0){
+					$string.='<span title=\''.date("m.d.Y", $news['startTime']).'\'><strong>'.addslashes($news['title']).'</strong> '.addslashes($news['content']).'</span>';
 				}
-
 			}
 			
 			if(!empty($string)){
@@ -93,7 +90,7 @@ class ETPlugin_News extends ETPlugin {
 	public function uninstall()
 	{
 		$structure = ET::$database->structure();
-		$structure->table("new")
+		$structure->table("news")
 			->drop();
 		return true;
 	}

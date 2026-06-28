@@ -20,7 +20,6 @@ class NewsAdminController extends ETAdminController {
 		$news = $this->model()->get();
 
 		$this->addCSSFile($this->plugin()->resource("admin.css"));
-
 		$this->addJSFile("core/js/lib/jquery.ui.js");
 		$this->addJSFile($this->plugin()->resource("admin.js"));
 		$this->addJSLanguage("message.confirmDelete");
@@ -29,42 +28,38 @@ class NewsAdminController extends ETAdminController {
 		$this->render($this->plugin()->view("admin/news"));
 	}
 
-	public function action_edit($newId = "")
+	public function action_edit($newsId = "")
 	{
-		if (!($new = $this->model()->getById((int)$newId))) {
+		if (!($newsItem = $this->model()->getById((int)$newsId))) {
 			$this->render404();
 			return;
 		}
 
 		$form = ETFactory::make("form");
-		$form->action = URL("admin/news/edit/".$new["newId"]);
-		$form->setValues($new);
+		$form->action = URL("admin/news/edit/".$newsItem["newsId"]);
+		$form->setValues($newsItem);
 
 		if ($form->isPostBack("cancel")) $this->redirect(URL("admin/news"));
 
 		if ($form->validPostBack("save")) {
-
 			$data = array(
 				"title"          => $form->getValue("title"),
 				"content"        => $form->getValue("content"),
 				"hideFromGuests" => (bool)$form->getValue("hideFromGuests"),
 				"startTime"      => time(),
-
 			);
 
 			$model = $this->model();
-			$model->updateById($new["newId"], $data);
+			$model->updateById($newsItem["newsId"], $data);
 
 			if ($model->errorCount()) $form->errors($model->errors());
-
 			else $this->redirect(URL("admin/news"));
 		}
 
 		$this->data("form", $form);
-		$this->data("new", $new);
-		$this->render($this->plugin()->view("admin/editNew"));
+		$this->data("news", $newsItem);
+		$this->render($this->plugin()->view("admin/editNews"));
 	}
-
 
 	public function action_create()
 	{
@@ -74,43 +69,37 @@ class NewsAdminController extends ETAdminController {
 		if ($form->isPostBack("cancel")) $this->redirect(URL("admin/news"));
 
 		if ($form->validPostBack("save")) {
-
 			$model = $this->model();
-			
 			date_default_timezone_set('America/New_York');
-			$time = time();
 			$data = array(
-				"title" => $form->getValue("title"),
-				"content" => $form->getValue("content"),
+				"title"          => $form->getValue("title"),
+				"content"        => $form->getValue("content"),
 				"hideFromGuests" => (bool)$form->getValue("hideFromGuests"),
-				"position" => $model->count(),
-				"startTime" =>$time
+				"position"       => $model->count(),
+				"startTime"      => time()
 			);
 
 			$model->create($data);
 
 			if ($model->errorCount()) $form->errors($model->errors());
-
 			else $this->redirect(URL("admin/news"));
 		}
 
 		$this->data("form", $form);
-		$this->data("new", null);
-		$this->render($this->plugin()->view("admin/editNew"));
+		$this->data("news", null);
+		$this->render($this->plugin()->view("admin/editNews"));
 	}
 
-
-	public function action_delete($newId = "")
+	public function action_delete($newsId = "") 
 	{
 		if (!$this->validateToken()) return;
 
-		// Get this field's details. If it doesn't exist, show an error.
-		if (!($new = $this->model()->getById((int)$newId))) {
+		if (!($newsItem = $this->model()->getById((int)$newsId))) {
 			$this->render404();
 			return;
 		}
 
-		$this->model()->deleteById($new["newId"]);
+		$this->model()->deleteById($newsItem["newsId"]);
 
 		$this->redirect(URL("admin/news"));
 	}
@@ -118,12 +107,9 @@ class NewsAdminController extends ETAdminController {
 	public function action_reorder()
 	{
 		if (!$this->validateToken()) return;
-
 		$ids = (array)R("ids");
-
 		for ($i = 0; $i < count($ids); $i++) {
 			$this->model()->updateById($ids[$i], array("position" => $i));
 		}
 	}
-
 }
