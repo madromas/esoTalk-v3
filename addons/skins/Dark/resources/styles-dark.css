@@ -157,23 +157,6 @@ vertical-align: middle;
 /* Global */
 .dark body {background:#131a20; color:#c9d1d9}
 
-
-
-.dark #hdr .link-newConversation {background-image: linear-gradient(to right, #3ba624 0%, #2c823c 51%, #1a9928 100%);}
-        .dark #hdr .link-newConversation {
-            color: white; 
-          }
-
-.dark #hdr .link-newConversation:hover {
-           color: #fff;
-          }
-
-
-/* Start New Discussion Green Button
-#hdr .link-newConversation {background-color:#23b636; color:#fff; border:0px; }
-#hdr .link-newConversation:hover {background-color:#2ea041; color:#fff; border:0px;}
-*/
-
 /* ScrollToTop */
 .dark .scrollToTop{
 
@@ -367,7 +350,7 @@ background-color: #FD4C4C;
 
 /* Popup menus */
 
-.dark .popupMenu li > a {color:#c9d1d9}
+.dark .popupMenu li > a {color:#c9d1d9;border-bottom: 1px solid #30363d;}
 .dark .popupMenu li > span {color:#888 !important}
 .dark .popupMenu li > a:hover,.dark  ul.popupMenu li.selected > a { background:#1e252d; color:#fff !important}
 .dark .popupMenu li > a:hover *,.dark  ul.popupMenu li.selected > a * {color:#fff}

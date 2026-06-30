@@ -414,7 +414,7 @@ negative margins so they overlap the padding of the <li>. */
 .conversationList .col-views {float:right; margin-right:-16em; width:14em; margin-top:1.5em}
 
 .conversationList .col-lastPost {float:right; width:20em; margin-right:-29em; font-size:90%; overflow:hidden; white-space:nowrap}
-.conversationList .col-replies span {font-size:100%; font-weight:300; color:#565656;}
+.conversationList .col-replies span {font-size:100%; color:#565656;}
 .list .col-replies {color:#565656; font-size:90%}
 .list .col-replies i {font-size:14px; color:#565656; margin-right:5px}
 
@@ -685,7 +685,7 @@ a.button.big {padding:10px; height:auto; line-height:1em}
 .deleted .thing:before, .deleted .thing:after {display:none}
 
 
-.postBody   {font-weight: normal; background-color:#fff;}
+.postBody   {font-weight: normal; background-color:#fff;border-radius: 8px;}
 
 #loginSheet {
     width: 480px !important;

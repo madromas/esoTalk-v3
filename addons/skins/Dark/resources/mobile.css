@@ -48,6 +48,12 @@ embed {
 #hdr-inner {padding:0}
 /*#hdr #forumTitle {font-size:14px; padding:11px 0; text-align:center; display:block; width:160px; margin:0 auto; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}*/
   #hdr #forumTitle {font-size:14px; padding: 7px 0 0 10px; text-align:left;   display:inline-flex; width:60%;   margin:0 auto; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+#hdr h1 { 
+    font-size: 15px !important;
+   padding: 10px 0 0 10px !important;
+   }
+   #hdr h1 img {padding: 0px;}
+
 #hdr .button {margin:6px 0}
 #hdr .popupWrapper {float:right; margin:0 0 0 7px}
 #hdr .popupMode {float:right; margin:10px 0 0 5px}
@@ -173,7 +179,18 @@ embed {
 
 
 /* Show controls by Dark, but hide unnecessary ones. */
-.hasControls .controls {opacity:1; visibility:visible}
+.hasControls .controls {
+    opacity: 1;
+    visibility: visible;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.hasControls .controls::-webkit-scrollbar {
+    display: none;
+}
 .controls .time, .post .group, .post .editedBy, .post .deletedBy {display:none}
 
 
@@ -193,3 +210,7 @@ div.activity {padding:0 10px}
 #adminDashboard {margin:0 !important}
 #adminChannels .channelList div .controls {visibility:visible !important}
 #skinList .popupWrapper, #pluginList .popupWrapper, #languageList .popupWrapper {display:inline-block !important;}
+
+.triangle-border {
+    margin: 5px 0px 10px 0px;
+}
