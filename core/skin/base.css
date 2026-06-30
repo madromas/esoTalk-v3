@@ -528,7 +528,7 @@ negative margins so they overlap the padding of the <li>. */
 .conversationList .col-channel {float:left; width:10em; margin-left:-11em; text-align:right}
 .conversationList .col-lastPost {float:right; width:23em; margin-right:-27em; font-size:85%; overflow:hidden; white-space:nowrap}
 .conversationList .col-replies {float:right; margin-right:-31em; width:4em; margin-bottom:-2px}
-.conversationList .col-replies span {font-size:20px; font-weight:300}
+.conversationList .col-replies span {font-size:20px;}
 .list .col-replies {color:#666; font-size:85%}
 .list .col-replies span i {font-size:14px; color:#666; margin-right:5px}
 
@@ -654,6 +654,9 @@ a.deleteLink:hover {color:#f00 !important; text-decoration:line-through}
 .postBody ul {list-style-type:disc}
 .postBody b {
   font-weight: 600;
+}
+.postBody p:empty {
+    display: none;
 }
 
 .deleted .postHeader {margin:0; padding:6px 5px 6px 12px}
