@@ -26,7 +26,16 @@ $member = $data["member"];
 </div>
 <?php if (!empty($activity["body"])): ?>
 <div class='activityBody postBody thing'>
-<?php echo $activity["body"]; ?>
+<?php 
+    // 1. Remove all BBCode tags like [attachment...], [hide...], [rep...]
+    $excerpt = preg_replace('/\[(.*?)\]/', '', $activity["body"]);
+    
+    // 2. Strip any remaining HTML tags to keep it clean
+    $excerpt = strip_tags($excerpt);
+    
+    // 3. Truncate to a reasonable length (e.g., 100 characters)
+    echo (strlen($excerpt) > 100) ? mb_substr($excerpt, 0, 100) . '...' : $excerpt;
+?>
 </div>
 <?php endif; ?>
 </div>

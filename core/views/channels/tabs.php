@@ -16,14 +16,22 @@ if (!defined("IN_ESOTALK")) exit;
  */
 
 // Show the path leading up to the current channel depth. ?>
-<li class='pathItem<?php if (isset($data["currentChannels"])): ?> selected<?php endif; ?>'>
-<a href='<?php echo URL("conversations/all"); ?>' data-channel='all' class='channel-all'><?php echo T("All Channels"); ?></a>
 
-<?php if (!empty($data["channelPath"])):
-foreach ($data["channelPath"] as $channel): ?>
-<a href='<?php echo URL("conversations/".$channel["slug"]); ?>' data-channel='<?php echo $channel["slug"]; ?>' title='<?php echo sanitizeHTML(strip_tags((string)$channel["description"])); ?>' class='channel channel-<?php echo $channel["channelId"]; ?>'><?php echo $channel["title"]; ?></a>
-<?php endforeach; ?>
-<?php endif; ?>
+	<li class='<?php echo (empty($data["currentChannels"]) || in_array('all', (array)$data["currentChannels"])) ? 'selected' : ''; ?>'>
+    <a href='<?php echo URL("conversations/all"); ?>' data-channel='all' class='channel-all'>
+        <?php echo T("All Channels"); ?>
+    </a>
+
+    <?php if (!empty($data["channelPath"])):
+        foreach ($data["channelPath"] as $channel): ?>
+            <a href='<?php echo URL("conversations/".$channel["slug"]); ?>' 
+               data-channel='<?php echo $channel["slug"]; ?>' 
+               title='<?php echo sanitizeHTML(strip_tags((string)$channel["description"])); ?>' 
+               class='channel channel-<?php echo $channel["channelId"]; ?>'>
+               <?php echo $channel["title"]; ?>
+            </a>
+        <?php endforeach; ?>
+    <?php endif; ?>
 </li>
 
 <?php

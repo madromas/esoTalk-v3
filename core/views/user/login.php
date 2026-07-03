@@ -55,6 +55,8 @@ foreach ($form->getFieldsInSection($k) as $field): ?>
 
 </div>
 
+
+
 <div class='buttons'>
 <small><?php printf(T("Don't have an account? <a href='%s' class='link-join'>Sign up!</a>"), URL("user/join")); ?></small>
 <?php
