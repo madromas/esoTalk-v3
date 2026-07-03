@@ -29,6 +29,7 @@ init: function() {
 		this.slug = ET.conversation.slug;
 		this.searchString = ET.conversation.searchString;
 
+
 		// Make the controls into a popup button.
 		if ($("#conversationControls").length)
 			$("#conversation .search").after($("#conversationControls").popup({
