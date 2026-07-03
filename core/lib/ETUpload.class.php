@@ -162,9 +162,10 @@ public function saveAsImage($source, $destination, $width, $height, $sizeMode = 
 	// Create a new GD image of the specified width and height, and make sure we can handle transparency.
 	$newImage = imagecreatetruecolor($width, $height);
 	if ($outputType == "png") {
-		imagecolortransparent($newImage, imagecolorallocate($newImage, 0, 0, 0));
-		imagealphablending($newImage, false);
-		imagesavealpha($newImage, true);
+		imagealphablending($newImage, false); // Turn off blending
+    imagesavealpha($newImage, true);      // Save full alpha
+    $transparent = imagecolorallocatealpha($newImage, 0, 0, 0, 127);
+    imagefill($newImage, 0, 0, $transparent);
 	}
 
 	// Work out how much to offset the image by in order to center it.

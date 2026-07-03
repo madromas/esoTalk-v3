@@ -11,6 +11,11 @@ if (!defined("IN_ESOTALK")) exit;
  */
 class ETSQLResult {
 
+/**
+     * The name of the class that created this result instance.
+     * @var string
+     */
+public $className;
 
 /**
  * The PDOStatement object.
