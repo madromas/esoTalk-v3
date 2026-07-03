@@ -1,0 +1,11 @@
+User-agent: Meta-ExternalAgent
+Disallow: /conversations/
+Disallow: /member/
+Disallow: /members/
+Disallow: /conversation/start/
+
+User-agent: *
+Disallow: /conversations/?search=
+Disallow: /members/
+Disallow: /member/
+Disallow: /conversation/start/
