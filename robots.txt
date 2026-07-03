@@ -1,6 +1,15 @@
+# 1. Block the specific bot that is causing the problem
+User-agent: Meta-ExternalAgent
+Disallow: /conversations/
+Disallow: /member/
+Disallow: /members/
+Disallow: /conversation/start/
+
+# 2. General rules for other, well-behaved bots
 User-agent: *
-Crawl-delay: 10
-Disallow: /conversations/*?search=*
+# Use directory-based disallows for search pages
+# (Assuming your search lives at /conversations/)
+Disallow: /conversations/?search=
 Disallow: /members/
 Disallow: /member/
 Disallow: /conversation/start/
