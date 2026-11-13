@@ -96,12 +96,12 @@ $config["esoTalk.enableEmailNotifications"] = true;
 $config["esoTalk.notificationCheckInterval"] = 30;
 
 // Search view settings.
-$config["esoTalk.search.limit"] = 30; // Number of conversations to list for a normal search.
-$config["esoTalk.search.limitIncrement"] = 30; // Number of additional results to load when "more results" is clicked.
-$config["esoTalk.search.limitMax"] = 9999; // Maximum number of results that can be viewed using the #limit gambit.
+$config["esoTalk.search.limit"] = 10; // Number of conversations to list for a normal search.
+$config["esoTalk.search.limitIncrement"] = 10; // Number of additional results to load when "more results" is clicked.
+$config["esoTalk.search.limitMax"] = 10; // Maximum number of results that can be viewed using the #limit gambit.
 $config["esoTalk.search.updateInterval"] = 60; // Number of seconds at which to automatically update the unread status, post count, and last post information for currently listed conversations in a search.
-$config["esoTalk.search.searchesPerMinute"] = 10; // Users are limited to this many normal searches every minute.
-$config["esoTalk.search.disableRandomGambit"] = false; // The "random" gambit can be very slow/intensive on large forums.
+$config["esoTalk.search.searchesPerMinute"] = 1; // Users are limited to this many normal searches every minute.
+$config["esoTalk.search.disableRandomGambit"] = true; // The "random" gambit can be very slow/intensive on large forums.
 
 // Conversation view settings.
 $config["esoTalk.conversation.postsPerPage"] = 30; // The maximum number of posts to display on each page of a conversation.
