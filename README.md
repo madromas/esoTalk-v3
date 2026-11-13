@@ -2,6 +2,8 @@
 
 ## This is an updated version of the esoTalk forum v1.0.0g5 from 17 May 2014 (Added light/Dark mode support)
 
+<img width="835" height="280" alt="Screenshot 2026-11-13 083321" src="https://github.com/user-attachments/assets/1565613c-8dcb-4d02-893b-2d9850d203d5" />
+
 ![lol1](https://github.com/madromas/esoTalk-v3/assets/64708726/1af99499-2792-4ef9-b044-c3474ab509e5)
 
 ![lol2](https://github.com/madromas/esoTalk-v3/assets/64708726/dac2f6bf-1fa5-4476-9dd5-691ed1f06720)
