@@ -16,6 +16,10 @@ if (!defined("IN_ESOTALK")) exit;
 <meta charset='<?php echo T("charset", "utf-8"); ?>'>
 <title><?php echo sanitizeHTML($data["pageTitle"]); ?></title>
 <link rel="stylesheet" href="../fancybox/fancybox.css">
+<?php if(file_exists('favicon.png')) { ?>
+  
+    <link rel="shortcut icon" type="image/png" href="<?php echo URL('',true); ?>favicon.png" />
+  <?php } ?> 
 <?php echo $data["head"]; ?>
 <script>
 // Turn off JS effects and fixed positions, and disable tooltips.

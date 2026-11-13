@@ -235,7 +235,6 @@ background-color: darken(fadein(#1b2228, 5%), 5%);
 
 
 /* The channel breadcrumb tab */
-.dark .tabs .pathItem {margin-right:20px;}
 .dark .tabs .pathItem a {position:relative; float:left; padding-left:20px; margin-left:1px !important}
 .dark .tabs .pathItem.selected a {border-radius:0}
 .dark .tabs .pathItem a:first-child { padding-left:7px; border-radius:3px 0 0 3px; background:#131a20;}
@@ -324,7 +323,7 @@ background-color: #FD4C4C;
 
 /* Tabs */
 .dark .tabs.big li.selected a { padding:11px 14px; border:1px solid #30363d; color:#c9d1d9; border-radius:3px; background:#131a20;}
-.dark .tabs li.selected a { border:1px solid #30363d; color:#c9d1d9; border-radius:3px; background:#131a20;}
+.dark .tabs li.selected a { border:1px solid #30363d; color:#c9d1d9; border-radius:3px; background:#1b2228;}
 .dark .tabs.big:focus {outline:1px solid red;}
 
 
